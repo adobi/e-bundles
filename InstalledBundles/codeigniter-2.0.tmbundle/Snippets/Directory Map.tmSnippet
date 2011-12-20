@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Directory Map</string>
+        <key>uuid</key>
+        <string>174BE445-36CB-45A0-8144-D476EFC1BB89</string>
+        <key>tabTrigger</key>
+        <string>dirmap</string>
+        <key>content</key>
+        <string>directory_map(${1:'${2:directory}'}${3:, $43:TRUE}${5:, ${6:TRUE}}});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

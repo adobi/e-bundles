@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;load-&gt;database(${1:config}${2:, ${3:TRUE}});${0}</string>
+	<key>name</key>
+	<string>Load Database</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciloaddb</string>
+	<key>uuid</key>
+	<string>56349EDA-9CF9-4D73-A454-461E91BF614B</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Octal Permissions</string>
+        <key>uuid</key>
+        <string>345B021F-860E-4266-BBF6-1F13503F8111</string>
+        <key>content</key>
+        <string>octal_permissions(${1:numeric_permissions});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+        <key>tabTrigger</key>
+        <string>octalperms</string>
+    </dict>
+</plist>

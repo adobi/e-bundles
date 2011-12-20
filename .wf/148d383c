@@ -1,0 +1,5 @@
+<p>
+    <a href="javascript:void(0)" id = "start-facebook-payment">
+        <img src="http://www.facebook.com/connect/button.php?app_id=<?php echo FACEBOOK_PAYMENT_APP_ID; ?>&feature=payments&type=light_l">
+    </a>
+</p>

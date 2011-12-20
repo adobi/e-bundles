@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;output-&gt;set_status_header('${1:code}', '${2:text}');${0}</string>
+	<key>name</key>
+	<string>Set Status Header</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cioutputsetstatus</string>
+	<key>uuid</key>
+	<string>A3AFEA8E-F589-4244-8E79-6A60B183810E</string>
+</dict>
+</plist>

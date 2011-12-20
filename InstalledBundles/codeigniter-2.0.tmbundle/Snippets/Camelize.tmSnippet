@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Camelize</string>
+        <key>uuid</key>
+        <string>8456D72F-A484-48A1-BB6C-E0CE44E32983</string>
+        <key>tabTrigger</key>
+        <string>camel</string>
+        <key>content</key>
+        <string>camelize(${1:'${2:string}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

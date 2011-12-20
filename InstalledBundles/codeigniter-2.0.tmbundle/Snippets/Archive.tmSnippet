@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;zip-&gt;archive(${1:'${2:output_file}'});${0}</string>
+	<key>name</key>
+	<string>Archive</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciziparchive</string>
+	<key>uuid</key>
+	<string>CC9285F3-E5A6-4552-BA48-AE4075A97956</string>
+</dict>
+</plist>

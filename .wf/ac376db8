@@ -1,0 +1,36 @@
+					<form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post" id = "paypal-form">
+						<input type="hidden" name="cmd" value="_donations">
+						<input type="hidden" name="business" value="hello@adobi.hu">
+						<input type="hidden" name="lc" value="US">
+						<input type="hidden" name="no_note" value="0">
+						<input type="hidden" name="currency_code" value="EUR">
+						<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+						<input id = "go-to-paypal" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					</form>			<!--  
+					<form target="_blank" action="https://www.paypal.com/cgi-bin/webscr" method="post" id = "paypal-form">
+						<input type="hidden" name="cmd" value="_donations">
+						<input type="hidden" name="business" value="hello@adobi.hu">
+						<input type="hidden" name="lc" value="US">
+						<input type="hidden" name="no_note" value="0">
+						<input type="hidden" name="currency_code" value="EUR">
+						<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+						<input id = "go-to-paypal" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+						<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+					</form>	
+-->			
+                            <form target="_blank" id="paypal-form" method="post" action="https://www.paypal.com/cgi-bin/webscr">
+                                <input type="hidden" value="_xclick" name="cmd">
+                                <input type="hidden" value="invictus@invictus.hu" name="business">
+                                <input type="hidden" value="Donation to Santa Ride" name="item_name">
+                                <input type="hidden" value="Santa Ride Donation" name="item_number">
+                                <span  style="text-align:left; position:relative; top:-12px;">$ <input type="text" value="5" name="amount"  style="width:20px;"></span>
+                                <input type="hidden" value="0" name="no_shipping">
+                                <input type="hidden" value="1" name="no_note">
+                                <input type="hidden" value="USD" name="currency_code">
+                                <input type="hidden" value="HU" name="lc">
+                                <input type="hidden" value="PP-BuyNowBF" name="bn">
+                                <input type="hidden" value="<?php echo base_url() ?>thankyou.php" name="return">
+                                
+                                <input  onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', 'Donate - PayPal', 1]);" id = "go-to-paypal" type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                            </form>					

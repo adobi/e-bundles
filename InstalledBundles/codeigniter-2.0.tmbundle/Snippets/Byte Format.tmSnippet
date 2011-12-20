@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Byte Format</string>
+        <key>uuid</key>
+        <string>8D88C52E-D03E-43F6-9CDD-5E1C578C1C4E</string>
+        <key>tabTrigger</key>
+        <string>bytes</string>
+        <key>content</key>
+        <string>byte_format(${1:'${2:number}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

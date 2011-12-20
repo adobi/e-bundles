@@ -1,0 +1,13 @@
+        <script>
+
+            
+            FB.ui({ 
+                method: 'feed', 
+                name: 'Facebook Dialogs',
+                link: 'hello.adobi.hu/fb/',
+                picture: 'http://fbrell.com/f8.jpg',
+                caption: 'Reference Documentation',
+                description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+                
+            });
+        </script>

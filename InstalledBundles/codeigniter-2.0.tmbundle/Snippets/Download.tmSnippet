@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;zip-&gt;download(${1:'${2:file_name}'});${0}</string>
+	<key>name</key>
+	<string>Download</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cizipdownload</string>
+	<key>uuid</key>
+	<string>AD38CD79-CE84-4CD6-A9E0-1D5A46608E85</string>
+</dict>
+</plist>

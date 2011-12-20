@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;form_validation-&gt;set_error_delimiters('${1:start}','${2:end}');${0}</string>
+	<key>name</key>
+	<string>Set Error Delimiters</string>
+	<key>tabTrigger</key>
+	<string>ciformvaldelim</string>
+	<key>uuid</key>
+	<string>E1C1420E-FCFB-4E62-8DE7-4E6AA05874E7</string>
+</dict>
+</plist>

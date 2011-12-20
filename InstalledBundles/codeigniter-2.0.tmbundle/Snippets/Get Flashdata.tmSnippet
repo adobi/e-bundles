@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;session-&gt;flashdata('${1:index}');${0}</string>
+	<key>name</key>
+	<string>Get Flashdata</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cisessiongetflash</string>
+	<key>uuid</key>
+	<string>580A14E7-D7C7-45F8-B93C-847D485183A7</string>
+</dict>
+</plist>

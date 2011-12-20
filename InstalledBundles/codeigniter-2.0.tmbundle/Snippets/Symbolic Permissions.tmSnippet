@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Symbolic Permissions</string>
+        <key>uuid</key>
+        <string>DD3DF034-C442-4D56-98EE-7E052B58C933</string>
+        <key>tabTrigger</key>
+        <string>symbperms</string>
+        <key>content</key>
+        <string>symbolic_permissions(${1:numeric_permissions});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

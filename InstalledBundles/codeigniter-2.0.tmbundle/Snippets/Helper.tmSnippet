@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;load-&gt;helper(${1:'${2:name}'${3:, '${4:name}'${5:, '${6:name}'}}});${0}</string>
+	<key>name</key>
+	<string>Helper</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciloadhelper</string>
+	<key>uuid</key>
+	<string>623DCB59-7D8F-44D8-B0C0-A5033E67C4E2</string>
+</dict>
+</plist>

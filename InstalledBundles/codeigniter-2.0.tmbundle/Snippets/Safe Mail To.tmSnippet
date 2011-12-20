@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>safe_mailto(${1:'${2:address}'${3:, '${4:text}'${5:, ${6:attribs}}}});${0}</string>
+	<key>name</key>
+	<string>Safe Mail To</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>safemailto</string>
+	<key>uuid</key>
+	<string>3A6E58BA-1BF9-43FD-B34E-7BA025BF5A0E</string>
+</dict>
+</plist>

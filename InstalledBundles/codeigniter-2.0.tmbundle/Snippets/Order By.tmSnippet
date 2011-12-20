@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;db-&gt;order_by('${1:field}');${0}</string>
+	<key>name</key>
+	<string>Order By</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cidborder</string>
+	<key>uuid</key>
+	<string>B4E187FE-65EB-4D76-ACB5-7314278A4BD4</string>
+</dict>
+</plist>

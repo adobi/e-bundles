@@ -1,0 +1,32 @@
+
+
+
+<h2><em>Step 1:</em></h2>
+
+<div class="span8">
+	<p>Fill the form below:</p>
+	<?php echo form_open() ?>
+		<div class="clearfix">
+			<label for="roc_username">ROC user name:</label>
+			<div class="input">
+				<input type="text" name = "roc_username" id = "roc_username"  class="xlarge"/>
+			</div>
+		</div>
+		<div class="clearfix">
+			<label for="udid">Device's UDID number:</label>
+			<div class="input">
+				<input type="text" name = "udid" id = "udid" class="xlarge"/>
+			</div>
+		</div>
+	<?php echo form_close() ?>
+</div>
+
+<h2><em>Step 2:</em></h2>
+<div class="span8">
+	<p>Be in the game's prestige point high score TOP 50 at EACH WEEK!</p>
+</div>
+
+<h2><em>Step 3:</em></h2>
+<div class="span8">
+    <p>EACH WEEK You have the chance to win TWO TICKETS to the 2011. RoC.</p>
+</div>

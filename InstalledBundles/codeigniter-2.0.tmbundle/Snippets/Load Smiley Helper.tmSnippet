@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Load Smiley Helper</string>
+        <key>uuid</key>
+        <string>77251959-15B8-4A5D-8D1E-F4C890510343</string>
+        <key>tabTrigger</key>
+        <string>smileyhelper</string>
+        <key>content</key>
+        <string>\$this-&gt;load-&gt;helper('smiley');$0</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

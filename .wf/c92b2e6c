@@ -1,0 +1,318 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+		<title>Santa Ride</title>
+		<link rel="stylesheet" href="page.css" />
+		<link rel="stylesheet" href="http://invictus.hu/js/tipsy/stylesheets/tipsy.css" />
+		<link rel="stylesheet" href="http://invictus.hu/css/jquery-ui-1.8.4.custom.css" />
+		<link rel="stylesheet" href="http://invictus.hu/js/fancybox/jquery.fancybox-1.3.1.css" />
+
+		<link rel="stylesheet" href="http://invictus.hu/css/jScrollPane.css" />
+        <link rel="stylesheet" type="text/css" href="http://invictus.hu/css/scrollable-vertical.css?v=1" />
+		<script type="text/javascript" charset="utf-8" src = "http://ajax.googleapis.com/ajax/libs/jquery/1.4.3/jquery.min.js"></script>
+		<!-- <script type="text/javascript" charset="utf-8" src = "http://invictus.hu/js/jquery-ui-1.8.4.custom.min.js"></script> -->
+	    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+		<script type="text/javascript" charset="utf-8" src = "http://invictus.hu/js/tipsy/javascripts/jquery.tipsy.js"></script>
+
+		<script type="text/javascript" charset="utf-8" src = "http://invictus.hu/js/fancybox/jquery.fancybox-1.3.1.js"></script>
+		<script type="text/javascript" charset="utf-8" src = "http://invictus.hu/js/fancybox/jquery.easing-1.3.pack.js"></script>
+		<script type="text/javascript" charset="utf-8" src = "http://invictus.hu/js/jquery.mousewheel.js"></script>
+		<script type="text/javascript" charset="utf-8" src = "http://invictus.hu/js/jScrollPane.js"></script>
+	    <!-- <script type="text/javascript" charset="utf-8" src = "http://invictus.hu/js/alphaimages.js"></script> -->
+        <script type="text/javascript" charset="utf-8" src="http://invictus.hu/js/crawler.js"></script>
+
+        <script type="text/javascript" src = "http://invictus.hu/js/jquery.masonry.min.js"></script>
+        <script type="text/javascript" src = "http://invictus.hu/js/jquery.tools.min.js"></script>
+	</head>
+	<body bgcolor="white" style="padding:0px;margin:0px;">
+
+<table width='510' style="padding:0px;margin:0px;">	
+<tr>
+<td><img src="fb-head.jpg" align='left'>
+</td>
+<tr>
+<td height='350'  style="padding:0px;margin:0px;">
+<iframe src="ipad0WebPlayer.html" width="510" height="350" scrolling="no" frameborder="0" style="padding:0px;margin:0px;">
+  <p>Your browser does not support iframes.</p>
+</iframe> 
+</td>
+</tr>
+<tr>
+<td>     <div id = "carousel">
+  
+        <div class="marquee" id="mycrawler">
+            <a href="http://invictus.hu/games/pc-games/la-street-racing"> 
+                <img src="http://invictus.hu/img/games-pic-little/1.jpg" />
+
+            </a>  
+            <a href="http://invictus.hu/games/pc-games/monster-garage"> 
+                <img src="http://invictus.hu/img/games-pic-little/2.jpg" />
+            </a>  
+            <a href="http://invictus.hu/games/pc-games/street-legal"> 
+                <img src="http://invictus.hu/img/games-pic-little/3.jpg" />
+            </a>  
+            <a href="http://invictus.hu/games/iphone-games/roc"> 
+                <img src="http://invictus.hu/img/games-pic-little/webthumb_ROC_iPhone.png" />
+            </a>  
+            <a href="http://invictus.hu/games/ipad-games/greed-corp"> 
+                <img src="http://invictus.hu/img/games-pic-little/webthumb_GreedCorp_iPad.png" />
+            </a>  
+            <a href="http://invictus.hu/games/pc-games/street-legal-racing-redline"> 
+                <img src="http://invictus.hu/img/games-pic-little/4.jpg" />
+
+            </a>  
+            <a href="http://invictus.hu/games/pc-games/1nsane"> 
+                <img src="http://invictus.hu/img/games-pic-little/5.jpg" />
+            </a>  
+            <!-- 
+            <a href="http://invictus.hu/games/iphone-games/the-escapee" target="_blank"> 
+                <img src="http://invictus.hu/img/games-pic-little/6.jpg" /></a>  
+            -->    
+            <a href="http://invictus.hu/games/pc-games/santa-ride-1-2"> 
+                <img src="http://invictus.hu/img/games-pic-little/7.jpg" />
+            </a>  
+            <!-- 
+            <a href="http://invictus.hu/games/pc-games/invictus-live" target="_blank"> 
+                <img src="http://invictus.hu/img/games-pic-little/8.jpg" /></a>  
+             -->    
+            <a href="http://invictus.hu/games/iphone-games/picosaic"> 
+                <img src="http://invictus.hu/img/games-pic-little/9.jpg" />
+            </a>  
+            <a href="http://invictus.hu/games/iphone-games/brim"> 
+                <img src="http://invictus.hu/img/games-pic-little/10.jpg" />
+
+            </a>  
+            <a href="http://www.4x4jam.com" target="_blank"> 
+                <img src="http://invictus.hu/img/games-pic-little/11.jpg" />
+            </a>  
+            <a href="http://invictus.hu/games/iphone-games/blastwave"> 
+                <img src="http://invictus.hu/img/games-pic-little/12.jpg" />
+            </a>  
+            <a href="http://invictus.hu/games/mac-games/greed-corp"> 
+                <img src="http://invictus.hu/img/games-pic-little/webthumb_GreedCorp_OSX.png" />
+            </a>  
+            <a href="http://invictus.hu/games/iphone-games/fly-control"> 
+                <img src="http://invictus.hu/img/games-pic-little/13.jpg" />
+            </a>  
+            <a href="http://invictus.hu/games/mac-games/truck-jam"> 
+                <img src="http://invictus.hu/img/games-pic-little/truckjam_imac.png" />
+
+            </a>
+            <a href="http://invictus.hu/games/iphone-games/fly-fu"> 
+                <img src="http://invictus.hu/img/games-pic-little/14.jpg" />
+            </a> 
+            <a href="http://invictus.hu/games/iphone-games/froggy-jump"> 
+                <img src="http://invictus.hu/img/games-pic-little/15.jpg" />
+            </a>  
+            <a href="http://invictus.hu/games/ipad-games/roc"> 
+                <img src="http://invictus.hu/img/games-pic-little/webthumb_ROC_iPad.png" />
+            </a>  
+            <a href="http://invictus.hu/games/iphone-games/grim-filler"> 
+                <img src="http://invictus.hu/img/games-pic-little/16.jpg" />
+
+            </a>  
+            <a href="http://invictus.hu/games/iphone-games/pinfrog"> 
+                <img src="http://invictus.hu/img/games-pic-little/17.jpg" />
+            </a>  
+            <a href="http://invictus.hu/games/iphone-games/rollit-smartly"> 
+                <img src="http://invictus.hu/img/games-pic-little/18.jpg" />
+            </a> 
+            <a href="http://invictus.hu/games/psp-games/4x4-jam-psp"> 
+                <img src="http://invictus.hu/img/games-pic-little/4x4jam_psp.png" />
+            </a> 
+            <a href="http://invictus.hu/games/pc-games/cross-racing-championship"> 
+                <img src="http://invictus.hu/img/games-pic-little/crc_pc.png" />
+            </a> 
+            <a href="http://invictus.hu/games/ipad-games/fly-control-hd"> 
+                <img src="http://invictus.hu/img/games-pic-little/flycontrol_ipad.png" />
+
+            </a>             
+            <a href="http://invictus.hu/games/mac-games/fly-fu-pro"> 
+                <img src="http://invictus.hu/img/games-pic-little/flyfu_pro_imac.png" />
+            </a> 
+            <a href="http://invictus.hu/games/android-games/froggy-jump"> 
+                <img src="http://invictus.hu/img/games-pic-little/froggyjump_android.png" />
+            </a>
+            <a href="http://invictus.hu/games/iphone-games/froggy-launcher"> 
+                <img src="http://invictus.hu/img/games-pic-little/froggylauncher_iphone.png" />
+            </a>
+            <a href="http://invictus.hu/games/pc-games/level-r-heat-online"> 
+                <img src="http://invictus.hu/img/games-pic-little/heat_pc.png" />
+
+            </a>            
+            <a href="http://invictus.hu/games/ipad-games/truck-jam-hd"> 
+                <img src="http://invictus.hu/img/games-pic-little/truckjam_ipad.png" />
+            </a>
+            <a href="http://invictus.hu/games/iphone-games/fly-fu-pro"> 
+                <img src="http://invictus.hu/img/games-pic-little/flyfu_pro_iphone.png" />
+            </a>
+            <a href="http://invictus.hu/games/android-games/greed-corp"> 
+                <img src="http://invictus.hu/img/games-pic-little/webthumb_GreedCorp_android.png" />
+            </a>  
+            <a href="http://invictus.hu/games/android-games/roc"> 
+                <img src="http://invictus.hu/img/games-pic-little/webthumb_ROC_android.png" />
+
+            </a>  
+            <a href="http://invictus.hu/games/pc-games/level-r-heat-online"> 
+                <img src="http://invictus.hu/img/games-pic-little/levelr_pc.png" />
+            </a>               
+            <a href="http://invictus.hu/games/pc-games/overspeed"> 
+                <img src="http://invictus.hu/img/games-pic-little/overspeed_pc.png" />
+            </a>               
+            <a href="http://invictus.hu/games/psp-games/fly-fu-psp"> 
+                <img src="http://invictus.hu/img/games-pic-little/flyfu_psp.png" />
+            </a>
+            <a href="http://invictus.hu/games/ipad-games/picosaic-hd"> 
+                <img src="http://invictus.hu/img/games-pic-little/picosaic_ipad.png" />
+
+            </a>               
+            <a href="http://invictus.hu/games/iphone-games/the-escapee"> 
+                <img src="http://invictus.hu/img/games-pic-little/the_escapee_iphone.png" />
+            </a>
+            <a href="http://invictus.hu/games/iphone-games/truck-jam"> 
+                <img src="http://invictus.hu/img/games-pic-little/truckjam_iphone.png" />
+            </a>
+            <a href="http://invictus.hu/games/iphone-games/wild-slide"> 
+                <img src="http://invictus.hu/img/games-pic-little/wildslide.png" />
+            </a>
+        </div>
+
+        </td>
+        </tr>
+<table>		
+
+
+
+	</body>
+		<script type="text/javascript" charset="utf-8">
+		    $(function() {
+               
+     			$("#showSimpleModal").click(function() {
+     			    
+     				//$("div#simpleModal").addClass("show");
+     				/*$("#footer, #container, #header").css({
+                        'opacity': 0.4
+
+                    });*/
+     				//$("div#simpleModal").css('opacity', 1).show();
+                    $("div#simpleModal").addClass('shown').show();
+     				return false;
+     			});
+     			
+     			
+     			$("#closeSimple").click(function() {
+     				//$("div#simpleModal").removeClass("show");
+                    
+     				/*$("#footer, #container, #header").css({
+                        'opacity': 1
+                    });*/
+                    /*
+     				$("div#simpleModal").css({
+                        'opacity': 0,
+                        'z-index': -1
+                    });
+                    */
+                    $("div#simpleModal").removeClass('shown').hide();
+     				return false;
+     			});		        
+		        //if ($('#content').length)
+		            //$('.jScrollPaneContainer').css('height', $('#content').height() - $('.game-header').height() +500 );
+		            //console.log($('.a-game').height());
+                //$('#sidebar').jScrollPane({showArrows:false}); 
+                $('.searchbar_search_button').bind('click', function() {
+                    $(this).parents('form').submit(); 
+                });
+                
+                if ($.browser.msie && $.browser.version === '7.0') {
+                    //alert('hello')
+                    $('#content').height($('#content').height()+20);
+                }
+            });
+            $(window).load(function() {
+                $('a[rel=images-fancybox]').fancybox({
+            		'transitionIn'		: 'elastic',
+            		'transitionOut'		: 'elastic',
+            		'titlePosition' 	: 'over',
+                        'cyclic'            : true
+                }); 
+		        
+                marqueeInit({
+                	uniqueid: 'mycrawler',
+                	style: {
+                		'padding': '2px',
+                		'width': '510px', //3276px
+                		'height': '40px',
+                        'margin-left':'0px',
+                        'margin-right': '0px',
+                        'border': '0px solid red'
+                	},
+                	inc: 5, //speed - pixel increment for each iteration of this marquee's movement
+                	mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
+                	moveatleast: 2,
+                	neutral: 150,
+                	savedirection: true
+                });
+                
+		        $('.game-description, .page-content').height(
+		            $('#content').outerHeight(true) - 
+		            $('.game-header').outerHeight(true) - 
+		            $('.inner-nav').outerHeight(true) -40
+		        );
+		        
+		        if (/partners/.test(window.location.href)) {
+		            
+		            //$('.page-content').height(528);
+		        }
+		        
+		        
+                if ($('.game-description').height() > 400) {
+                    $('.game-description').height(400);
+                }
+                
+                if( navigator.userAgent.match(/Android/i) ||
+                 navigator.userAgent.match(/webOS/i) ||
+                 navigator.userAgent.match(/iPhone/i) ||
+                 navigator.userAgent.match(/iPod/i)
+                ){
+                
+                    $('.game-description, .page-content').jScrollPane({showArrows:true}); 
+                } else {
+                    
+                    $('.game-description, .page-content').jScrollPane({showArrows:false}); 
+                    
+                }
+                
+                
+		       /* $('.game-description').height(
+		            $('#content').outerHeight(true) - 
+		            $('.game-header').outerHeight(true) - 
+		            $('.inner-nav').outerHeight(true) -40
+		        );
+		        */
+		        
+		        /*
+		        console.log('game description: '+$('.game-description').outerHeight(true));
+		        
+                
+                
+		        console.log('content: '+$('#content').outerHeight(true));
+		        console.log('game header: '+$('.game-header').outerHeight(true));
+		        console.log('nav: '+$('.inner-nav').outerHeight(true));
+		        */
+		        //console.log('scroll pane:'+$('.jScrollPaneContainer').height(400));
+		        
+                if ($('.gallery-images').length) {
+
+                    $.each($('.page-img-wrapper'), function(i, v) {
+
+                        if ($(v).find('img-title').length) {
+
+                            $(v).height($(v).outerHeight()+10);                            
+                        } 
+                    });      
+                    $('.gallery-images').masonry();
+
+                }
+            });
+		</script>
+</html>

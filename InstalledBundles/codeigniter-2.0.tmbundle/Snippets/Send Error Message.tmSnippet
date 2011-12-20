@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;xmlrpc-&gt;send_error_message(${1:'${2:error_number}'},${3:'${4:error_message}'});${0}</string>
+	<key>name</key>
+	<string>Send Error Message</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cixmlsenderror</string>
+	<key>uuid</key>
+	<string>B9FB3A61-AA84-409D-8C5B-12C89C493FA8</string>
+</dict>
+</plist>

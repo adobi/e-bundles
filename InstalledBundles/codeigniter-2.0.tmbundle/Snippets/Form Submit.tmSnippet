@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Form Submit</string>
+        <key>uuid</key>
+        <string>0FCC26A6-CF24-47EC-8579-CB96A4C87FCE</string>
+        <key>tabTrigger</key>
+        <string>formsubmit</string>
+        <key>content</key>
+        <string>form_submit(${1:'${2:name}', '${3:value}'${4:, ${5:js}}});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

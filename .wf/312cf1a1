@@ -1,0 +1,437 @@
+<script type="text/javascript" src="script/jquery-1.3.2.js"></script>
+<script type="text/javascript" src="script/jquery.cookie.js"></script>
+<script type="text/javascript" src="script/TunerBasicMethods.js"></script>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+	<head>
+		<title>Tuner Garage</title>
+		
+<meta property="og:title" content="alma" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="http://fbtest.invictus.hu/TunerGarage/Facebook/Work/" />
+
+<meta property="og:description" content="The Open Graph protocol enables any web page to become a rich object in a social graph. " />
+<meta property="fb:app_id" content="138701632858229" />		
+		<script type="text/javascript" src="http://webplayer.unity3d.com/download_webplayer-3.x/3.0/uo/UnityObject.js"></script>
+		
+		<style type="text/css">
+		<!--
+		body {
+			font-family: Helvetica, Verdana, Arial, sans-serif;
+			background-color: white;
+			color: black;
+            margin:0px;
+            padding:0px;
+            width: 100%;		
+			height: 620px;
+            overflow:hidden;
+            text-align: center;
+		}
+		a:link, a:visited {
+			color: #000;
+		}
+		a:active, a:hover {
+			color: #666;
+		}
+		p.header {
+			font-size: small;
+		}
+		p.header span {
+			font-weight: bold;
+		}
+		p.footer {
+			font-size: x-small;
+		}
+		div.missing {
+			position: relative;
+			top: 50%;
+			width: 193px;
+		}
+		div.missing a {
+			height: 63px;
+			position: relative;
+			top: -31px;
+		}
+		div.missing img {
+			border-width: 0px;
+		}
+		div#unityPlayer {
+			cursor: default;
+			width: 100%;		
+			height: 100%;
+		}
+        .requestHeader {
+            height: 99px;
+            width:  733px;
+            background-image: url('pics/request/gift_banner.png');
+        }
+        div#giftLabel {
+            border-style:solid;
+            border-bottom-width:1px;
+            border-top-width:0px;
+            border-left-width:0px;
+            border-right-width:0px;
+            width:  720px;
+            text-align: left;
+        }
+        
+         div#reqsLabel {
+            border-style:solid;
+            border-bottom-width:1px;
+            border-top-width:0px;
+            border-left-width:0px;
+            border-right-width:0px;
+            width:  720px;
+            text-align: left;
+        }
+        
+        div#gifts {
+            width:  720px;
+        }
+        
+        .requestsRow {
+            width: 687px;
+            height: 81px;
+            background-image: url('pics/request/gift_requestbg.png');
+        }
+        
+        .giftsRow {
+            width: 687px;
+            height: 81px;
+            background-image: url('pics/request/gift_giftbg.png');
+        }
+        
+        div.requestBackGround {
+            width: 758px;
+            height: 620px;
+            overflow-y: scroll;
+            overflow-x: hidden;
+        }
+        
+        .textCenter
+        {
+            text-align:center;
+        }
+        
+        .sendButton
+        {
+            width: 130px;
+            height: 42px;
+            background-image: url('pics/request/gift_button_send.png');
+        }
+        
+        .sendButton:hover
+        {
+            background-image: url('pics/request/gift_button_send_over.png');
+        }
+        
+        .sendButton:visited
+        {
+            background-image: url('pics/request/gift_button_send_pushed.png');
+        }	
+        
+        .acceptButton
+        {
+            width: 130px;
+            height: 42px;
+            background-image: url('pics/request/gift_button_accept.png');
+        }
+        
+        .acceptButton:hover
+        {
+            background-image: url('pics/request/gift_button_accept_over.png');
+        }
+        
+        .acceptButton:visited
+        {
+            background-image: url('pics/request/gift_button_accept_pushed.png');
+        }
+        .accepted
+        {
+             width: 81px;
+            height: 72px;
+            background-image: url('pics/request/gift_pipa.png');
+        }
+        
+        .declineButton
+        {
+            width: 45px;
+            height: 42px;
+            background-image: url('pics/request/gift_button_X.png');
+        }
+        
+        .declineButton:hover
+        {
+            background-image: url('pics/request/gift_button_X.png');
+        }
+        
+        .declineButton:visited
+        {
+            background-image: url('pics/request/gift_button_X_pushed.png');
+        }
+        
+        .playButton
+        {
+            width: 389px;
+            height: 72px;
+            background-image: url('pics/request/gift_button_play.png');
+        }
+        
+        .playButton:hover
+        {
+            background-image: url('pics/request/gift_button_play_over.png');
+        }
+        
+        .playButton:visited
+        {
+            background-image: url('pics/request/gift_button_play_over.png');
+        }
+        
+        .closeButton
+        {
+            width: 35px;
+            height: 46px;
+            background-image: url('pics/request/gift_button_close.png');
+        }
+        
+        .closeButton:hover
+        {
+            background-image: url('pics/request/gift_button_close_over.png');
+        }
+        
+        .closeButton:visited
+        {
+            background-image: url('pics/request/gift_button_close_over.png');
+        }
+        	
+		-->
+		</style>
+	</head>
+    <center>
+	<body >
+        <div id="fb-root"> </div>
+        <script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>
+        <img src="pics/banner.jpg" width="503" height="100" />
+		<div class="content">
+			<div id="unityPlayer">
+				<div class="missing">
+					<a href="http://unity3d.com/webplayer/" title="Unity Web Player. Install now!">
+						<img alt="Unity Web Player. Install now!" src="http://webplayer.unity3d.com/installation/getunity.png" width="193" height="63" />
+					</a>
+				</div>
+               
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+    <script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>
+                <script >
+                    /*$(document).ready(function() {
+		                //FB.Canvas.setSize({ width: 760, height: 800 }); 
+                        FB.Canvas.setAutoResize(); 
+                        //$(".content").toggle();
+                    });*/
+                </script>
+                <script>
+                    //FB.Canvas.setSize({ width: 740, height: 740 });
+                    /*  
+                    window.fbAsyncInit = function() {
+                      FB.init({appId: '138701632858229',
+                                  //channel  : 'http://fbtest.invictus.hu/TunerGarage/Facebook/Work/channel.html',
+                                  status: true,
+                                  cookie: true,  
+                                  xfbml: true});  };  
+                         (function() {
+                             var e = document.createElement('script');
+                             e.async = true;  
+                             e.src = document.location.protocol +  
+                             '//connect.facebook.net/en_US/all.js';
+                             document.getElementById('fb-root').appendChild(e);
+                    }());
+                    */
+                    FB.init({ 
+                        appId:'188016007947673', cookie:true, 
+                        status:true, xfbml:true 
+                    });                
+                    function PostToFb(accToken, desc, picture)
+                    {
+                        //alert(" picture: " + picture );     
+			var picUrl = 'http://fbtest.invictus.hu/TunerGarage/Facebook/Test/' + picture; 
+                        FB.ui(
+                        {
+                             method: 'feed',
+                             display: 'popup',
+                             user_message_prompt: "Publish This!",
+                             message: 'Facebook Dialogs are easy!',
+                             caption: '',
+                             description: desc,
+                             title: 'Tuner Garage',
+                             name: 'Tuner Garage',
+                             picture: picUrl,
+                             redirect_uri: 'http://fbtest.invictus.hu/TunerGarage/Facebook/Work/fbpost.html',
+                             access_token: accToken,
+                             next: null,
+							 show_error: true
+                           }/*,
+                           function(response) {
+                             if (response && response.post_id) {
+                               //alert('Post was published.');
+                             } else {
+                               //alert('Post was not published.');
+                             }
+                           }*/
+                          
+                        );
+                    }
+                    
+                    function RequestThroughFb(objectData, _message)
+                    {
+                        var _objectDatas = objectData.split(";");
+                        if( _objectDatas.length < 2 )
+                            return;                 
+                                                
+                         $.ajax({
+                            url: "request.php", 
+                            dataType: "html",
+                            type: 'POST', 
+                            data: {
+                                cmd : 100,
+                                uid : userId,
+                                param : _objectDatas[1]
+                            },
+                            success: function(data){
+                                //alert("RequestThroughFb: " + data.toString());
+                                FB.ui(
+                                    {
+                                        method: 'apprequests', 
+                                        message: _message, 
+                                        data: objectData,
+                                        display: 'popup',
+                                        title: 'TunerGarage',
+                                        redirect_uri : 'http://fbtest.invictus.hu/TunerGarage/Facebook/Work/fbrequest.php',
+                                        exclude_ids : data.split(","),
+                                        next : null,
+                                        show_error: true
+                                    }
+                                );
+                            }
+                            ,
+                            error : function(error) {
+                                //alert("error: " + error.toString());
+                            }
+                        });
+                        
+                    }
+                    
+                    function OnlyOneRequestThroughFb(objectData, _message)
+                    {
+                        var _objectDatas = _objectDatas.split(";");
+                        if( _objectDatas.length < 2 )
+                            return;
+                        
+                         $.ajax({
+                            url: "request.php", 
+                            dataType: "html",
+                            type: 'POST', 
+                            data: {
+                                cmd : 100,
+                                uid : userId,
+                                param : _objectDatas[1]
+                            },
+                            success: function(data){
+                                //alert("RequestThroughFb: " + data.toString());
+                                FB.ui(
+                                    {
+                                        method: 'apprequests', 
+                                        message: _message, 
+                                        data: objectData,
+                                        display: 'popup',
+                                        title: 'TunerGarage',
+                                        redirect_uri : 'http://fbtest.invictus.hu/TunerGarage/Facebook/Work/fbrequest.php',
+                                        exclude_ids : data.split(","),
+                                        max_recipients : 1,
+                                        next : null,
+                                        show_error: true,
+                                        attachment:null
+                                    }
+                                );
+                            }
+                            ,
+                            error : function(error) {
+                                //alert("error: " + error.toString());
+                            }
+                        });
+                    }
+                    
+                    function Test()
+                    {
+                        /*
+                        
+                          FB.ui(
+                                    {
+                                        method: 'apprequests', 
+                                        //channel  : 'http://fbtest.invictus.hu/TunerGarage/Facebook/Work/channel.html',
+                                        message: 'TestMsg', 
+                                        data: 'TestData',
+                                        //display: 'iframe',
+                                        title: 'TunerGarage',
+                                        redirect_uri : 'http://fbtest.invictus.hu/TunerGarage/Facebook/Work/fbrequest.php',
+                                        //next : 'http://fbtest.invictus.hu/TunerGarage/Facebook/Work/channel.html',
+                                        next:null,
+                                        //show_error: true,
+                                        access_token: 'AAABZBJf2OaHUBAItZAZA8oYttZCYq2Y3c8YtikWZBv3ZAtLRSZAlSJVEDwJuF6jK0kRXjc1RlMGAUJdLY5KwZAbeNYWJhDRiKyHi185INgYNsQZDZD'
+                                    }
+                                );
+                        */
+                        
+                        FB.ui({ 
+                            method: 'feed', 
+                            name: 'Facebook Dialogs',
+                            link: 'hello.adobi.hu/fb/',
+                            picture: 'http://fbrell.com/f8.jpg',
+                            caption: 'Reference Documentation',
+                            description: 'Dialogs provide a simple, consistent interface for applications to interface with users.'
+                            
+                        });                        
+                    }
+                        
+                </script> 
+                <a href="javascript:void(0)" onclick="Test();">TestRequest</a>
+			</div>
+		</div>
+        
+        <div id="requestBgr" >
+            <script>
+                          
+               //$("#requestBgr").fadeIn(3000);
+               //login();
+            </script>
+            
+            <div class="requestBackGround" >
+                        
+                <div >
+                    <table width="733" height="99" border="0" cellspacing="0" class="requestHeader">
+                        <tr height="99">
+                            <td width="688">
+                            </td>
+                            <td width="35" style="padding:0px 0px 24px 16px" >
+                                <a href="javascript:void(0)" ><div class="closeButton" onclick="play()" align="top" > </div></a>
+                            </td>
+                            <td width="10" height="99">
+                            </td>
+                        </tr>
+                    </table>
+                    
+                </div>
+                
+                <div id="listgifts">
+                
+                </div>
+                                
+                <div id="requests">
+                
+                </div>
+                       
+            </div>
+        </div> 
+	</body>
+    </center>
+</html>
+

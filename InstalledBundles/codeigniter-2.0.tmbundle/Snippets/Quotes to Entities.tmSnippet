@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Quotes to Entities</string>
+        <key>uuid</key>
+        <string>3A74EEEB-ECFE-4158-A0FB-55687667AE24</string>
+        <key>tabTrigger</key>
+        <string>quotes2ent</string>
+        <key>content</key>
+        <string>quotes_to_entities(${1:'${2:string}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

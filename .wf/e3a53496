@@ -1,0 +1,88 @@
+
+
+<!-- 
+  
+  <img src = "<?= BASE_URL ?>img/main_page_pic.jpg" usemap="#iphone_games" hspace="0" vspace="0" border="0" width="950"  height="645"/>
+
+<map name = "iphone_games">
+    <area shape = "poly" coords = " 0,  0, 240, 0, 240, 521, 0,  521" href="<?= BASE_URL ?>games/iphone" title="IPhone Games" />
+    <area shape = "poly" coords = " 241, 0, 471, 0, 471, 521, 241, 521" href="<?= BASE_URL ?>games/psp" title="PSP Games" />
+    <area shape = "poly" coords = " 472, 0, 962, 0, 962, 521, 472, 521" href="<?= BASE_URL ?>games/pc" title="PC Games" />
+</map>
+ -->  
+
+<?php  
+
+    $types = new Types();
+        
+    $typesList = $types->fetchAll('order');
+    
+    $mainpages = new Mainpages();
+    
+   
+?>
+
+
+<div class = "slideshow">
+    <?php foreach ($typesList as $tl) : ?>
+        
+        <?php $mainpageImages = $mainpages->fetchRandomByType($tl['id']) ?>
+        
+        
+        <?php if ($mainpageImages): ?>
+            <div class = "<?= $tl['url'] ?>-on-mainpage game-category-on-mainpage">
+                <?php foreach ($mainpageImages as $mpi):?>
+                    <a 
+                        class = "game-category<?= $tl['url'] === $action ? '-selected' : '' ?> 
+                                 <?= $tl['url'] ?>-on-mainpage" 
+                        href="<?= BASE_URL . 'games' .  '/' . $tl['url'] ?>"
+                        
+                    >
+                        <img src="<?= BASE_URL ?>uploads/mainpages/<?= $mpi['path'] ?>" alt="" />
+                    </a>
+                <?php endforeach ?>
+            </div>
+        <?php endif ?>
+        
+        <!-- 
+        <div class = "<?= $tl['url'] ?>-on-mainpage game-category-on-mainpage">
+            <a 
+                class = "game-category<?= $tl['url'] === $action ? '-selected' : '' ?> 
+                         <?= $tl['url'] ?>-on-mainpage" 
+                href="<?= BASE_URL . 'games' .  '/' . $tl['url'] ?>"
+                <?php if ($mainpage): ?>
+                    style = "background: url(<?= BASE_URL . 'uploads/mainpages/' . $mainpage['path'] ?>) no-repeat transparent"
+                <?php endif ?>
+                >
+            </a>
+        </div>
+        -->
+    <?php endforeach;?>
+</div>
+
+ 
+<?php require_once 'newnews.php' ?> 
+
+
+<script type="text/javascript" src="<?= BASE_URL ?>js/jquery.cycle.all.latest.js"></script> 
+
+<script type="text/javascript">
+    $(function() {
+        var delays = [5000, 8000, 11000, 14000, 17000, 20000].sort(function() { return (Math.round(Math.random())-0.5);});
+        $.each($('.game-category-on-mainpage'), function(i, v) {
+            
+           $(this).cycle({
+        		fx: 'fade',
+        		//delay: Math.floor(Math.random()*8000),
+        		delay: -delays[i],
+        		speed: 3000,
+        		//random: true,
+        		timeout: 25000
+        	}); 
+        });    
+    });
+</script>
+
+
+      
+  

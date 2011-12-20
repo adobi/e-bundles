@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;ftp-&gt;connect(${1:config_var});${0}</string>
+	<key>name</key>
+	<string>Connect</string>
+	<key>tabTrigger</key>
+	<string>ciftpconnect</string>
+	<key>uuid</key>
+	<string>2B72910B-1B90-4396-9413-E10CAE7AAD16</string>
+</dict>
+</plist>

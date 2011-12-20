@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;agent-&gt;is_browser();${0}</string>
+	<key>name</key>
+	<string>Is Browser</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciagentisbrowser</string>
+	<key>uuid</key>
+	<string>7A6237D4-FEFE-4B1D-A390-F278A5BFEA36</string>
+</dict>
+</plist>

@@ -1,0 +1,299 @@
+.tabs a {
+    border:1px solid #ddd!important;
+}
+.tabs span, .pills span {
+    font-weight:bold;
+    position:relative;
+    top:10px;
+    padding: 0 10px;
+    display:inline-block;
+    color:#000;
+}
+#main-nav li a {
+    border:0px!important;
+}
+
+#main-nav .active a {
+    border:1px solid #ddd !important;
+    border-bottom:0px!important;
+}
+
+.item {
+    background:#eee; padding:5px;width:930px;
+    border-radius: 5px;
+    margin-top:10px;
+}
+
+.item-nav {
+    text-align: right;
+}
+    .item-nav a {
+        margin-right:10px;
+    }
+    
+#upload-image-form {
+    margin-bottom:0px!important;
+}body {
+    background:#ccc;
+}
+
+.container {
+    background:#eee; 
+}
+
+.row .span4 {
+    background:#ddd;
+    padding:100px 0;
+}
+
+.row .span8 {
+    background:#aaa;
+    padding:100px 0;
+}
+
+#facebook-comment {
+    margin-top:10px;
+}
+body {
+    background:#f5f5f5;
+}
+
+.container {
+}
+
+
+#facebook-comment {
+    margin-top:10px;
+    margin-left:160px;
+}
+
+#header-ad {
+    width:770px;
+    height:90px;
+    background: url('http://placehold.it/770x90') no-repeat transparent; 
+}
+
+#leftside-ad {
+    width:120px;
+    height:600px;
+}
+
+#rightside-ad {
+    width:300px;
+    height:600px;
+    //background:url('http://placehold.it/300x600') no-repeat transparent;
+}
+
+#donation {
+    width:300px;
+    background: #eee;
+    text-align:center;
+}
+
+#donation input {
+    height:auto;
+    width: auto;
+}
+
+#content {
+    width:480px;
+}
+
+#logo {
+    width:120px;
+}body {
+    background:#f5f5f5;
+}
+
+.container {
+}
+
+
+#content {
+    margin-left:10px;
+}
+
+#facebook-comment {
+    margin-top:10px;
+    //margin-left:160px;
+}
+
+#header-ad {
+    width:810px;
+    height:90px;
+    background: url('http://placehold.it/810x90') no-repeat transparent; 
+    margin-left:10px;
+}
+
+#leftside-ad {
+    width:120px;
+    height:600px;
+}
+
+#rightside-ad {
+    width:300px;
+    height:600px;
+    //background:url('http://placehold.it/300x600') no-repeat transparent;
+    margin-left:10px;
+}
+
+#donation {
+    width:300px;
+    background: #eee;
+    text-align:center;
+}
+
+#donation input {
+    height:auto;
+    width: auto;
+    border:0px;
+    box-shadow:none;
+    
+}
+
+#content {
+    width:500px;
+}
+
+#logo {
+    width:120px;
+}
+
+#game-canvas {
+    width:500px;
+    height:350px;
+}
+
+#game-canvas iframe{
+    width:500px;
+    height:350px;
+}
+
+#crosspromo {
+    width:500px;
+    height:120px;
+    //background:url('http://placehold.it/500x150') no-repeat transparent;
+    margin-top:10px;
+}
+
+#video-ad {
+    margin-top:10px;
+}
+
+.modal.fade.in {
+    top:80%;
+}
+
+.media-grid {
+    margin-left:0px;
+}
+
+.media-grid a {
+    margin: 0 0 5px 3px;
+    padding:2px;
+    cursor:pointer;
+}body {
+    background:url("http://www.leroidelagarnotte.com/images/bg.jpg") no-repeat transparent;
+}
+
+.container {
+    position:relative;
+}
+
+
+#content {
+    margin-left:10px;
+}
+
+#facebook-comment {
+    margin-top:10px;
+    //margin-left:160px;
+}
+
+#header-ad {
+    width:810px;
+    height:90px;
+    background: url('http://placehold.it/810x90') no-repeat transparent; 
+    margin-left:10px;
+}
+
+#leftside-ad {
+    width:120px;
+    height:600px;
+}
+
+#rightside-ad {
+    width:300px;
+    height:600px;
+    //background:url('http://placehold.it/300x600') no-repeat transparent;
+    margin-left:10px;
+}
+
+#donation {
+    width:300px;
+    background: #eee;
+    text-align:center;
+}
+
+#donation input {
+    height:auto;
+    width: auto;
+    border:0px;
+    box-shadow:none;
+    
+}
+
+#content {
+    width:500px;
+}
+
+#logo {
+    width:120px;
+}
+
+#game-canvas {
+    width:500px;
+    height:350px;
+}
+
+#game-canvas iframe{
+    width:500px;
+    height:350px;
+}
+
+#crosspromo {
+    width:500px;
+    height:120px;
+    //background:url('http://placehold.it/500x150') no-repeat transparent;
+    margin-top:10px;
+}
+
+#video-ad {
+    margin-top:10px;
+}
+
+.modal {
+    min-width:560px;
+    width:auto;
+}
+
+.modal.fade.in {
+    top:80%;
+}
+
+.media-grid {
+    margin-left:0px;
+}
+
+.media-grid a {
+    margin: 0 0 5px 3px;
+    padding:2px;
+    cursor:pointer;
+}
+
+canvas {
+    z-index:-1;
+    //position:relative;
+    //top:-900px;
+    width:100%!important;
+}

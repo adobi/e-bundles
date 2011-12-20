@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;uri-&gt;ruri_string();${0}</string>
+	<key>name</key>
+	<string>RURI String</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciuriruristring</string>
+	<key>uuid</key>
+	<string>FA8E0A8A-E059-4B97-99AA-70FC53701876</string>
+</dict>
+</plist>

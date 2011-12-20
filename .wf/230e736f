@@ -1,0 +1,113 @@
+<?php  
+    $crosspromo = array(
+        array(
+            'title'=>'Race Of Champions Mobile Game', 
+            'small_icon'=>'90x90.gif', 
+            'big_icon'=>'145x145.gif', 
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'links'=> array(
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+            )
+        ),
+        array(
+            'title'=>'Race Of Champions Mobile Game', 
+            'small_icon'=>'90x90.gif', 
+            'big_icon'=>'145x145.gif', 
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'links'=> array(
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+            )
+        ),
+        array(
+            'title'=>'Race Of Champions Mobile Game', 
+            'small_icon'=>'90x90.gif', 
+            'big_icon'=>'145x145.gif', 
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'links'=> array(
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+            )
+        ),
+        array(
+            'title'=>'Race Of Champions Mobile Game', 
+            'small_icon'=>'90x90.gif', 
+            'big_icon'=>'145x145.gif', 
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'links'=> array(
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+            )
+        ),
+        array(
+            'title'=>'Race Of Champions Mobile Game', 
+            'small_icon'=>'90x90.gif', 
+            'big_icon'=>'145x145.gif', 
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'links'=> array(
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'120x45.gif',
+                    'url'=>'#'
+                ),
+            )
+        ),
+    );
+
+?>

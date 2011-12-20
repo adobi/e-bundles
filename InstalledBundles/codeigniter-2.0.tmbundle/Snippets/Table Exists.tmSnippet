@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;db-&gt;table_exists('${1:table_name}');${0}</string>
+	<key>name</key>
+	<string>Table Exists</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cidbtableexists</string>
+	<key>uuid</key>
+	<string>ACF38E5E-A12A-4964-9D71-34A1E059E5FA</string>
+</dict>
+</plist>

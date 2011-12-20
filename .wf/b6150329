@@ -1,0 +1,51 @@
+<?php
+
+set_include_path('class');
+
+include_once("class/class.enum.php");
+include_once("class/class.config.php");
+include_once("class/class.item.php");
+include_once("class/class.shopitem.php");
+include_once("class/class.avataritem.php");
+include_once("class/class.useritemhistory.php");
+include_once("class/class.goals.php");
+include_once("class/class.statistic.php");
+include_once("class/class.user.php");
+include_once("class/class.job.php");
+
+$basicDomain = 'http://fbtest.invictus.hu/TunerGarage/Facebook/Work/';
+$appUrl = 'http://apps.facebook.com/tesztapi/';
+
+$NEXT_USER_ID = 1000;
+$APPLICATION_ID_TUNER_GARAGE = 1;
+
+$app_id = "138701632858229";
+$app_secret = "87411a68428a74a7411992eb8ec3668a";
+$app_access_token = $app_id."|".$app_secret;
+
+?><?php
+
+set_include_path('class');
+
+include_once("class/class.enum.php");
+include_once("class/class.config.php");
+include_once("class/class.item.php");
+include_once("class/class.shopitem.php");
+include_once("class/class.avataritem.php");
+include_once("class/class.useritemhistory.php");
+include_once("class/class.goals.php");
+include_once("class/class.statistic.php");
+include_once("class/class.user.php");
+include_once("class/class.job.php");
+
+$basicDomain = 'http://fbtest.invictus.hu/TunerGarage/Facebook/Work/';
+$appUrl = 'http://apps.facebook.com/tesztapi/';
+
+$NEXT_USER_ID = 1000;
+$APPLICATION_ID_TUNER_GARAGE = 1;
+
+$app_id = "138701632858229";
+$app_secret = "87411a68428a74a7411992eb8ec3668a";
+$app_access_token = $app_id."|".$app_secret;
+
+?>

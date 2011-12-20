@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Alternator</string>
+        <key>uuid</key>
+        <string>A2FB9ABC-ACB9-4B9C-96DF-49FE9B80FE23</string>
+        <key>tabTrigger</key>
+        <string>alt</string>
+        <key>content</key>
+        <string>alternator(${1:'${2:string1}','${3:string1}'${4:, '${5:string}'}${6:, '${7:string}'}});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

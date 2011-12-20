@@ -1,0 +1,101 @@
+(function($) {
+	
+	App = {
+		PAGE_ID: '226467557415341',
+		ID: '219947674704766',
+		SESSION: false,
+		
+		Init: function() 
+		{
+		    FB.init({ 
+		        appId:App.ID, cookie:true, 
+		        status:true, xfbml:true 
+		    });         
+            window.fbAsyncInit = function() {
+                FB.Canvas.setAutoGrow();
+            }
+			if (window.App.SESSION) {
+				
+				FB.login(function(response) {
+				    console.log(response.session);
+					window.App.SESSION = response.session;
+					
+					if (response.authResponse) {
+						
+					}	
+				}, {scope: 'email'});
+				    
+			}
+            FB.Canvas.setSize({height: 480});
+            
+			FB.api('/me?access_token='+App.Session.access_token, function(response) {
+			 
+				console.log(response);
+				FB.api({
+				    method: 'pages.isFan',
+				    page_id: App.PAGE_ID,
+				    uid: response.id
+				}, function (resp) {
+				    if (resp == true) {
+	        		    FB.Canvas.setSize({height: 1040});
+
+				        jQuery('.content').load(App.URL+'register/second_step', function() {
+				       	
+				   		});
+				    } else if (resp.error_code) {
+				        //alert(resp.error_msg);
+				        console.log(resp);
+				        jQuery('.content').load(App.URL+'register/first_step', function() {
+				        	
+				        });			        
+				    } else {
+				        jQuery('.content').load(App.URL+'register/first_step', function() {
+				        	
+				        });
+				    }
+				});
+			});	
+		},
+		
+		SubmitForm: function() {
+		    
+		    $('body').delegate('#registration-submit', 'click', function() {
+		        
+		        var self = $(this), 
+		            form = self.parents('form:first'), 
+		            fields = form.find('input[type=text]'),
+		            wasError = false;
+		        
+		        self.addClass('disabled').removeAttr('id');
+		        
+		        $.each(fields, function(index, item) {
+		            var val = $.trim($(item).val());
+		            
+		            if (!val.length) {
+		                $('.validation-error').show();
+		                wasError = true;
+		            }
+		        });
+		        
+		        if (!wasError) {
+		            
+		            $.post(App.URL+'register/second_step/', form.serialize(), function(response) {
+		                
+		            });
+		        } else {
+		            self.removeClass('disabled').attr('id', 'registration-submit');
+		        }
+		        
+		        return false;
+		    });
+		}
+	};
+	
+	$(function() {
+		App.Init();
+		//App.SubmitForm();
+		
+		$('#contentArea').css('overflow', 'hidden');
+	});
+	
+}) (jQuery);

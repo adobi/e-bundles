@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Load Securtiy Helper</string>
+        <key>uuid</key>
+        <string>2694845A-7EF7-45F6-AC29-9E059964C1DA</string>
+        <key>tabTrigger</key>
+        <string>sechelper</string>
+        <key>content</key>
+        <string>\$this-&gt;load-&gt;helper('security');$0</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

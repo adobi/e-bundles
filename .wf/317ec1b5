@@ -1,0 +1,52 @@
+<script type="text/javascript">
+    FB.login(function(response) {
+      if (response.session) {
+        if (response.perms) {
+          // user is logged in and granted some permissions.
+          // perms is a comma separated list of granted permissions
+          $('#console pre').html(JSON.stringify(response.session, null, '\t') + ': ' + response.perms);
+          
+          window.FB_SB = response.session;
+          
+        } else {
+          // user is logged in, but did not grant any permissions
+        }
+      } else {
+        // user is not logged in
+      }
+    }, {perms:'read_stream,publish_stream,offline_access'});    
+</script><script type="text/javascript">
+    FB.login(function(response) {
+      if (response.session) {
+        if (response.perms) {
+          // user is logged in and granted some permissions.
+          // perms is a comma separated list of granted permissions
+          $('#console pre').html(JSON.stringify(response.session, null, '\t') + ': ' + response.perms);
+          
+          window.FB_SB = response.session;
+          
+        } else {
+          // user is logged in, but did not grant any permissions
+        }
+      } else {
+        // user is not logged in
+      }
+    }, {perms:'read_stream,publish_stream,offline_access'});    
+</script><script type="text/javascript">
+    FB.login(function(response) {
+      if (response.session) {
+        if (response.perms) {
+          // user is logged in and granted some permissions.
+          // perms is a comma separated list of granted permissions
+          jQuery('#console pre').html(JSON.stringify(response.session, null, '\t') + ': ' + response.perms);
+          
+          window.FB_SB = response.session;
+          
+        } else {
+          // user is logged in, but did not grant any permissions
+        }
+      } else {
+        // user is not logged in
+      }
+    }, {perms:'read_stream,publish_stream,offline_access,user_likes'});    
+</script>

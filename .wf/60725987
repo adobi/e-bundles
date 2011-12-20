@@ -1,0 +1,127 @@
+.body-with-bg {
+    background:url("../images/bg.png") repeat-x transparent;
+}
+
+.container {
+    position:relative;
+}
+
+
+#content {
+    margin-left:10px;
+}
+
+#facebook-comment {
+    margin-top:10px;
+    //margin-left:160px;
+}
+
+#header-ad {
+    width:810px;
+    height:90px;
+    background: url('http://placehold.it/810x90') no-repeat transparent; 
+    margin-left:10px;
+}
+
+#leftside-ad {
+    width:120px;
+    height:600px;
+}
+
+#rightside-ad {
+    width:300px;
+    height:600px;
+    //background:url('http://placehold.it/300x600') no-repeat transparent;
+    margin-left:10px;
+}
+
+input {
+    height:auto;
+    width: auto;
+    border:0px;
+    box-shadow:none;
+    
+}
+
+#content {
+    width:500px;
+}
+
+#logo {
+    width:120px;
+}
+
+#game-canvas {
+    width:500px;
+    height:350px;
+}
+
+#game-canvas iframe{
+    width:500px;
+    height:350px;
+}
+
+#crosspromo {
+    width:500px;
+    height:120px;
+    //background:url('http://placehold.it/500x150') no-repeat transparent;
+    margin-top:10px;
+}
+
+
+#donation {
+    width:300px;
+    text-align:center;
+    border-radius:4px;
+    background-color:rgba(238,238,238,0.6);
+}
+
+.donation-header {
+    background: url(../images/donate_small.png) no-repeat transparent;
+    width:300px;
+    height:93px;
+}
+
+#video-ad {
+    margin-top:10px;
+}
+
+#social {
+    width:290px;
+    margin-bottom:10px;
+    background-color:rgba(238,238,238,0.6);
+    border-radius:4px;
+    padding:5px;
+}
+    #social span {
+        display:inline-block;
+        width:90px;
+        height:25px;
+        text-align:center;
+        margin-top:5px;
+    }
+.modal {
+    min-width:560px;
+    width:auto;
+}
+
+.modal.fade.in {
+    top:80%;
+}
+
+.media-grid {
+    margin-left:0px;
+}
+
+.media-grid a {
+    margin: 0 0 5px 3px;
+    padding:2px;
+    cursor:pointer;
+}
+
+canvas {
+    z-index:-1;
+    //position:relative;
+    //top:-900px;
+    width:100%!important;
+}

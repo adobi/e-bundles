@@ -1,0 +1,34 @@
+<?php 
+
+if (! defined('BASEPATH')) exit('No direct script access');
+
+require_once APPPATH . 'libraries/MY_Controller.php';
+
+class Register extends MY_Controller 
+{
+    
+    //php 5 constructor
+    public function __construct() 
+    {
+    	
+        parent::__construct();
+        
+    }
+    
+    public function index()
+    {
+    	
+        $this->template->build('register/index');
+    }
+
+    public function first_step()
+    {
+        $this->template->build('register/first');
+    }
+
+    public function second_step()
+    {
+        $this->template->build('register/second');
+    }
+    
+}

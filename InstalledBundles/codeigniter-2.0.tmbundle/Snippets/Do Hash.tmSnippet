@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Do Hash</string>
+        <key>uuid</key>
+        <string>6EBA3CA0-6BDD-46BB-B2A2-F373F3ECCBD8</string>
+        <key>tabTrigger</key>
+        <string>dohash</string>
+        <key>content</key>
+        <string>dohash(${1:'${2:string}'}${3:, '${4:sha1}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;upload-&gt;do_upload(${1:'${2:field_name}'});${0}</string>
+	<key>name</key>
+	<string>Do Upload</string>
+	<key>tabTrigger</key>
+	<string>ciuploaddo</string>
+	<key>uuid</key>
+	<string>65BBF9E6-7B60-4B6B-A0BA-9CED404B7BF1</string>
+</dict>
+</plist>

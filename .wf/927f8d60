@@ -1,0 +1,262 @@
+<?php  
+
+    $menus = new Menus();
+    $pages = new Pages();
+    
+    $mainMenus = $menus->fetchAll('order');
+     
+    $displaySidebar = true;
+    $fullSizeContent = false;
+    $is404 = false;
+    
+    $controller = $controller === 'home' ? '' : $controller;    
+    
+    $currentPage = false;
+    if ($controller) {
+        
+        $currentPage = $menus->findByUrl($controller);
+    }
+    
+    if (!$currentPage && $controller && $controller !== 'games' && $controller !== 'news' && $controller !== 'search') {
+        
+        $is404 = true;
+    }    
+    
+    if ($controller) {
+        /**
+         * ha az urlben van megadva controller, nem a fooldalon vagyunk
+         *
+         * @author Dobi Attila
+         */
+        
+         
+         if ($controller === 'games') {
+             $games = new Games();
+             $qsp = false;
+             if ($action && $param) {
+                 /**
+                  * egy jatek van kivalasztva
+                  *
+                  * @author Dobi Attila
+                  */
+                $types = new Types();
+                $currentType = $types->isType($action);
+                $currentGame = $games->findByUrl($param, $currentType['id']);
+                $currentSubpage = false;
+                
+                if ($currentGame) {
+                    $gamesSubpages = new GamesSubpages();
+                    
+                    $currentGamesSubpages = $gamesSubpages->fetchNotDraftByGame($currentGame['id']);
+                } else {
+                    $is404 = true;
+                }
+                
+                $qsp = (isset($_app_info['params'][3]) ? $_app_info['params'][3] : '');
+                $isSubpage = false;
+                if ($qsp) {
+                    
+                    $subpages = new Subpages();
+                    
+                    $currentSubpage = $subpages->findByUrl($qsp, 'games', $currentGame['id']);
+                    
+                    $isSubpage = true;
+                }                                  
+             } else {
+
+                $currentGame = $games->fetchFirstReleased($action);
+                if ($currentGame) {
+    
+                    Redirect::to(BASE_URL . "games/".$currentGame['type_name']."/".$currentGame['url']);
+                }
+            }
+            //dump($currentGamesSubpages);
+            $_page = "games.php";
+         } elseif ($controller === 'news') {
+
+             /**
+              * ha hirk oldalon vagyunk
+              *
+              * @author Dobi Attila
+              */ 
+                $displaySidebar = true;
+                 
+                $news = new News();
+                $allNews = false;
+                $hir = false;
+                
+                if ($action) {
+                    $hir = $news->findByUrl($action);
+                    
+                } else {
+                    $allNews = $news->fetchAllNotDraft();
+                }
+                
+                $_page = 'news.php';
+             
+         } elseif ($controller === 'search') {
+            
+             $displaySidebar = true;
+            
+             $gamessearch = new Games();
+             $newssearch = new News();
+             
+             $talal = $_POST['q'];
+             $gamesearch = false; $nsearch = false;
+             if (trim($talal)) {
+                 
+                 $gamesearch = $gamessearch->GameSearch();
+                
+                 $nsearch = $newssearch->NewsSearch();
+             }
+             
+             $_page = 'search.php';             
+             
+         } else {
+             
+            $qwerty = false;
+            
+            if ($controller === 'design') {
+                
+                $action = 'concept';
+            } 
+             
+            /** 
+             * aktualis menuponthoz tartozo osszes oldal 
+             *
+             * @author Dobi Attila
+            */ 
+            $_pages = $pages->fetchAllNotDraftByMenu($currentPage['id']);
+            
+            if (!$_pages) {
+                
+                //$is404 = true;
+            }
+            $areMultiplaPages = false;
+            
+            //if (!$action) {
+                if (count($_pages) > 1) {
+                    
+                    /**
+                     * tobb fooldall tartozik a menuhez, listazzuk az osszeset linkekkel
+                     *
+                     * @author Dobi Attila
+                     */
+                    $areMultiplaPages = true;
+                    
+                    if ($action) {
+                        
+                        //$_pages = $_pages[0];
+                        $cp = $pages->findByUrl($currentPage['id'], $action);
+                        
+                        $_pages = current($cp);
+                        $currentSubpage = $_pages;
+                        $subpages = new Subpages();
+                        $currentPagesSubpages = $subpages->fetchNotDraftByPage($cp[0]['id']);                 
+                        
+                        if (!$param) {
+                        } else {
+                            $sp = new Subpages();
+                        
+                            $currentSubpage = $sp->findByUrl($param, $controller, $cp[0]['id']);
+                        }
+                        $qwerty = true;
+                        $areMultiplaPages = false;                        
+                    }
+                    
+                } else {
+    
+                    /**   
+                     * egy oldal van a menuponthoz, kell az aloldalak listaja is
+                     *
+                     * @author Dobi Attila
+                     */
+                    $_pages = $_pages[0];
+                    
+                    $cp = $pages->fetchAllByMenu($currentPage['id']);
+                    $subpages = new Subpages();
+                    $currentPagesSubpages = $subpages->fetchNotDraftByPage($cp[0]['id']);                 
+                    
+                    if (!$action) {                    
+                    } else {
+                        $sp = new Subpages();
+                    
+                        $currentSubpage = $sp->findByUrl($action, $controller, $cp[0]['id']);
+                        //dump($action); dump($controller); dump($cp);
+                        //dump($currentSubpage);die;
+                    }
+                }
+            //} else {
+
+                /**
+                 * tobb oldal kozul valasztottunk ki egyet
+                 *
+                 * @author Dobi Attila
+                 */
+                 
+                 //$_pages = $pages->findByUrl
+            //}
+            
+            //$_page = $controller . '.php';
+            $_page = 'page.php';
+         }
+
+    } else {
+        /**
+         * fooldalon vagyunk, kell listazni a hirekete
+         *
+         * @author Dobi Attila
+         */
+        $news = new News();
+        
+        $newsindex = false;
+        $newsurl = false;
+        
+        if($action) {
+            $newsurl = $news->findByUrl($action);
+        }
+        else {
+            
+            $newsindex = $news->Haromlekerdez();
+        }
+        
+        $fullSizeContent = true;
+        $displaySidebar = false;
+        $_page = 'index.php';
+    }
+    
+    if ($is404) {
+        
+        $_page = "404.php";
+    }
+    
+    /**
+     * oldalsavhoz tartozo dologok
+     *
+     * @author Dobi Attila
+     */
+    if($displaySidebar==true) {
+        
+        $types = new Types();
+            
+        $typesList = $types->fetchAll('order');
+        $games = new Games();
+        $gamesList = false; //$currentGame = false;
+        $currentType = $types->isType($action);
+        
+        if ($currentType) {
+            
+            $gamesList = $games->fetchAllNotDraftByType(intval($currentType['id']), 'released', 'desc');
+        } else {
+            
+            $gamesList = $games->fetchAllNotDraft('released', 'desc');        
+        }
+        
+         if ($param) {
+            
+            $currentGame = $games->findByUrl($param, $currentType['id']);
+            
+        }
+    }   
+    //dump($currentGame) ;
+?>

@@ -1,0 +1,145 @@
+<?php 
+
+if (! defined('BASEPATH')) exit('No direct script access');
+
+require_once 'MY_Controller.php';
+
+class Registration extends MY_Controller 
+{
+    private $faceboook;
+    
+    //php 5 constructor
+    public function __construct() 
+    {
+    	
+        parent::__construct();
+        
+        require_once APPPATH . 'libraries/facebook.php';
+        
+    	$this->facebook = new Facebook(array(
+            'appId'  => FACEBOOK_APPLICATION_ID,
+            'secret' => FACEBOOK_APPLICATION_SECRET,
+        ));        
+    }
+    
+    public function index()
+    {
+        /*
+        require_once APPPATH . 'libraries/facebook.php';
+        
+    	$this->facebook = new Facebook(array(
+            'appId'  => FACEBOOK_APPLICATION_ID,
+            'secret' => FACEBOOK_APPLICATION_SECRET,
+        ));
+        */
+        $user = $this->facebook->getUser();
+        
+        if ($user) {
+            
+            redirect(base_url() . 'registration/register');
+        }
+        
+        
+
+        if ($user) {
+            
+            $logoutUrl = $this->facebook->getLogoutUrl();
+        } else {
+            $loginUrl = $this->facebook->getLoginUrl(array( 
+                'scope' => 'email,user_activities,user_birthday,user_groups,user_hometown,user_interests,user_likes,user_location', 
+                'canvas'    => 1,
+                'fbconnect' => 1, 
+                'redirect_uri'=>base_url() . 'registration/redirect'
+            ));
+            
+            echo '<script>top.window.location = "', $loginUrl, '"</script>';
+            //header('Location:'.$loginUrl);
+            exit;
+        }
+        
+        
+        $this->template->build('registration/index');
+    }
+    
+    public function redirect() 
+    {
+        redirect(FACEBOOK_APPLICATION_URL);
+    }
+
+    public function welcome()
+    {
+        $this->template->build('registration/first');
+    }
+
+    public function register()
+    {
+        $this->form_validation->set_rules('roc_username', 'ROC username', 'trim|required');
+        $this->form_validation->set_rules('udid', 'UDID', 'trim|required');
+        
+        if ($this->form_validation->run()) {
+            
+            $this->load->model('Registrations', 'registration');
+            
+            //dump($this->registration);
+            
+            //$facebookData = json_decode($_POST['facebook_data']);
+            $facebookData = $this->facebook->api('/me');
+            
+            $facebookData = json_decode(json_encode($facebookData));
+            
+            //unset($_POST['facebook_data']);
+            if ($facebookData) {
+                $_POST['facebook_id'] = $facebookData->id;
+                $_POST['name'] = @$facebookData->name;
+                $_POST['email'] = @$facebookData->email;
+                $_POST['location'] = @$facebookData->location->name;
+                $_POST['hometown'] = @$facebookData->hometown->name;
+                $_POST['birthday'] = date('Y-m-d H:i:s', strtotime(@$facebookData->birthday));
+                $_POST['gender'] = @$facebookData->gender;
+            }
+            //dump($_POST); die;
+            $_POST['registered_at'] = date('Y-m-d H:i:s');
+            $_POST['origin'] = 1;
+            
+            if ($this->input->is_ajax_request()) {
+                
+                echo $this->registration->insert($_POST);
+                
+                die;
+            } else {
+                
+                redirect(base_url() . 'registration/thanx');
+            }
+        } else {
+            $this->session->set_userdata('validation_errors', validation_errors());
+        }
+        
+        $this->template->build('registration/second');
+    }
+    
+    public function thanks() 
+    {
+        $this->template->build('registration/thanx');
+    }
+    
+    public function terms () 
+    {
+        $this->template->build('registration/terms');
+    }
+    
+    public function privacy() 
+    {
+        $this->template->build('registration/privacy');
+    }
+    
+    public function competitors()
+    {
+        $data = array();
+        
+        $this->load->model('Registrations', 'registration');
+        
+        $data['items'] = $this->registration->fetchAll();
+        
+        $this->template->build('registration/competitors');
+    }
+}

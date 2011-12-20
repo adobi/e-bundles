@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Set Select</string>
+        <key>uuid</key>
+        <string>C058283D-9297-4E27-9982-FEBA05707173</string>
+        <key>tabTrigger</key>
+        <string>setselect</string>
+        <key>content</key>
+        <string>set_select(${1:'${2:name}', '${3:value}'${4:, ${5:TRUE}}});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

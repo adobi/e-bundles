@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;uri-&gt;assoc_to_uri(${1:array});${0}</string>
+	<key>name</key>
+	<string>Assoc to URI</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciuriassoctouri</string>
+	<key>uuid</key>
+	<string>6D36B67C-7306-4B21-9DFE-E55C16F99900</string>
+</dict>
+</plist>

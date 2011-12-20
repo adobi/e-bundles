@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;zip-&gt;add_dir(${1:'${2:directory_name}'});${0}</string>
+	<key>name</key>
+	<string>Add Directory</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cizipadddir</string>
+	<key>uuid</key>
+	<string>8866764D-417E-4A69-9676-1D9FD5ED4467</string>
+</dict>
+</plist>

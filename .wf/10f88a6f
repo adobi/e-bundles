@@ -1,0 +1,718 @@
+<?php  
+
+    function dump($var, $label = null, $echo = true) {
+
+		$label = ($label === null) ? '' : rtrim($label) . ' ';
+
+		ob_start();
+
+		var_dump($var);
+
+		$output = ob_get_clean();
+
+		$output = preg_replace("/\]\=\>\n(\s+)/m", "] => ", $output);
+
+		$output = '<pre>' . $label . $output . '</pre>';
+
+		if($echo) echo $output;
+
+		return $output;
+	}	
+
+    function base_url() 
+    {
+        return (isset($_SERVRE['https']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/';
+    }
+    
+?>
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" style="overflow: hidden_">
+    <head>
+    	<title>Santa ride</title>
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <meta charset="utf-8">
+        
+        <link rel = "stylesheet" href="<?= base_url() ?>styles/bootstrap.min.css" media="all" />
+        <link rel = "stylesheet" href="<?= base_url() ?>styles/page.css" media="all" />
+        
+        <script src = "http://code.jquery.com/jquery-1.7.min.js"></script>
+    </head>
+    
+    <body>    
+            
+        <div id="fb-root"></div>	
+        
+        <div class="container">
+        	<div class="content">  
+        	    <div class="span16" id = "header-ad">
+        	        div.row
+        	        <div class="span4">
+        	            <img src="http://placehold.it/200x%2090" alt="">
+        	        </div>
+        	        <div class="span13">
+        	            <img src="http://placehold.it/728%20x%2090" alt="">
+        	        </div>
+        	    </div>      
+        	    <div class="row">
+        	        <div class="span4"></div>
+                    <div class="span8"></div>
+        	        <dic class="span4"></dic>
+        	    </div>
+        	    <div class="hero-unit" id = "facebook-comment"></div>      
+            </div> <!-- /content -->   
+        </div> <!-- /container -->
+        
+    	<script src="http://connect.facebook.net/en_US/all.js"></script>
+        <script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>     	    
+        
+    </body>
+</html>    <?php  
+
+    function dump($var, $label = null, $echo = true) {
+
+		$label = ($label === null) ? '' : rtrim($label) . ' ';
+
+		ob_start();
+
+		var_dump($var);
+
+		$output = ob_get_clean();
+
+		$output = preg_replace("/\]\=\>\n(\s+)/m", "] => ", $output);
+
+		$output = '<pre>' . $label . $output . '</pre>';
+
+		if($echo) echo $output;
+
+		return $output;
+	}	
+
+    function base_url() 
+    {
+        return (isset($_SERVRE['https']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/';
+    }
+    
+?>
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" style="overflow: hidden_">
+    <head>
+    	<title>Santa ride</title>
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <meta charset="utf-8">
+        
+        <link rel = "stylesheet" href="<?= base_url() ?>styles/bootstrap.min.css" media="all" />
+        <link rel = "stylesheet" href="<?= base_url() ?>styles/page.css" media="all" />
+        
+        <script src = "http://code.jquery.com/jquery-1.7.min.js"></script>
+    </head>
+    
+    <body>    
+            
+        <div id="fb-root"></div>	
+        
+        <div class="container">
+        	<div class="content">  
+        	    <div class="row" id = "header-ad">
+        	        <div class="span3">
+        	            <img src="http://placehold.it/160x%2090" alt="">
+        	        </div>
+        	        <div class="span13">
+        	            <img src="http://placehold.it/728%20x%2090" alt="">
+        	        </div>
+        	    </div>  <!-- header-row -->    
+        	    <div class="row">
+        	        <div class="span4" id = "leftside-ad">
+        	            <img src="http://placehold.it/120x%20600" alt="">
+        	        </div>
+                    <div class="span8">
+                        <img src="http://placehold.it/460x%20600" alt="">
+                    </div>
+        	        <div  class="span-5" id = "rightside-add">
+        	            <img src="http://placehold.it/300x%20500" alt="">
+        	        </div>
+        	    </div> <!-- content-row -->
+        	    <div class="span-16 row" id = "facebook-comment">
+        	        <img src="http://placehold.it/940x%20300" alt="">
+        	    </div>      
+            </div> <!-- /content -->   
+        </div> <!-- /container -->
+        
+    	<script src="http://connect.facebook.net/en_US/all.js"></script>
+        <script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>     	    
+        
+    </body>
+</html>    <?php  
+
+    function dump($var, $label = null, $echo = true) {
+
+		$label = ($label === null) ? '' : rtrim($label) . ' ';
+
+		ob_start();
+
+		var_dump($var);
+
+		$output = ob_get_clean();
+
+		$output = preg_replace("/\]\=\>\n(\s+)/m", "] => ", $output);
+
+		$output = '<pre>' . $label . $output . '</pre>';
+
+		if($echo) echo $output;
+
+		return $output;
+	}	
+
+    function base_url() 
+    {
+        return (isset($_SERVRE['https']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/';
+    }
+    
+?>
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" style="overflow: hidden_">
+    <head>
+    	<title>Santa ride</title>
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <meta charset="utf-8">
+        
+        <link rel = "stylesheet" href="<?= base_url() ?>styles/bootstrap.min.css" media="all" />
+        <link rel = "stylesheet" href="<?= base_url() ?>styles/page.css" media="all" />
+        
+        <script src = "http://code.jquery.com/jquery-1.7.min.js"></script>
+    </head>
+    
+    <body>    
+            
+        <div id="fb-root"></div>	
+        
+        <div class="container">
+        	<div class="content">  
+        	    <div class="row">
+        	        <div class="span3" id="logo">
+        	            <img src="http://placehold.it/120x%2090" alt="">
+        	        </div>
+        	        <div class="span13" id = "header-ad">
+        	            
+        	        </div>
+        	    </div>  <!-- header-row -->    
+        	    <div class="row">
+        	        <div class="span4" id = "leftside-ad">
+        	            <img src="http://placehold.it/120x%20600" alt="">
+        	        </div>
+                    <div class="span8" id="content">
+                        <div class="span8">
+                            
+                        </div>
+                        <div class="span8" id = "crosspromo">
+                            
+                        </div>
+                    </div>
+        	        <div class="span5" id = "rightside-ad">
+        	            <div id="donation">
+        	                <h4>Donate!</h4>
+        	                <p style="text-align:left">
+        	                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+        	                </p>
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                <input type="hidden" name="cmd" value="_donations">
+                                <input type="hidden" name="business" value="hello@adobi.hu">
+                                <input type="hidden" name="lc" value="US">
+                                <input type="hidden" name="no_note" value="0">
+                                <input type="hidden" name="currency_code" value="EUR">
+                                <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+        	            </div>
+        	            <div id="facebook-like-box">
+                            <div class="fb-like-box" data-href="http://www.facebook.com/santaride" data-width="300" data-show-faces="true" data-stream="false" data-header="true"></div>        	                
+        	            </div>
+        	            
+        	            
+        	        </div>
+        	    </div> <!-- content-row -->
+        	    <div class="row">
+        	        <div class="span16" id = "facebook-comment">
+        	            <div class="fb-comments" data-href="invictus.hu" data-num-posts="2" data-width="480"></div>
+        	        </div>
+        	        
+        	    </div>      
+            </div> <!-- /content -->   
+        </div> <!-- /container -->
+        
+    	<script src="http://connect.facebook.net/en_US/all.js#xfbml=1&appId=194972437254149"></script>
+        <script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>     	    
+        
+    </body>
+</html>    <?php  
+
+    function dump($var, $label = null, $echo = true) {
+
+		$label = ($label === null) ? '' : rtrim($label) . ' ';
+
+		ob_start();
+
+		var_dump($var);
+
+		$output = ob_get_clean();
+
+		$output = preg_replace("/\]\=\>\n(\s+)/m", "] => ", $output);
+
+		$output = '<pre>' . $label . $output . '</pre>';
+
+		if($echo) echo $output;
+
+		return $output;
+	}	
+
+    function base_url() 
+    {
+        return (isset($_SERVRE['https']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/';
+    }
+    
+    require_once 'crosspromo.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" style="overflow: hidden_">
+    <head>
+    	<title>Santa ride</title>
+        <!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+        <!--[if lt IE 9]>
+          <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+        <meta charset="utf-8">
+        
+        <link rel = "stylesheet" href="<?= base_url() ?>styles/bootstrap.min.css" media="all" />
+        <link rel = "stylesheet" href="<?= base_url() ?>styles/page.css" media="all" />
+        
+        <script src = "http://code.jquery.com/jquery-1.7.min.js"></script>
+        <script src = "<?php echo base_url() ?>scripts/bootstrap-modal.js"></script>
+    </head>
+    
+    <body>    
+            
+        <div id="fb-root"></div>	
+        
+        <div class="container">
+        	<div class="content">  
+        	    <div class="row" style="margin-bottom:5px;">
+        	        <div class="span3" id="logo">
+        	            <img src="http://placehold.it/120x%2090" alt="">
+        	        </div>
+        	        <div class="span13" id = "header-ad">
+        	            
+        	        </div>
+        	    </div>  <!-- header-row -->    
+        	    <div class="row">
+        	        <div class="span4" id = "leftside-ad">
+        	            <img src="http://placehold.it/120x%20600" alt="">
+        	        </div>
+                    <div class="span8" id="content">
+                        <div class="span8" id="game-canvas">
+                            <iframe src_="http://fbtest.invictus.hu/SantaRide/ipad0WebPlayer.html" frameborder="0"></iframe>
+                        </div>
+                        <div class="span8" id = "crosspromo">
+                            <ul class=" media-grid">
+                                    
+                                <?php foreach ($crosspromo as $item): ?>
+                                    <li>
+                                    <a data-keyboard="true" data-backdrop="true" data-controls-modal="modal-from-dom">
+                                        <img src="<?php echo base_url() ?>images/<?php echo $item['small_icon'] ?>" alt="">
+                                    </a>
+                                    </li>
+                                <?php endforeach ?>
+                                    
+                            </ul>
+                        </div>
+            	        <div class="span8" id = "facebook-comment">
+            	            <div class="fb-comments" data-href="invictus.hu" data-num-posts="2" data-width="500"></div>
+            	        </div>
+                    </div>
+        	        <div class="span5" id = "rightside-ad">
+        	            <div id="donation">
+        	                <h4>Donate!</h4>
+        	                <p style="text-align:left; padding:5px;">
+        	                    Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+        	                </p>
+                            <form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+                                <input type="hidden" name="cmd" value="_donations">
+                                <input type="hidden" name="business" value="hello@adobi.hu">
+                                <input type="hidden" name="lc" value="US">
+                                <input type="hidden" name="no_note" value="0">
+                                <input type="hidden" name="currency_code" value="EUR">
+                                <input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+                                <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_SM.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+                                <img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+                            </form>
+        	            </div>
+        	            <div id="facebook-like-box">
+                            <div class="fb-like-box" data-href="http://www.facebook.com/raceofchampions.game" data-width="300" data-show-faces="true" data-stream="false" data-header="true"></div>        	                
+        	            </div>
+        	            
+        	            <div id="video-ad">
+        	                <img src="http://placehold.it/300x%20250" alt="">
+        	            </div>
+        	        </div>
+        	    </div> <!-- content-row -->
+        	    <div class="row">
+        	        <!-- 
+        	        <div class="span16" id = "facebook-comment">
+        	            <div class="fb-comments" data-href="invictus.hu" data-num-posts="2" data-width="480"></div>
+        	        </div>
+        	         -->
+        	    </div> 
+            </div> <!-- /content -->   
+        </div> <!-- /container -->
+        <div style="display:none;">
+            <?php foreach ($crosspromo as $item): ?>
+                    
+                <div class="modal hide fade" id="modal-from-dom">
+                    <div class="modal-header">
+                        <a class="close" href="#">×</a>
+                        <h3>Race Of Champions Mobile Game</h3>
+                    </div>
+                    <div class="modal-body">
+                        <div class="row">
+                            <div class="span2">
+                                
+                            </div>
+                        </div>
+                        <p>One fine body…</p>
+                    </div>
+                    <div class="modal-footer">
+                        <a class="btn primary" href="#">Primary</a>
+                        <a class="btn secondary" href="#">Secondary</a>
+                    </div>
+                </div>        
+            <?php endforeach ?>
+        </div>
+        
+    	<script src="http://connect.facebook.net/en_US/all.js#xfbml=1&appId=194972437254149"></script>
+        <script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>     	    
+        <script type="text/javascript">
+            (function($) {
+                $(function() {
+                    $('#my-modal').modal()                    
+                })
+            }) (jQuery)
+        </script>
+    </body>
+</html>    <?php  
+
+	function dump($var, $label = null, $echo = true) {
+
+		$label = ($label === null) ? '' : rtrim($label) . ' ';
+
+		ob_start();
+
+		var_dump($var);
+
+		$output = ob_get_clean();
+
+		$output = preg_replace("/\]\=\>\n(\s+)/m", "] => ", $output);
+
+		$output = '<pre>' . $label . $output . '</pre>';
+
+		if($echo) echo $output;
+
+		return $output;
+	}	
+
+	function base_url() 
+	{
+		return (isset($_SERVRE['https']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/';
+	}
+	
+	require_once 'crosspromo.php';
+?>
+
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+				xmlns:fb="http://www.facebook.com/2008/fbml" 
+				xmlns:og="http://ogp.me/ns#"
+				style="overflow: hidden_">
+	<head>
+		<title>Santa Ride</title>
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<meta property="og:title" content="Santa Ride"/>
+		<meta property="og:type" content="game"/>
+		<meta property="og:url" content="http://invictus.hu/games/pc-games/santa-ride-1-2"/>
+		<meta property="og:image" content="http://invictus.hu/uploads/logos/2011.02.14_1297675937_webikon_santaride1.png"/>
+		<meta property="og:site_name" content="Invictus Games"/>        
+		<meta property="fb:admins" content="adobi" />
+		<meta property="fb:app_id" content="194972437254149"/>        
+		
+		<meta charset="utf-8">
+		
+		<link rel = "stylesheet" href="<?= base_url() ?>styles/bootstrap.min.css" media="all" />
+		<link rel = "stylesheet" href="<?= base_url() ?>styles/page.css" media="all" />
+		
+		<script src = "http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src = "<?php echo base_url() ?>scripts/bootstrap-modal.js"></script>
+	</head>
+	
+	<body  style="">    
+			
+		<div id="fb-root"></div>	
+		
+		<div class="container" id = "container">
+			<div class="content">  
+				<div class="row" style="margin-bottom:5px;">
+					<div class="span3" id="logo">
+						<img src="http://placehold.it/120x%2090" alt="">
+					</div>
+					<div class="span13" id = "header-ad">
+						<img src="http://placehold.it/810x90" alt="">
+					</div>
+				</div>  <!-- header-row -->    
+				<div class="row">
+					<div class="span4" id = "leftside-ad">
+						<img src="http://placehold.it/120x%20600" alt="">
+					</div>
+					<div class="span8" id="content">
+						<div class="span8" id="game-canvas">
+							<iframe src="http://fbtest.invictus.hu/SantaRide/ipad0WebPlayer.html" frameborder="0"></iframe>
+						</div>
+						<div class="span8" id = "crosspromo">
+							<ul class=" media-grid">
+									
+								<?php foreach ($crosspromo as $i=>$item): ?>
+									<li>
+									<a data-keyboard="true" data-backdrop="true" data-controls-modal="crosspromo-<?php echo $i ?>">
+										<img src="<?php echo base_url() ?>images/<?php echo $item['small_icon'] ?>" alt="">
+									</a>
+									</li>
+								<?php endforeach ?>
+									
+							</ul>
+						</div>
+						<div class="span8" id = "facebook-comment">
+							<div class="fb-comments" data-href="invictus.hu/games/pc-games/santa-ride-1-2" data-num-posts="2" data-width="500"></div>
+						</div>
+					</div>
+					<div class="span5" id = "rightside-ad">
+						<div id="donation">
+							<h4>Donate!</h4>
+							<p style="text-align:left; padding:5px;">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+							</p>
+							<form action="https://www.paypal.com/cgi-bin/webscr" method="post">
+								<input type="hidden" name="cmd" value="_donations">
+								<input type="hidden" name="business" value="hello@adobi.hu">
+								<input type="hidden" name="lc" value="US">
+								<input type="hidden" name="no_note" value="0">
+								<input type="hidden" name="currency_code" value="EUR">
+								<input type="hidden" name="bn" value="PP-DonationsBF:btn_donate_SM.gif:NonHostedGuest">
+								<input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_donate_LG.gif" border="0" name="submit" alt="PayPal - The safer, easier way to pay online!">
+								<img alt="" border="0" src="https://www.paypalobjects.com/en_US/i/scr/pixel.gif" width="1" height="1">
+							</form>
+						</div>
+						<div style="margin-bottom:10px;">
+							<img src="http://placehold.it/300x%20130" alt="">
+						</div>
+						<div id="facebook-like-box">
+							<div class="fb-like-box" data-href="http://www.facebook.com/raceofchampions.game" data-width="300" data-show-faces="true" data-stream="false" data-header="true"></div>        	                
+						</div>
+						
+						<div id="video-ad">
+							<img src="http://placehold.it/300x%20250" alt="">
+						</div>
+					</div>
+				</div> <!-- content-row -->
+				<div class="row">
+					<!-- 
+					<div class="span16" id = "facebook-comment">
+						<div class="fb-comments" data-href="invictus.hu" data-num-posts="2" data-width="480"></div>
+					</div>
+					 -->
+				</div> 
+			</div> <!-- /content -->   
+		</div> <!-- /container -->
+		<div style="display:none;">
+			<?php foreach ($crosspromo as $i=>$item): ?>
+					
+				<div class="modal hide fade" id="crosspromo-<?php echo $i ?>">
+					<div class="modal-header">
+						<a class="close" href="#">×</a>
+						<h3><?php echo $item['title'] ?></h3>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="span3">
+								<img src="<?php echo base_url() ?>images/<?php echo $item['big_icon'] ?>" alt="">
+							</div>
+							<div class="span6">
+								<p><?php echo $item['description'] ?></p>
+							</div>
+						</div>
+						<?php if (isset($item['links']) && $item['links']): ?>
+							<h5>Available in:</h5>
+							<div class="row">
+								<?php foreach ($item['links'] as $link): ?>
+									<div class="span2" style = "width: 120px;">
+										<a href="<?php echo $link['url'] ?>" target = "_blank">
+											<img src="<?php echo base_url() ?>images/<?php echo $link['image'] ?>" alt="">
+										</a>
+									</div>
+								<?php endforeach ?>
+							</div>
+						<?php endif ?>
+					</div>
+					<div class="modal-footer">
+						<a class="btn secondary" href="#" onclick = "jQuery('#crosspromo-<?php echo $i ?>').modal('hide')">Close</a>
+					</div>
+				</div>        
+			<?php endforeach ?>
+		</div>
+		
+		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1&appId=194972437254149"></script>
+		<script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>
+		<script type="text/javascript" src = "<?= base_url() ?>scripts/Three.js"></script>     	    
+		<script type="text/javascript" src = "<?= base_url() ?>scripts/Snow.js"></script>     	    
+		<script type="text/javascript">
+			(function($) {
+				$(function() {
+					$('#my-modal').modal()                    
+				})
+			}) (jQuery)
+		</script>
+		<script type="text/javascript">
+
+			var SCREEN_WIDTH = window.innerWidth;
+			var SCREEN_HEIGHT = window.innerHeight;
+
+			var container;
+
+			var particle;
+
+			var camera;
+			var scene;
+			var renderer;
+
+			var mouseX = 0;
+			var mouseY = 0;
+
+			var windowHalfX = window.innerWidth / 2;
+			var windowHalfY = window.innerHeight / 2;
+			
+			var particles = []; 
+			var particleImage = new Image();
+			particleImage.src = 'images/ParticleSmoke.png'; 
+
+
+			init();
+			setInterval( loop, 1000 / 60 );
+
+			function init() {
+
+				//container = document.body;//document.getElementById('container'); //document.createElement('div');
+				//document.body.appendChild(container);
+
+				camera = new THREE.Camera( 75, SCREEN_WIDTH / SCREEN_HEIGHT, 1, 10000 );
+				camera.position.z = 1000;
+
+				scene = new THREE.Scene();
+
+				renderer = new THREE.CanvasRenderer();
+				renderer.setSize(SCREEN_WIDTH, SCREEN_HEIGHT);
+
+				for (var i = 0; i < 500; i++) {
+
+					particle = new Particle3D( new THREE.ParticleBitmapMaterial( particleImage));
+					particle.position.x = Math.random() * 2000 - 1000;
+					particle.position.y = Math.random() * 2000 - 1000;
+					particle.position.z = Math.random() * 2000 - 1000;
+					particle.scale.x = particle.scale.y =  1;
+					scene.addObject( particle );
+					
+					particles.push(particle); 
+				}
+
+				document.getElementById('container').parentNode.insertBefore( renderer.domElement , document.getElementById('container'));
+				jQuery('#container').css('margin-top', -1*window.innerHeight);
+                //document.body.appendChild( renderer.domElement);
+	            
+				//document.addEventListener( 'mousemove', onDocumentMouseMove, false );
+				//document.addEventListener( 'touchstart', onDocumentTouchStart, false );
+				//document.addEventListener( 'touchmove', onDocumentTouchMove, false );
+			}
+
+			//
+
+			function onDocumentMouseMove( event ) {
+
+				mouseX = event.clientX - windowHalfX;
+				mouseY = event.clientY - windowHalfY;
+			}
+
+			function onDocumentTouchStart( event ) {
+
+				if ( event.touches.length == 1 ) {
+
+					event.preventDefault();
+
+					mouseX = event.touches[ 0 ].pageX - windowHalfX;
+					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+				}
+			}
+
+			function onDocumentTouchMove( event ) {
+
+				if ( event.touches.length == 1 ) {
+
+					event.preventDefault();
+
+					mouseX = event.touches[ 0 ].pageX - windowHalfX;
+					mouseY = event.touches[ 0 ].pageY - windowHalfY;
+				}
+			}
+
+			//
+
+			function loop() {
+
+				for(var i = 0; i<particles.length; i++)
+				{
+				
+					var particle = particles[i]; 
+					particle.update(); 
+					
+					with(particle.position)
+					{
+						if(y<-1000) y+=2000; 
+						if(x>1000) x-=2000; 
+						else if(x<-1000) x+=2000; 
+						if(z>1000) z-=2000; 
+						else if(z<-1000) z+=2000; 
+					}				
+				}
+
+				camera.position.x += ( mouseX - camera.position.x ) * 0.05;
+				camera.position.y += ( - mouseY - camera.position.y ) * 0.05;
+				
+
+				renderer.render( scene, camera );
+
+				
+			}
+
+		</script>		
+		
+	</body>
+</html>    

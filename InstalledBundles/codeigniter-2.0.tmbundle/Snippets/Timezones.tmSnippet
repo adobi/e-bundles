@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Timezones</string>
+        <key>uuid</key>
+        <string>326E6972-3F38-4D2A-9255-E93F4A5FD979</string>
+        <key>tabTrigger</key>
+        <string>timezones</string>
+        <key>content</key>
+        <string>timezones(${1:'${2:timezone}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

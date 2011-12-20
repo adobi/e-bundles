@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;ftp-&gt;mirror(${1:'${2:local_path}'},${3:'${4:remote_path}'});${0}</string>
+	<key>name</key>
+	<string>Mirror</string>
+	<key>tabTrigger</key>
+	<string>ciftpmirror</string>
+	<key>uuid</key>
+	<string>290CC297-96BC-4FE5-BEFF-175A44A4734F</string>
+</dict>
+</plist>

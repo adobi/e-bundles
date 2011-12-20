@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;ftp-&gt;move(${1:'${2:original}'},${3:'${4:new}'});${0}</string>
+	<key>name</key>
+	<string>Move</string>
+	<key>tabTrigger</key>
+	<string>ciftpmove</string>
+	<key>uuid</key>
+	<string>446CFD27-B2B2-4E21-B7F9-F5D8DAC6E1D2</string>
+</dict>
+</plist>

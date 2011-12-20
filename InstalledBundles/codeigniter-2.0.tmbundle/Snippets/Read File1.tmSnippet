@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Read File</string>
+        <key>uuid</key>
+        <string>E20E6D58-F6DF-4AD2-B03E-EAE9E493858A</string>
+        <key>tabTrigger</key>
+        <string>readfile</string>
+        <key>content</key>
+        <string>read_file(${1:'${2:file_path}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

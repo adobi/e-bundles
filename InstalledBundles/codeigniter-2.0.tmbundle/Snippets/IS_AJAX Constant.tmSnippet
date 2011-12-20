@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>content</key>
+        <string>// Define Ajax Request
+define('IS_AJAX', isset(\$_SERVER['HTTP_X_REQUESTED_WITH']) &amp;&amp; strtolower(\$_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest');</string>
+        <key>name</key>
+        <string>IS_AJAX Constant</string>
+        <key>tabTrigger</key>
+        <string>is_ajax</string>
+        <key>uuid</key>
+        <string>E006B047-26F3-40BF-AD31-06B1C401715C</string>
+        <key>scope</key>
+        <string></string>
+    </dict>
+</plist>

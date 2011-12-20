@@ -1,0 +1,26 @@
+            </div> <!-- /content -->   
+            <footer>
+            
+            </footer>
+        
+        </div> <!-- /container -->
+    
+    </body>
+</html>            </div> <!-- /content -->   
+            <footer>
+            
+            </footer>
+        
+        </div> <!-- /container -->
+        
+        
+        <script src = "http://code.jquery.com/jquery-1.7.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+                
+		<script src="http://connect.facebook.net/en_US/all.js"></script>
+		<script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script> 
+		
+		<script type="text/javascript" src = "<?php echo base_url() ?>scripts/page.js"></script>
+		   
+    </body>
+</html>

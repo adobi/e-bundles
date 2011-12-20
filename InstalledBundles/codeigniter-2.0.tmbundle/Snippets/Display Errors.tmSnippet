@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;image_lib-&gt;display_errors(${1:'${2:start_tag}',${3:end_tag}});${0}</string>
+	<key>name</key>
+	<string>Display Errors</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciimgerros</string>
+	<key>uuid</key>
+	<string>87DE4C0F-089E-4D19-8C68-81A7B2700B73</string>
+</dict>
+</plist>

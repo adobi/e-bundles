@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;xmlrpc-&gt;send_response(${1:array});${0}</string>
+	<key>name</key>
+	<string>Send Response</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cixmlsendresponse</string>
+	<key>uuid</key>
+	<string>E329FF7B-DDD0-4CCB-8134-48B5ADCDAC89</string>
+</dict>
+</plist>

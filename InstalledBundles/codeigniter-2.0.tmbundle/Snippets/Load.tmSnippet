@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;lang-&gt;load(${1:'${2:file_name}'${3:, '${4:language}'}});${0}</string>
+	<key>name</key>
+	<string>Load</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cilangload</string>
+	<key>uuid</key>
+	<string>37C07A06-FAAF-4FD1-B7C2-446F284EB4C1</string>
+</dict>
+</plist>

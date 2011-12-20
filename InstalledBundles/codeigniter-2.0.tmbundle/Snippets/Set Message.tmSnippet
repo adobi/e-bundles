@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;form_validation-&gt;set_message('${1:rule}','${2:error_message}');${0}</string>
+	<key>name</key>
+	<string>Set Message</string>
+	<key>tabTrigger</key>
+	<string>ciformvalsetmsg</string>
+	<key>uuid</key>
+	<string>C4281F8F-4662-427F-A806-AB2D3E6FAA8E</string>
+</dict>
+</plist>

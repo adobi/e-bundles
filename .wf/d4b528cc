@@ -1,0 +1,41 @@
+(function($) {
+    
+    var Payment = {
+        appId: '239232439472925',
+        
+        opendDialog: function() {
+            
+            $('body').delegate('#start-facebook-payment', 'click', function() {
+                
+                var obj = {
+                    method: 'pay',
+                    order_info: { 
+                        "title":'Lorem ipsum dolor',
+                        "description":'Alma a fa alatt',
+                        "price":1000,
+                        "image_url":'http://www.facebook.com/images/gifts/21.png',
+                        "product_url":'http://www.facebook.com/images/gifts/21.png'
+                        },
+                    purchase_type: 'item',
+                    dev_purchase_params: {'oscif': true},
+                    display: 'iframe'
+                }
+                
+                FB.ui(obj, Payment.callback);
+                
+                return false;
+            });
+        },
+        
+        callback: function(data) {
+            console.log(data);
+        }
+    };
+    
+    FB.init({appId: Payment.appId, status: true, cookie: true});
+    
+    $(function() {
+        Payment.opendDialog();
+    });
+    
+}) (jQuery);

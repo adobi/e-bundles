@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;session-&gt;unset_userdata(${1:'${2:index}'});${0}</string>
+	<key>name</key>
+	<string>Unset Data</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cisessionunset</string>
+	<key>uuid</key>
+	<string>D6C36A91-DB5D-48BB-99C2-5CCF8F3E2327</string>
+</dict>
+</plist>

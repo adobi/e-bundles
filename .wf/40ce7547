@@ -1,0 +1,29 @@
+
+            
+            <button class="btn danger" data-keyboard="true" data-backdrop="true" data-controls-modal="modal-from-dom">Launch Modal</button>
+            
+            <div class="modal hide fade" id="modal-from-dom" style="display: none;">
+                <div class="modal-header">
+                    <a class="close" href="#"><img src="takeover_close.png" alt=""></a>
+                </div>
+                <div class="modal-body">
+                    <div>
+                        <a href="#" class="play-santa-ride pull-right">
+                            <img src="takeover_play.png" alt="">
+                        </a>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <div>
+                        <a href="#"><img src="takeover_appstore.png" alt=""></a>
+                        <a href="#"><img src="takeover_android.png" alt=""></a>
+                    </div>
+                </div>
+            </div>
+        <a href="javascript:void();" class="takeover-trigger">santa ride</a>
+        
+        <script type="text/javascript">
+            $(function() {
+                $('#modal').modal()
+            });
+        </script>

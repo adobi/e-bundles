@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Underscore</string>
+        <key>uuid</key>
+        <string>6355AA7C-285C-486A-88F4-1CFDA0A6596B</string>
+        <key>tabTrigger</key>
+        <string>underscore</string>
+        <key>content</key>
+        <string>underscore(${1:'${2:string}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

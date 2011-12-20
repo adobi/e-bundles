@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Last Segment</string>
+        <key>uuid</key>
+        <string>66FB595B-D9A2-46E4-84AB-8F8052D63F9E</string>
+        <key>tabTrigger</key>
+        <string>lastsegment</string>
+        <key>content</key>
+        <string>last_segment();${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

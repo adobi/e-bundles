@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Highlight Phrase</string>
+        <key>uuid</key>
+        <string>14F96175-381B-4E8C-928C-738FD6249FD1</string>
+        <key>tabTrigger</key>
+        <string>highlightphrase</string>
+        <key>content</key>
+        <string>highlight_phrase(${1:'${2:string}'}, ${3:'${4:phrase}'}, ${5:'${6:opening_wrapper}'}, ${7:'${8:closing_wrapper}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

@@ -1,0 +1,84 @@
+<?php if ($areMultiplaPages): ?>
+    <?php foreach ($_pages as $p): ?>
+        <h1><?= $p['title'] ?>
+            <a style="font-size:12px; color:#FFCC00;" href="<?= BASE_URL . $currentPage['url'] . '/' . $p['url']?>">more <span class = "raquo" style="top:0px;">&raquo;</span></a>
+        </h1>
+        
+    <?php endforeach ?>
+<?php else: ?>
+    
+    <?php if ($currentPagesSubpages): ?>
+
+        <div class = "inner-nav" style="margin-botton: 5x;">
+            <a href="<?= BASE_URL . $currentPage['url'] . ($qwerty ? ( $action ? '/'.$action : '') : '') ?>" <?= !$action || ($qwerty && !$param && $action && $action === $_pages['url']) || ($controller === 'design') ? ' class = "selected-inner-nav"' : '' ?>>
+                <?= $controller === 'design' ? 'Design Concept' : 'Main page' ?>
+            </a>
+            
+            <?php if ($controller !== 'design'): ?>
+                <?php foreach ($currentPagesSubpages as $subpage): ?>
+                    <a href="<?= BASE_URL . $currentPage['url'] . '/' . ($qwerty ? $_pages['url'] . '/' : '') . $subpage['url'] ?>" 
+                        <?= ($action && $action === $subpage['url']) || ($qwerty && $param && $param === $subpage['url']) ?  'class = "selected-inner-nav" ' : '' ?>>
+                        <?= ucfirst($subpage['title']); ?></a>
+                <?php endforeach ?>
+            <?php endif ?>
+            
+        </div>
+        <br /><br />
+    <?php endif ?>        
+    <?php if ($controller === 'partners'): ?>
+        
+    <?php endif ?>
+    <div class = "page-content" >
+    <?php if (!$action && $controller !== 'design'): ?>
+        <!--  <div class = "page-content">-->
+            <?= htmlspecialchars_decode($_pages['content']) ?>
+        <!-- </div>  -->      
+        
+    <?php else: ?>
+        <?php if ($param || ($action && !$param)): ?>
+
+            <?php if (array_key_exists('images', $currentSubpage)): ?>
+                
+                <?php if ($controller === 'design'): ?>
+                    <?= htmlspecialchars_decode($_pages['content']) ?>
+                <?php endif ?>
+                
+                <div class = "gallery-images"  style="margin:0 auto;width:650px;float:left;">
+                    <?php foreach ($currentSubpage['images'] as $image): ?>
+                        <div class="page-img-wrapper" style="margin-right:10px; margin-bottom: 10px; width: 170px; height: 170px;line-height:13em;"><center>
+                            <a href="<?= BASE_URL ?>uploads/gallery/<?= $image['path'] ?>" rel = "images-fancybox">
+                                <img style="vertical-align:middle;" <?= $action === 'office-pictures' ? 'style="width: 150px; height: 100px;" ' : '' ?> src="<?= BASE_URL ?>uploads/gallery/thumbs/<?= $image['path'] ?>" alt=""/>
+                            </a></center>
+                        </div>
+                    <?php endforeach ?>
+                </div>
+            <?php endif; ?>
+            <?php if (array_key_exists('videos', $currentSubpage)): ?>
+                <?php foreach ($currentSubpage['videos'] as $video): ?>
+                    <div class="video-wrapper">
+                        <?= Display::embed($video['path']) ?>
+                    </div>
+                <?php endforeach ?>
+            <?php endif ?>
+            
+            <?php if ($currentSubpage['content']): ?>
+                <!-- <div class = "page-content"> -->
+                    <?= htmlspecialchars_decode($currentSubpage['content']) ?>
+                <!-- </div> -->
+            <?php endif ?>
+        <?php else: ?>
+    
+            <!-- <div class = "page-content"> -->
+                <?= htmlspecialchars_decode($currentSubpage['content']) ?>
+            <!-- </div>               -->
+                            
+        <?php endif ?>
+
+    
+    <?php endif ?>
+    </div>
+    <?php if (false): ?>
+        <a  href="<?= BASE_URL . $controller . '/' . ($action && $param ? $action : '') ?>"><span class="laquo"  style="top:0px;">&laquo;</span>Go back</a>
+        
+    <?php endif ?>
+<?php endif ?>

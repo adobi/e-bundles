@@ -1,0 +1,66 @@
+
+    <div class="span8 header">
+        <div class="span7" style="position:relative; top:100px; padding:0 20px; text-align:justify">
+            <h2 class="orange">Win a co-drive with a champion!</h2>
+            <p>
+                <span class="orange">Join our Race Of Champions Mobile Game competition:</span> be amongst the best 50 players each week to qualify yourself.
+            </p>
+            <p>
+                <span class="orange">1 winner of the actual Top 50</span> players will be drawn out each week until 28 November and <span class="orange">get 2 tickets</span> for the Race Of Champions 2011 event held in Düsseldorf.
+            </p>
+            <p>
+                <span class="orange">The best player</span>, who sign up for the competition and earns the most prestige points until 27 November 2011, 12:00pm (GMC), <span class="orange">will win 2 tickets</span> and a co-drive with one of the best racers of the world.
+            </p>
+        </div>
+    </div>
+
+	<?php echo form_open() ?>
+        <div class="span8 step"><span>STEP 1</span></div>
+        <div class="span8 box" style="padding:0 0 20px 0">
+        	<p style="padding: 10px 20px;">Fill the form below:</p>
+        	<?php if ($this->session->userdata('validation_errors')) :?>
+        	    
+            	<div class="clearbox" style="color:red">
+            	    <?php echo $this->session->userdata('validation_errors'); ?>
+            	    <?php $this->session->unset_userdata('validation_errors') ?>
+            	</div>
+        	<?php endif ?>
+    		<div class="clearfix">
+    			<label for="roc_username">ROC user name:</label>
+    			<div class="input">
+    				<input type="text" name = "roc_username" id = "roc_username"  class="xlarge"/>
+    			</div>
+    		</div>
+    		<div class="clearfix">
+    			<label for="udid">Device's UDID number:</label>
+    			<div class="input">
+    				<input type="text" name = "udid" id = "udid" class="xlarge"/>
+    			</div>
+    		</div>
+        </div>
+    
+        <div class="span8 step"><span>STEP 2</span></div>
+        <div class="span8 box" style="padding:0 0 10px 0">
+            <p style="padding: 10px 20px;">
+                Be in the game's prestige point high score <span class="orange">TOP 50</span> at <span class="orange">EVERY WEEK!</span>
+                
+                <div class="span8 score"></div>
+            </p>
+        </div>
+        
+        <div class="span8 step"><span>STEP-3</span></div>
+        <footer>
+            <p style="padding: 10px 20px;">
+                <span class="orange">EACH WEEK</span> you have the chance to <span class="orange">WIN TWO TICKETS</span> to the 2011. RoC. Remember to check back on <span class="orange">EACH MONDAY</span> the RoC Facebook wall to see who won the weekly contest.
+            </p>
+    		<div class="clearfix register-button">
+    		    <button id = "registration-submit">
+    		        <img src="<?php echo base_url() ?>images/sign-up-bg.png" alt="">
+    		    </button>
+    		</div>
+    		<p style="padding:0px 20px;font-size:0.7em; position:relative; top:-40px;line-height:12px; text-align:center;">
+    		    Prizes to be drawn out on 14, 21 and 28 November 2011 and will be posted on  <a href="www.facebook.com/raceofchampions.game">www.facebook.com/raceofchampions.game</a> and on <span class="orange">Race Of Champions Mobile Game in-game news</span>.
+    		    Only users who can prove the origin and genuineness of their copy of the Race Of Champions Mobile game by sending their iTunes confirmation e-mail to <a href="mailto:roc.game@invictusgames.com">roc.game@invictusgames.com</a> are entitled to become a winner and receive their prizes. 
+    		</p>
+        </footer>    
+	<?php echo form_close() ?>

@@ -1,0 +1,164 @@
+<?php  
+	require_once 'functions.php';
+	require_once 'crosspromo.php';
+?>
+
+    <?php require_once 'header.php'; ?>
+	
+	<body  style="" class="body-with-bg">    
+			
+		<div id="fb-root"></div>	
+		
+		<div class="container" id = "container">
+		    <p style="color:#fff;text-align:right; padding-top:5px; margin-bottom:0px;">
+    		    <a style="color:#fff;" href="javascript:void(0)" id="snow-off">turn off the snow</a> | 
+    		    <a  style="color:#fff;" href="javascript:void(0)" id="snow-on">turn on the snow</a>
+		    </p>
+			<div class="content">  
+				<div class="row" style="margin-bottom:5px;">
+					<div class="span3" id="logo">
+						<img src="<?php echo base_url() ?>images/logo.png" alt="">
+					</div>
+					<div class="span13" id = "header-ad">
+						<img src="http://placehold.it/810x90" alt="">
+					</div>
+				</div>  <!-- header-row -->    
+				<div class="row">
+					<div class="span4" id = "leftside-ad">
+						<img src="http://placehold.it/120x%20600" alt="">
+					</div>
+					<div class="span8" id="content">
+						<div class="span8" id="game-canvas">
+							<iframe src_="http://fbtest.invictus.hu/SantaRide/ipad0WebPlayer.html" frameborder="0"></iframe>
+						</div>
+						<div class="span8" id = "crosspromo" style="margin-bottom:60px;">
+						    <h5 style="margin-left:5px;color:#000;">More Invictus Games:</h6>
+							<ul class=" media-grid">
+									
+								<?php foreach ($crosspromo as $i=>$item): ?>
+									<li>
+									<a rel = "twipsy" title = "<strong style='font-size:1.1em;'><?php echo $item['title'] ?></strong>" data-html="true" data-placement="below" data-keyboard="true" data-backdrop="true" data-controls-modal="crosspromo-<?php echo $i ?>">
+										<img src="<?php echo base_url() ?>images/icons/<?php echo $item['small_icon'] ?>" alt="">
+									</a>
+									</li>
+								<?php endforeach ?>
+									
+							</ul>
+						</div>
+						<div class="span8" id = "facebook-comment">
+							<div class="fb-comments" data-href="invictus.hu/games/pc-games/santa-ride-1-2" data-num-posts="2" data-width="500"></div>
+						</div>
+					</div>
+					<div class="span5" id = "rightside-ad">
+					    <div id = "social">
+					       <span style="position:relative; top:-3px;"> <div class="fb-send" data-href="example.com"></div></span>
+					        
+					        <span><div class="g-plusone" data-size="medium" data-annotation="none"></div></span>
+
+					        <span><a href="https://twitter.com/share" class="twitter-share-button" data-url="example.com" data-text="Some text..." data-count="none" data-via="invictusgames">Tweet</a></span>
+					    </div>
+						<div id="donation">
+						    <div class="donation-header"></div>
+							<h4>Donate!</h4>
+							<p style="text-align:left; padding:5px;">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+							</p>
+                            <?php require_once 'paypal.php'; ?>
+						</div>
+						<div style="margin-bottom:10px;">
+							<img src="http://placehold.it/300x%20130" alt="">
+						</div>
+						<div id="facebook-like-box">
+							<div class="fb-like-box" data-href="http://www.facebook.com/raceofchampions.game" data-width="300" data-show-faces="true" data-stream="false" data-header="true"></div>        	                
+						</div>
+						
+						<div id="video-ad">
+							<img src="http://placehold.it/300x%20250" alt="">
+						</div>
+					</div>
+				</div> <!-- content-row -->
+				<div class="row">
+					<!-- 
+					<div class="span16" id = "facebook-comment">
+						<div class="fb-comments" data-href="invictus.hu" data-num-posts="2" data-width="480"></div>
+					</div>
+					 -->
+				</div> 
+			</div> <!-- /content -->   
+		</div> <!-- /container -->
+		<div style="display:none;">
+			<?php foreach ($crosspromo as $i=>$item): ?>
+					
+				<div class="modal hide fade" id="crosspromo-<?php echo $i ?>">
+					<div class="modal-header">
+						<a class="close" href="#">×</a>
+						<h3><?php echo $item['title'] ?></h3>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="span3">
+								<img src="<?php echo base_url() ?>images/icons/<?php echo $item['big_icon'] ?>" alt="">
+							</div>
+							<div class="span6">
+								<p><?php echo $item['description'] ?></p>
+        						<div class="fb-like" data-href="<?php echo $item['facebook_page'] ?>" data-send="true" data-width="400" data-show-faces="true"></div>
+								
+							</div>
+						</div>
+						<?php if (isset($item['links']) && $item['links']): ?>
+							<h5>Available in:</h5>
+							<div class="row">
+								<?php foreach ($item['links'] as $link): ?>
+									<div class="span2" style = "width: 120px;">
+										<a href="<?php echo $link['url'] ?>" target = "_blank">
+											<img src="<?php echo base_url() ?>images/icons/<?php echo $link['image'] ?>" alt="">
+										</a>
+									</div>
+								<?php endforeach ?>
+							</div>
+						<?php endif ?>
+					</div>
+					<div class="modal-footer">
+						<a class="btn primary" href="#" onclick = "jQuery('#crosspromo-<?php echo $i ?>').modal('hide')">Close</a>
+					</div>
+				</div>        
+			<?php endforeach ?>
+		</div>
+		
+		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1&appId=<?php echo app_id() ?>"></script>
+		<script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>
+        <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>		
+        <script type="text/javascript">
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+        
+		
+		<script type="text/javascript" src = "<?= base_url() ?>scripts/Three.js"></script>     	    
+		<script type="text/javascript" src = "<?= base_url() ?>scripts/Snow.js"></script>     	    
+		<script type="text/javascript" src = "<?php echo base_url() ?>scripts/snow-init.js"></script>		
+		<script type="text/javascript">
+			(function($) {
+				$(function() {
+					$('#my-modal').modal();
+					
+					$('[rel=twipsy]').twipsy();
+					
+					$('#snow-off').bind('click', function() {
+					    $('canvas').hide();
+					    $('#container').css('margin-top', -3);
+					});
+
+					$('#snow-on').bind('click', function() {
+					    $('canvas').show();
+					    $('#container').css('margin-top', -1*window.innerHeight);
+					});					
+				})
+			}) (jQuery)
+		</script>
+		
+	</body>
+</html>    

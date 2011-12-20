@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+				xmlns:fb="http://www.facebook.com/2008/fbml" 
+				xmlns:og="http://ogp.me/ns#"
+				itemscope itemtype="http://schema.org/Games">
+	<head>
+		<title>Santa Ride</title>
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<meta property="og:title" content="Santa Ride"/>
+		<meta property="og:type" content="game"/>
+		<meta property="og:url" content="http://invictus.hu/games/pc-games/santa-ride-1-2"/>
+		<meta property="og:image" content="http://invictus.hu/uploads/logos/2011.02.14_1297675937_webikon_santaride1.png"/>
+		<meta property="og:site_name" content="Invictus Games"/>        
+		<meta property="fb:admins" content="adobi" />
+		<meta property="fb:app_id" content="<?php echo app_id() ?>" />     
+		
+        <meta itemprop="name" content="Santa Ride">
+        <meta itemprop="description" content="This would be a description of the content your users are sharing">		   
+		<meta itemprop="image" content="http://invictus.hu/uploads/logos/2011.02.14_1297675937_webikon_santaride1.png">
+		
+		<meta charset="utf-8">
+		
+		<link rel = "stylesheet" href="<?= base_url() ?>styles/bootstrap.min.css" media="all" />
+		<link rel = "stylesheet" href="<?= base_url() ?>styles/page.css?<?php echo time() ?>" media="all" />
+		
+		<script src = "http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src = "<?php echo base_url() ?>scripts/bootstrap-modal.js"></script>
+		<script src = "<?php echo base_url() ?>scripts/bootstrap-twipsy.js"></script>
+		<script src = "<?php echo base_url() ?>scripts/bootstrap-tabs.js"></script>
+	</head><!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+				xmlns:fb="http://www.facebook.com/2008/fbml" 
+				xmlns:og="http://ogp.me/ns#"
+				itemscope itemtype="http://schema.org/Games">
+	<head>
+		<title>Santa Ride</title>
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<meta property="og:title" content="Santa Ride"/>
+		<meta property="og:type" content="game"/>
+		<meta property="og:url" content="http://santaride.invictus.com"/>
+		<meta property="og:image" content="http://santaride.invictus.com//images/120x90.png"/>
+		<meta property="og:site_name" content="Invictus Games"/>        
+		<meta property="fb:admins" content="adobi" />
+		<meta property="fb:app_id" content="<?php echo app_id() ?>" />     
+		
+        <meta itemprop="name" content="Check out Santa Ride, the official Christmas game of Invictus Games Ltd!">
+        <meta itemprop="description" content="Check out Santa Ride, the official Christmas game of Invictus Games Ltd!">		   
+		<meta itemprop="image" content="hhttp://santaride.invictus.com//images/120x90.png">
+		
+		<meta charset="utf-8">
+		
+		<link rel = "stylesheet" href="<?= base_url() ?>styles/bootstrap.min.css" media="all" />
+		<link rel = "stylesheet" href="<?= base_url() ?>styles/page.css?<?php echo time() ?>" media="all" />
+		
+		<script src = "http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src = "<?php echo base_url() ?>scripts/bootstrap-modal.js"></script>
+		<script src = "<?php echo base_url() ?>scripts/bootstrap-twipsy.js"></script>
+		<script src = "<?php echo base_url() ?>scripts/bootstrap-tabs.js"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>scripts/slides.jquery.js"></script>
+		
+		<script type="text/javascript">
+            $(function() {
+                (function($) {
+                    
+                    $('#video-ad').slides({
+                        'width': 300,
+                        'height': 250,                    
+                    });                
+                }) (jQuery);
+            })		    
+		</script>
+		
+	</head>
+	
+	<body  style="" <?php echo strpos($_SERVER['SCRIPT_NAME'], 'index') ? ' class="body-with-bg"' : ''?>>    
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-27505489-1']);
+            _gaq.push(['_trackPageview']);
+            
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>		    
+        
+		<div id="fb-root"></div>	
+			<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" 
+				xmlns:fb="http://www.facebook.com/2008/fbml" 
+				xmlns:og="http://ogp.me/ns#"
+				itemscope itemtype="http://schema.org/Games">
+	<head>
+		<title>Santa Ride</title>
+		<!-- Le HTML5 shim, for IE6-8 support of HTML elements -->
+		<!--[if lt IE 9]>
+		  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+		<![endif]-->
+		<meta property="og:title" content="Santa Ride"/>
+		<meta property="og:type" content="game"/>
+		<meta property="og:url" content="http://santaride.invictus.com"/>
+		<meta property="og:image" content="http://santaride.invictus.com//images/120x90.png"/>
+		<meta property="og:site_name" content="Invictus Games"/>        
+		<meta property="fb:admins" content="adobi" />
+		<meta property="fb:app_id" content="<?php echo app_id() ?>" />     
+		
+        <meta itemprop="name" content="SCheck out Santa Ride, the official Christmas game of Invictus Games Ltd!">
+        <meta itemprop="description" content="Check out Santa Ride, the official Christmas game of Invictus Games Ltd!">		   
+		<meta itemprop="image" content="hhttp://santaride.invictus.com//images/120x90.png">
+		
+		<meta charset="utf-8">
+		
+		<link rel = "stylesheet" href="<?= base_url() ?>styles/bootstrap.min.css" media="all" />
+		<link rel = "stylesheet" href="<?= base_url() ?>styles/page.css?<?php echo time() ?>" media="all" />
+		
+		<script src = "http://code.jquery.com/jquery-1.7.min.js"></script>
+		<script src = "<?php echo base_url() ?>scripts/bootstrap-modal.js"></script>
+		<script src = "<?php echo base_url() ?>scripts/bootstrap-twipsy.js"></script>
+		<script src = "<?php echo base_url() ?>scripts/bootstrap-tabs.js"></script>
+		<script type="text/javascript" src="<?php echo base_url() ?>scripts/slides.jquery.js"></script>
+		
+		<script type="text/javascript">
+            $(function() {
+                (function($) {
+                    
+                    $('#video-ad').slides({
+                        'width': 300,
+                        'height': 250,                    
+                    });                
+                }) (jQuery);
+            })		    
+		</script>
+		
+	</head>
+	
+	<body  style="" <?php echo strpos($_SERVER['SCRIPT_NAME'], 'index') ? ' class="body-with-bg"' : ''?>>    
+        <script type="text/javascript">
+            var _gaq = _gaq || [];
+            _gaq.push(['_setAccount', 'UA-27505489-1']);
+            _gaq.push(['_trackPageview']);
+            
+            (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+                
+                ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+            })();
+        </script>		    
+        
+		<div id="fb-root"></div>	
+			

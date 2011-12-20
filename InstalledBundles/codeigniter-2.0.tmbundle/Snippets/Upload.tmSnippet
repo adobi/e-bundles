@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;ftp-&gt;upload(${1:'${2:local_path}'},${3:'${4:remote_path}'}${5:,${6:mode}${7:,${8:permissions}}});${0}</string>
+	<key>name</key>
+	<string>Upload</string>
+	<key>tabTrigger</key>
+	<string>ciftpupload</string>
+	<key>uuid</key>
+	<string>B76ADAF2-6FFB-4BBD-9F52-4496DC6CCBC2</string>
+</dict>
+</plist>

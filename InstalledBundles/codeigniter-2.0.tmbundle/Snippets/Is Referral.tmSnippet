@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;agent-&gt;is_referral();${0}</string>
+	<key>name</key>
+	<string>Is Referral</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciagentisreferral</string>
+	<key>uuid</key>
+	<string>599E5FA1-88BB-4CA6-9DBD-423FAF3B7071</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;calendar-&gt;${1:function}(${2});${0}</string>
+	<key>name</key>
+	<string>Calendar Class</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cical</string>
+	<key>uuid</key>
+	<string>C079DD5B-198C-4C42-86B8-7DA323C580AD</string>
+</dict>
+</plist>

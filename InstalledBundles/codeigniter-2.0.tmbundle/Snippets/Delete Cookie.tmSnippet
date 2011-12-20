@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Delete Cookie</string>
+        <key>uuid</key>
+        <string>1EAA107E-78A9-47C6-8CF3-313914377D18</string>
+        <key>tabTrigger</key>
+        <string>delcookie</string>
+        <key>content</key>
+        <string>delete_cookie(${1:${2:item}${3:, ${4:item}${5:, ${6:item}}}});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

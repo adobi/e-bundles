@@ -1,0 +1,54 @@
+            </div> <!-- /content -->   
+
+        
+        </div> <!-- /container -->
+        
+        
+        <script src = "http://code.jquery.com/jquery-1.7.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+                
+		<script src="http://connect.facebook.net/en_US/all.js"></script>
+		<script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script> 
+		
+		<script type="text/javascript" src = "<?php echo base_url() ?>scripts/page.js"></script>
+		
+		<script type="text/javascript">
+			App.URL = "<?php echo base_url() ?>";
+		</script>
+		   
+    </body>
+</html>            </div> <!-- /content -->   
+
+        
+        </div> <!-- /container -->
+        
+        <div style="display:none;">
+            <a href="#" id = "facebook-login">Login</a>
+            <a href="#" id = "facebook-logout">Logut</a>
+        </div>
+        
+    	<script src="http://connect.facebook.net/en_US/all.js"></script>
+        <script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>    	        
+        
+        <script src = "http://code.jquery.com/jquery-1.7.min.js"></script>
+        <script src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.8.16/jquery-ui.min.js"></script>
+	    
+        <?php if ($this->uri->segment(1) === 'registration'): ?>
+            
+    		<script type="text/javascript" src = "<?php echo base_url() ?>scripts/page.js?<?php echo time(); ?>"></script>
+    		<script type="text/javascript" src = "<?php echo base_url() ?>scripts/run.js?<?php echo time(); ?>"></script>
+    		
+        <?php endif ?>
+        
+		<?php if ($this->uri->segment(1) === 'leaderboard'): ?>
+		    <script type="text/javascript" src = "<?php echo base_url() ?>scripts/leaderboard.js?<?php echo time(); ?>"></script>
+		<?php endif ?>
+		
+		<?php if ($this->uri->segment(1) === 'payment'): ?>
+		    <script type="text/javascript" src = "<?php echo base_url() ?>scripts/payment.js?<?php echo time(); ?>"></script>
+		<?php endif ?>		
+		<script type="text/javascript">
+			App.URL = "<?php echo base_url() ?>";
+		</script>
+    </body>
+</html>

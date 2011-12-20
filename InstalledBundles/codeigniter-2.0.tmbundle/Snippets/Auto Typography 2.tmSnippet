@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>auto_typography(${1:'${2:string}'});${0</string>
+	<key>name</key>
+	<string>Auto Typography</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>autotypo</string>
+	<key>uuid</key>
+	<string>E4BEE294-6698-4479-B2F3-2CE6EAE0132F</string>
+</dict>
+</plist>

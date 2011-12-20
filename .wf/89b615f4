@@ -1,0 +1,243 @@
+<?php  
+
+/**
+* 
+*/
+class News extends Table
+{
+    protected $_name = 'news';
+    protected $_primary = 'id';
+    
+    public function fetchAll($order = null, $dest = null) 
+    {
+        $sql = 'SELECT news.*, types.name as type_name, types.url as type_url FROM ' . $this->_name . ' JOIN types ON types.id = ' . $this->_name . '.type_id ORDER BY created DESC';
+        
+        $stmt = $this->_connection->prepare($sql);
+        
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll($this->_fetchMode);
+        
+        return !empty($result) ? $result : false; 
+        
+    }
+    
+
+    public function fetchAllNotDraft($order = null, $dest = null) 
+    {
+        $sql = 'SELECT news.*, types.name as type_name, types.url as type_url FROM ' . $this->_name . ' JOIN types ON types.id = ' . $this->_name . '.type_id WHERE is_draft IS NULL OR is_draft = 0  ORDER BY created DESC';
+        
+        $stmt = $this->_connection->prepare($sql);
+        
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll($this->_fetchMode);
+        
+        return !empty($result) ? $result : false; 
+        
+    }
+    
+    public function fetchAllByType($typeId)
+    {
+        $flag = false;
+        if (is_null($typeId)) {
+            
+            // olyan hirek amik nem tartoznak tipushoz
+            $flag = true;
+        } else {
+            if (!is_numeric($typeId)) {
+                
+                return false;
+            }
+        }
+        $sql = 'SELECT news.*, types.name as type_name FROM ' . $this->_name .' join types on news.type_id = types.id';
+        if ($flag) {
+
+            $sql  .= ' WHERE type_id IS NULL OR type_id = 0 ORDER BY created DESC';
+        } else {
+            
+            $sql .= ' WHERE type_id = :type_id ORDER BY created DESC';
+        }
+        
+        $stmt = $this->_connection->prepare($sql);
+        
+        if (!$flag) {
+            
+            $stmt->execute(array(':type_id'=>$typeId));    
+        } else {
+            
+            $stmt->execute();
+        }
+        
+        $result = $stmt->fetchAll($this->_fetchMode);
+        
+        return !empty($result) ? $result : false;        
+    }
+    
+    public function findByUrl($url)
+    {
+        $sql='SELECT * FROM ' .$this->_name.' WHERE url = :url';
+        
+        $stmt = $this->_connection->prepare($sql);
+        
+        $stmt->execute(array(':url'=>$url));
+        
+        $result = $stmt->fetchAll($this->_fetchMode);
+        
+        return !empty($result) ? current($result) : false;
+    }
+   
+    public function Haromlekerdez()
+    {
+        
+        
+         $sql = 'SELECT * FROM ' . $this->_name . ' WHERE is_draft IS NULL OR is_draft = 0 ORDER BY ' . $this->_primary .' DESC LIMIT 0 , 4';
+        /*
+        $stmt = $this->_connection->prepare($sql);
+        //dump($stmt); die;
+       // $stmt = execute();
+        
+        $result = $stmt->fetchAll($this->_fetchMode);
+        
+        return !empty($result) ? $result : false;
+        */
+        
+        return $this->query($sql)->fetchAll();
+    }
+   
+    public function NewsSearch()
+    {
+        $talal = Xss::clear($_POST['q']); 
+       
+        $sql = ' SELECT * FROM '. $this->_name . ' WHERE content LIKE "%' . $talal . '%" ORDER BY content DESC';
+       
+        $stmt = $this->_connection->prepare($sql);
+        
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll($this->_fetchMode);
+        
+        return !empty($result) ? $result : false; 
+    }
+}<?php  
+
+/**
+* 
+*/
+class News extends Table
+{
+    protected $_name = 'news';
+    protected $_primary = 'id';
+    
+    public function fetchAll($order = null, $dest = null) 
+    {
+        $sql = 'SELECT news.*, types.name as type_name, types.url as type_url FROM ' . $this->_name . ' LEFT JOIN types ON types.id = ' . $this->_name . '.type_id ORDER BY created DESC';
+        
+        $stmt = $this->_connection->prepare($sql);
+        
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll($this->_fetchMode);
+        
+        return !empty($result) ? $result : false; 
+        
+    }
+    
+
+    public function fetchAllNotDraft($order = null, $dest = null) 
+    {
+        $sql = 'SELECT news.*, types.name as type_name, types.url as type_url FROM ' . $this->_name . ' JOIN types ON types.id = ' . $this->_name . '.type_id WHERE is_draft IS NULL OR is_draft = 0  ORDER BY created DESC';
+        
+        $stmt = $this->_connection->prepare($sql);
+        
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll($this->_fetchMode);
+        
+        return !empty($result) ? $result : false; 
+        
+    }
+    
+    public function fetchAllByType($typeId)
+    {
+        $flag = false;
+        if (is_null($typeId)) {
+            
+            // olyan hirek amik nem tartoznak tipushoz
+            $flag = true;
+        } else {
+            if (!is_numeric($typeId)) {
+                
+                return false;
+            }
+        }
+        $sql = 'SELECT news.*, types.name as type_name FROM ' . $this->_name .' join types on news.type_id = types.id';
+        if ($flag) {
+
+            $sql  .= ' WHERE type_id IS NULL OR type_id = 0 ORDER BY created DESC';
+        } else {
+            
+            $sql .= ' WHERE type_id = :type_id ORDER BY created DESC';
+        }
+        
+        $stmt = $this->_connection->prepare($sql);
+        
+        if (!$flag) {
+            
+            $stmt->execute(array(':type_id'=>$typeId));    
+        } else {
+            
+            $stmt->execute();
+        }
+        
+        $result = $stmt->fetchAll($this->_fetchMode);
+        
+        return !empty($result) ? $result : false;        
+    }
+    
+    public function findByUrl($url)
+    {
+        $sql='SELECT * FROM ' .$this->_name.' WHERE url = :url';
+        
+        $stmt = $this->_connection->prepare($sql);
+        
+        $stmt->execute(array(':url'=>$url));
+        
+        $result = $stmt->fetchAll($this->_fetchMode);
+        
+        return !empty($result) ? current($result) : false;
+    }
+   
+    public function Haromlekerdez()
+    {
+        
+        
+         $sql = 'SELECT * FROM ' . $this->_name . ' WHERE is_draft IS NULL OR is_draft = 0 ORDER BY ' . $this->_primary .' DESC LIMIT 0 , 4';
+        /*
+        $stmt = $this->_connection->prepare($sql);
+        //dump($stmt); die;
+       // $stmt = execute();
+        
+        $result = $stmt->fetchAll($this->_fetchMode);
+        
+        return !empty($result) ? $result : false;
+        */
+        
+        return $this->query($sql)->fetchAll();
+    }
+   
+    public function NewsSearch()
+    {
+        $talal = Xss::clear($_POST['q']); 
+       
+        $sql = ' SELECT * FROM '. $this->_name . ' WHERE content LIKE "%' . $talal . '%" ORDER BY content DESC';
+       
+        $stmt = $this->_connection->prepare($sql);
+        
+        $stmt->execute();
+        
+        $result = $stmt->fetchAll($this->_fetchMode);
+        
+        return !empty($result) ? $result : false; 
+    }
+}

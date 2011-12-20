@@ -1,0 +1,33 @@
+<?php  
+
+
+	function dump($var, $label = null, $echo = true) {
+
+		$label = ($label === null) ? '' : rtrim($label) . ' ';
+
+		ob_start();
+
+		var_dump($var);
+
+		$output = ob_get_clean();
+
+		$output = preg_replace("/\]\=\>\n(\s+)/m", "] => ", $output);
+
+		$output = '<pre>' . $label . $output . '</pre>';
+
+		if($echo) echo $output;
+
+		return $output;
+	}	
+
+	function base_url() 
+	{
+		return (isset($_SERVRE['https']) ? 'https' : 'http') . '://' . $_SERVER['HTTP_HOST'] . dirname($_SERVER['SCRIPT_NAME']) . '/';
+	}
+	
+	function app_id() 
+	{
+	    return '194972437254149';
+	}
+
+?>

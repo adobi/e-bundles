@@ -1,0 +1,42 @@
+//
+//  checkinAppDelegate.h
+//  checkin
+//
+//  Created by iwebleopard on 02/05/2011.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import <Cocoa/Cocoa.h>
+
+@interface checkinAppDelegate : NSObject <NSApplicationDelegate> {
+@private
+    NSWindow *window;
+    NSTextField *UserNameField;
+    NSTextField *PasswordField;
+    NSTextView *LogWindow;
+    NSButton *clockInBTN;
+    NSButton *clockOutBTN;
+}
+
+@property (assign) IBOutlet NSWindow *window;
+@property (assign) IBOutlet NSTextField *UserNameField;
+@property (assign) IBOutlet NSTextField *PasswordField;
+@property (assign) IBOutlet NSTextView *LogWindow;
+@property (assign) IBOutlet NSButton *clockInBTN;
+@property (assign) IBOutlet NSButton *clockOutBTN;
+
+CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *refcon);
+-(IBAction)clockInTouched:(id)sender;
+-(IBAction)clockOutTouched:(id)sender;
+-(NSString*) urlEncodeValue:(NSString*)str;
+-(void) onTick:(NSTimer *)timer;
+-(void) saveClock:(int)active: (int) passive;
+
+@end
+
+@interface NSString (md5)
+
+-(NSString *) MD5;
+
+@end
+

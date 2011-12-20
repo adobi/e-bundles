@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" style="overflow: hidden">
+    <head>
+    	<title>ROC facebook page</title>
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet/less" href="<?= base_url() ?>css/bootstrap.less" media="all" />
+
+        <script src="<?= base_url() ?>scripts/less-1.1.3.min.js"></script>
+    </head>
+    
+    <body style="overflow: hidden">    
+        
+    <div id="fb-root"></div>	
+    	
+    <div class="container span8">
+    	<div class="content">
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" style="overflow: hidden">
+    <head>
+    	<title>Race Of Champions Mobile Game Competition</title>
+        <meta charset="utf-8">
+        
+        <link rel="stylesheet/less" href="<?= base_url() ?>css/bootstrap.less" media="all" />
+
+        <script src="<?= base_url() ?>scripts/less-1.1.3.min.js"></script>
+        
+        <?php //if (@$_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https'): ?>
+        <?php if (isset($_SERVER['HTTPS'])) : ?>
+            
+            <script type="text/javascript">
+            
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-27023014-2']);
+              _gaq.push(['_trackPageview']);
+            
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+              })();
+            
+            </script>            
+            
+        <?php else: ?>
+            <script type="text/javascript">
+            
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-27023014-1']);
+              _gaq.push(['_trackPageview']);
+            
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    
+                var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+              })();
+            
+            </script>            
+        <?php endif ?>
+        
+    </head>
+    
+    <body style="overflow: hidden">    
+        
+    <div id="fb-root"></div>	
+    
+    <div class="container span8">
+    	<div class="content">
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml" style="overflow: hidden">
+    <head>
+    	<title>Race Of Champions Mobile Game Competition</title>
+        <meta charset="utf-8">
+        
+        
+        
+        <?php if ($this->uri->segment(1) === 'manage'): ?>
+            <link rel = "stylesheet" href="<?= base_url() ?>css/bootstrap.min.css" media="all" />
+            <link rel = "stylesheet" href="<?= base_url() ?>css/aristo.css" media="all" />
+        <?php else: ?>
+            <link rel="stylesheet/less" href="<?= base_url() ?>css/bootstrap.less" media="all" />
+        <?php endif ?>
+        
+        <script src="<?= base_url() ?>scripts/less-1.1.3.min.js"></script>
+        <script src = "http://code.jquery.com/jquery-1.7.min.js"></script>
+        <script src = "<?php echo base_url() ?>scripts/plugins/bootstrap-dropdown.js"></script>
+        <script src = "<?php echo base_url() ?>scripts/plugins/bootstrap-tabs.js"></script>
+        
+        
+        <?php //if (@$_SERVER['HTTP_X_FORWARDED_PROTO'] == 'https'): ?>
+        <?php if (isset($_SERVER['HTTPS'])) : ?>
+            
+            <script type="text/javascript">
+            
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-27023014-2']);
+              _gaq.push(['_trackPageview']);
+            
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+              })();
+            
+            </script>            
+            
+        <?php else: ?>
+            <script type="text/javascript">
+            
+              var _gaq = _gaq || [];
+              _gaq.push(['_setAccount', 'UA-27023014-1']);
+              _gaq.push(['_trackPageview']);
+            
+              (function() {
+                var ga = document.createElement('script'); ga.type = 'text/javascript';
+                    ga.async = true;
+                    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+                    
+                var s = document.getElementsByTagName('script')[0];
+                    s.parentNode.insertBefore(ga, s);
+              })();
+            
+            </script>            
+        <?php endif ?>
+        
+    </head>
+    
+    <body style="overflow: hidden">    
+        
+    <div id="fb-root"></div>	
+    
+    <div class="container <?php echo $this->uri->segment(1) === 'manage' ? 'span16' : 'span8' ?>" id="top">
+    	<div class="content">
+        <?php if ($this->session->userdata('logged_in') && $this->uri->segment(1) === 'manage'): ?>
+            <style type="text/css">
+                html {
+                    
+                    overflow-y:scroll!important;
+                }
+                body {
+                    background:#fff;
+                    color:#333;
+                }
+            </style>   
+            
+            <style type="text/css">
+                .tabs a {
+                    border:1px solid #ddd!important;
+                }
+                .tabs span, .pills span {
+                    font-weight:bold;
+                    position:relative;
+                    top:10px;
+                    padding: 0 10px;
+                    display:inline-block;
+                    color:#000;
+                }
+                #main-nav li a {
+                    border:0px!important;
+                }
+                
+                #main-nav .active a {
+                    border:1px solid #ddd !important;
+                    border-bottom:0px!important;
+                }
+            </style>
+            
+            
+            <h3>Race Of Champion management</h3>
+            <div class="span16" id="main-nav">
+                <ul class="tabs" data-dropdown="dropdown">
+                    <li class="dropdown <?php echo $this->uri->segment(2) === 'competitors' ? 'active' : '' ?>" data-dropdown="dropdown">
+                        <a href="#" class="dropdown-toggle">Lists</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo base_url() ?>manage/competitors">Competitors</a></li>
+                            <li><a href="<?php echo base_url() ?>manage/orders" >Orders</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" data-dropdown="dropdown">
+                        <a href="#" class="dropdown-toggle">Pages</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo base_url() ?>registration" target = "_blank">Competition</a></li>
+                            <li><a href="<?php echo base_url() ?>leaderboard" target = "_blank">Leaderboard</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown" data-dropdown="dropdown">
+                        <a href="#" class="dropdown-toggle">Mobile</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="<?php echo base_url() ?>mobile/register" target = "_blank">Competition</a></li>
+                            <li><a href="<?php echo base_url() ?>mobile/leaderboard" target = "_blank">Leaderboard</a></li>
+                            <li><a href="<?php echo base_url() ?>payment/" target = "_blank" class="iframe">Payment</a></li>
+                        </ul>
+                    </li>
+                    <li <?php echo $this->uri->segment(2) === 'license' || $this->uri->segment(2) === 'edit_license' ? 'class = "active"' : '' ?>>
+                        <a href="<?php echo base_url() ?>manage/license">Licenses</a>
+                    </li>
+                    <li <?php echo $this->uri->segment(2) === 'stat' ? 'class = "active"' : '' ?>>
+                        <a href="<?php echo base_url() ?>manage/stat">Statistics</a>
+                    </li>
+					<li <?php echo $this->uri->segment(2) === 'stat' ? 'class = "active"' : '' ?>>
+						<a href="<?php echo base_url() ?>manage/logout">Logout</a>
+					</li>
+					
+                </ul>
+            </div>
+            <script type="text/javascript">
+                jQuery(function() {
+                    jQuery('#main-nav').dropdown()
+                })
+            </script>
+
+        <?php endif ?>

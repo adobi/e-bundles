@@ -1,0 +1,25 @@
+
+<style type="text/css">
+    body {
+        background:#0a0a0a;
+    }
+</style>
+
+<div class="span8 first-step">
+<!--    
+    <a href = "http://itunes.apple.com/us/app/race-champions-official-game/id469354336" class="first-app-store" target="_blank"></a>
+    <a href="<?php echo FACEBOOK_APPLICATION_URL ?>" target = "_blank">go to apps</a>
+-->
+    <div class="span8 market-container">
+        <div class="span4">
+            <a href="http://itunes.apple.com/us/app/race-champions-official-game/id469354336" class = "appstore-market" target="_blank"></a>
+        </div>
+        <div class="span4" style="position:relative; left:65px;">
+            <a href="#" class = "android-market"></a>
+        </div>
+    </div>
+
+    <div class="span8 sign-up-container">
+        <a href="<?php echo FACEBOOK_APPLICATION_URL ?>" class = "sign-up" target="_blank"></a>
+    </div>
+</div>

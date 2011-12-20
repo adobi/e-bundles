@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;db-&gt;insert_id();${0}</string>
+	<key>name</key>
+	<string>Insert ID</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cidbinsid</string>
+	<key>uuid</key>
+	<string>863541D6-9CBC-4443-BA98-AFA1290F4388</string>
+</dict>
+</plist>

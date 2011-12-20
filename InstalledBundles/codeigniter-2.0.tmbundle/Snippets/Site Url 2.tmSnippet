@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;config-&gt;site_url();${0}</string>
+	<key>name</key>
+	<string>Site Url</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciconfigsite</string>
+	<key>uuid</key>
+	<string>A086FE34-C9DA-48CF-AC8E-A578CBA79666</string>
+</dict>
+</plist>

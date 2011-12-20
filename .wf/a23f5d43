@@ -1,0 +1,588 @@
+<?php		
+	include_once('config.php');
+	
+	$d_ios_res = 0;
+	$d_and_res = 0;
+	$u_ios_res = 0;
+	$u_and_res = 0;
+	
+	$d_ios = "SELECT COUNT( * ) as c FROM ( SELECT DISTINCT LEFT(  `DevID` , 44 ) AS dev FROM  `users` WHERE LEFT(  `DevID` , 3 ) =  'IOS') AS x";
+	$d_and = "SELECT COUNT( * ) as c FROM ( SELECT DISTINCT LEFT(  `DevID` , 22 ) AS dev FROM  `users` WHERE LEFT(  `DevID` , 3 ) =  'AND') AS x";
+	$u_ios = "SELECT COUNT( * ) as c FROM  `users` WHERE LEFT(  `DevID` , 3 ) =  'IOS'";
+	$u_and = "SELECT COUNT( * ) as c FROM  `users` WHERE LEFT(  `DevID` , 3 ) =  'AND'";
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` ";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite`";
+	
+	$down_loads_q = "SELECT Server,COUNT(distinct `IP`) as c FROM  `downloading_android_data` group by Server";
+	$down_loads_qlasthour = "SELECT Server,COUNT(distinct `IP`) as c FROM  `downloading_android_data` where TIMESTAMPDIFF(HOUR,`When`,NOW()) < 1 group by Server";
+	$down_loads_q2 = "SELECT Min(`When`) as c FROM  `downloading_android_data`";
+	$down_loads_q3 = "SELECT Max(`When`) as c FROM  `downloading_android_data`";
+	
+	
+	$Q1 = mysql_query ($d_ios,$sqlDB);
+	if ($Q1) {
+		if ( mysql_num_rows($Q1)) {		
+			$row = mysql_fetch_assoc($Q1);
+			$d_ios_res = $row['c'];
+			mysql_free_result($Q1);
+		}
+	}
+	$Q2 = mysql_query ($d_and,$sqlDB);
+	if ($Q2) {
+		if ( mysql_num_rows($Q2)) {		
+			$row = mysql_fetch_assoc($Q2);
+			$d_and_res = $row['c'];
+			mysql_free_result($Q2);
+		}
+	}
+	$Q3 = mysql_query ($u_ios,$sqlDB);
+	if ($Q3) {
+		if ( mysql_num_rows($Q3)) {		
+			$row = mysql_fetch_assoc($Q3);
+			$u_ios_res = $row['c'];
+			mysql_free_result($Q3);
+		}
+	}
+	$Q4 = mysql_query ($u_and,$sqlDB);
+	if ($Q4) {
+		if ( mysql_num_rows($Q4)) {		
+			$row = mysql_fetch_assoc($Q4);
+			$u_and_res = $row['c'];
+			mysql_free_result($Q4);
+		}
+	}
+	
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	
+
+	echo "iOS Devices: ".$d_ios_res."<br>";
+	echo "iOS Users: ".$u_ios_res."<br>";
+	echo "Android Devices: ".$d_and_res."<br>";
+	echo "Android Users: ".$u_and_res."<br><br><br>";
+	
+	$Q11 = mysql_query ($down_loads_q2,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			echo "From: ".$row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "<br>";
+	$Q11 = mysql_query ($down_loads_q3,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			echo "To: ".$row['c'];
+			$lastdate = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+
+	echo "<br>";
+	echo "Downloading connections (all) : ".$down_active."<br>";
+	echo "Download finished: ".$down_finish."<br><br><br>";
+	
+	echo "Serverusage SUMMA<br>";
+	$summas = 0;
+	$servers = array();
+	$Q12 = mysql_query ($down_loads_q,$sqlDB);
+	if ($Q12) {
+		if ( mysql_num_rows($Q12)) {		
+			while ($row = mysql_fetch_assoc($Q12)) {
+				$servers[] = array('s' => $row['Server'], 'c' => $row['c']);
+				//echo $row['Server']." : ".$row['c']."<br>";
+				$summas +=  $row['c'];
+			}
+			mysql_free_result($Q12);
+		}
+	}
+	//var_dump($servers);
+	
+	foreach ($servers as $value) {
+		echo $value['s']." : ".$value['c']." <b>(".($value['c']/$summas*100)."%)</b><br>";
+		//echo "Value: $value<br />\n";
+	}	
+	echo "<br>";
+	echo "Serverusage lastHour<br>";
+	$summas = 0;
+	$servers = array();
+	$Q12 = mysql_query ($down_loads_qlasthour,$sqlDB);
+	if ($Q12) {
+		if ( mysql_num_rows($Q12)) {		
+			while ($row = mysql_fetch_assoc($Q12)) {
+				$servers[] = array('s' => $row['Server'], 'c' => $row['c']);
+				//echo $row['Server']." : ".$row['c']."<br>";
+				$summas +=  $row['c'];
+			}
+			mysql_free_result($Q12);
+		}
+	}
+	//var_dump($servers);
+	
+	foreach ($servers as $value) {
+		echo $value['s']." : ".$value['c']." <b>(".($value['c']/$summas*100)."%)</b><br>";
+		//echo "Value: $value<br />\n";
+	}	
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	
+	$dateb = date("Y-m-d H:00:00",strtotime("-6 hours"));
+	$datee = date("Y-m-d H:00:00",strtotime("-5 hours"));
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` where `when` between '".$dateb."' and '".$datee."'";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite` where `when` between '".$dateb."' and '".$datee."'";
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "Downloading connections (all / finished) started between(".$dateb." and ".$datee.") : ".$down_active." / ".$down_finish."  <b>(".($down_finish/$down_active*100)."%)</b><br>";
+	
+	$dateb = date("Y-m-d H:00:00",strtotime("-5 hours"));
+	$datee = date("Y-m-d H:00:00",strtotime("-4 hours"));
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` where `when` between '".$dateb."' and '".$datee."'";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite` where `when` between '".$dateb."' and '".$datee."'";
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "Downloading connections (all / finished) started between(".$dateb." and ".$datee.") : ".$down_active." / ".$down_finish."  <b>(".($down_finish/$down_active*100)."%)</b><br>";
+
+	$dateb = date("Y-m-d H:00:00",strtotime("-4 hours"));
+	$datee = date("Y-m-d H:00:00",strtotime("-3 hours"));
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` where `when` between '".$dateb."' and '".$datee."'";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite` where `when` between '".$dateb."' and '".$datee."'";
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "Downloading connections (all / finished) started between(".$dateb." and ".$datee.") : ".$down_active." / ".$down_finish."  <b>(".($down_finish/$down_active*100)."%)</b><br>";
+
+	$dateb = date("Y-m-d H:00:00",strtotime("-3 hours"));
+	$datee = date("Y-m-d H:00:00",strtotime("-2 hours"));
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` where `when` between '".$dateb."' and '".$datee."'";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite` where `when` between '".$dateb."' and '".$datee."'";
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "Downloading connections (all / finished) started between(".$dateb." and ".$datee.") : ".$down_active." / ".$down_finish."  <b>(".($down_finish/$down_active*100)."%)</b><br>";
+
+	$dateb = date("Y-m-d H:00:00",strtotime("-2 hours"));
+	$datee = date("Y-m-d H:00:00",strtotime("-1 hours"));
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` where `when` between '".$dateb."' and '".$datee."'";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite` where `when` between '".$dateb."' and '".$datee."'";
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "Downloading connections (all / finished) started between(".$dateb." and ".$datee.") : ".$down_active." / ".$down_finish."  <b>(".($down_finish/$down_active*100)."%)</b><br>";
+	
+	$dateb = date("Y-m-d H:00:00",strtotime("-1 hours"));
+	$datee =  $lastdate;
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` where `when` between '".$dateb."' and '".$datee."'";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite` where `when` between '".$dateb."' and '".$datee."'";
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "Downloading connections (all / finished) started between(".$dateb." and ".$datee.") : ".$down_active." / ".$down_finish."  <b>(".($down_finish/$down_active*100)."%)</b><br>";
+	echo "<br>";
+	echo "<br>";
+	
+	$dateb = date("Y-m-d H:00:00",strtotime("-10 hours"));
+	$lastmax = 0;
+	$Q12 = mysql_query ("select * from stat_hourly_usertable where StatTime >= '".$dateb."'",$sqlDB);
+	if ($Q12) {
+		if ( mysql_num_rows($Q12)) {		
+			while ($row = mysql_fetch_assoc($Q12)) {
+				echo $row['StatTime']."        iOSDev: ".$row['Dev_iOS']."        androidDev: ".$row['Dev_ANDROID']."  <b>(+".($row['Dev_ANDROID']-$limit).")</b><br>";
+				$limit = $row['Dev_ANDROID'];
+			}
+			mysql_free_result($Q12);
+		}
+	}
+	echo date("Y-m-d H:i:s",strtotime("-1 hours"))."        iOSDev: ".$d_ios_res."        androidDev: ".$d_and_res."  <b>(+".($d_and_res-$limit).")</b><br>";
+?>	
+<?php		
+	include_once('config.php');
+	
+	$d_ios_res = 0;
+	$d_and_res = 0;
+	$u_ios_res = 0;
+	$u_and_res = 0;
+	
+	$d_ios = "SELECT COUNT( * ) as c FROM ( SELECT DISTINCT LEFT(  `DevID` , 44 ) AS dev FROM  `users` WHERE LEFT(  `DevID` , 3 ) =  'IOS') AS x";
+	$d_and = "SELECT COUNT( * ) as c FROM ( SELECT DISTINCT LEFT(  `DevID` , 22 ) AS dev FROM  `users` WHERE LEFT(  `DevID` , 3 ) =  'AND') AS x";
+	$u_ios = "SELECT COUNT( * ) as c FROM  `users` WHERE LEFT(  `DevID` , 3 ) =  'IOS'";
+	$u_and = "SELECT COUNT( * ) as c FROM  `users` WHERE LEFT(  `DevID` , 3 ) =  'AND'";
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` ";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite`";
+	
+	$down_loads_q = "SELECT Server,COUNT(distinct `IP`) as c FROM  `downloading_android_data` group by Server";
+	$down_loads_qlasthour = "SELECT Server,COUNT(distinct `IP`) as c FROM  `downloading_android_data` where TIMESTAMPDIFF(HOUR,`When`,NOW()) < 1 group by Server";
+	$down_loads_q2 = "SELECT Min(`When`) as c FROM  `downloading_android_data`";
+	$down_loads_q3 = "SELECT Max(`When`) as c FROM  `downloading_android_data`";
+	
+	
+	$Q1 = mysql_query ($d_ios,$sqlDB);
+	if ($Q1) {
+		if ( mysql_num_rows($Q1)) {		
+			$row = mysql_fetch_assoc($Q1);
+			$d_ios_res = $row['c'];
+			mysql_free_result($Q1);
+		}
+	}
+	$Q2 = mysql_query ($d_and,$sqlDB);
+	if ($Q2) {
+		if ( mysql_num_rows($Q2)) {		
+			$row = mysql_fetch_assoc($Q2);
+			$d_and_res = $row['c'];
+			mysql_free_result($Q2);
+		}
+	}
+	$Q3 = mysql_query ($u_ios,$sqlDB);
+	if ($Q3) {
+		if ( mysql_num_rows($Q3)) {		
+			$row = mysql_fetch_assoc($Q3);
+			$u_ios_res = $row['c'];
+			mysql_free_result($Q3);
+		}
+	}
+	$Q4 = mysql_query ($u_and,$sqlDB);
+	if ($Q4) {
+		if ( mysql_num_rows($Q4)) {		
+			$row = mysql_fetch_assoc($Q4);
+			$u_and_res = $row['c'];
+			mysql_free_result($Q4);
+		}
+	}
+	
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	
+
+	echo "iOS Devices: ".$d_ios_res."<br>";
+	echo "iOS Users: ".$u_ios_res."<br>";
+	echo "Android Devices: ".$d_and_res."<br>";
+	echo "Android Users: ".$u_and_res."<br><br><br>";
+	
+	$Q11 = mysql_query ($down_loads_q2,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			echo "From: ".$row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "<br>";
+	$Q11 = mysql_query ($down_loads_q3,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			echo "To: ".$row['c'];
+			$lastdate = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+
+	echo "<br>";
+	echo "Downloading connections (all) : ".$down_active."<br>";
+	echo "Download finished: ".$down_finish."<br><br><br>";
+	
+	echo "Serverusage SUMMA<br>";
+	$summas = 0;
+	$servers = array();
+	$Q12 = mysql_query ($down_loads_q,$sqlDB);
+	if ($Q12) {
+		if ( mysql_num_rows($Q12)) {		
+			while ($row = mysql_fetch_assoc($Q12)) {
+				$servers[] = array('s' => $row['Server'], 'c' => $row['c']);
+				//echo $row['Server']." : ".$row['c']."<br>";
+				$summas +=  $row['c'];
+			}
+			mysql_free_result($Q12);
+		}
+	}
+	//var_dump($servers);
+	
+	foreach ($servers as $value) {
+		echo $value['s']." : ".$value['c']." <b>(".($value['c']/$summas*100)."%)</b><br>";
+		//echo "Value: $value<br />\n";
+	}	
+	echo "<br>";
+	echo "Serverusage lastHour<br>";
+	$summas = 0;
+	$servers = array();
+	$Q12 = mysql_query ($down_loads_qlasthour,$sqlDB);
+	if ($Q12) {
+		if ( mysql_num_rows($Q12)) {		
+			while ($row = mysql_fetch_assoc($Q12)) {
+				$servers[] = array('s' => $row['Server'], 'c' => $row['c']);
+				//echo $row['Server']." : ".$row['c']."<br>";
+				$summas +=  $row['c'];
+			}
+			mysql_free_result($Q12);
+		}
+	}
+	//var_dump($servers);
+	
+	foreach ($servers as $value) {
+		echo $value['s']." : ".$value['c']." <b>(".($value['c']/$summas*100)."%)</b><br>";
+		//echo "Value: $value<br />\n";
+	}	
+	echo "<br>";
+	echo "<br>";
+	echo "<br>";
+	
+	$dateb = date("Y-m-d H:00:00",strtotime("-6 hours"));
+	$datee = date("Y-m-d H:00:00",strtotime("-5 hours"));
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` where `when` between '".$dateb."' and '".$datee."'";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite` where `when` between '".$dateb."' and '".$datee."'";
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "Downloading connections (all / finished) started between(".$dateb." and ".$datee.") : ".$down_active." / ".$down_finish."  <b>(".($down_finish/$down_active*100)."%)</b><br>";
+	
+	$dateb = date("Y-m-d H:00:00",strtotime("-5 hours"));
+	$datee = date("Y-m-d H:00:00",strtotime("-4 hours"));
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` where `when` between '".$dateb."' and '".$datee."'";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite` where `when` between '".$dateb."' and '".$datee."'";
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "Downloading connections (all / finished) started between(".$dateb." and ".$datee.") : ".$down_active." / ".$down_finish."  <b>(".($down_finish/$down_active*100)."%)</b><br>";
+
+	$dateb = date("Y-m-d H:00:00",strtotime("-4 hours"));
+	$datee = date("Y-m-d H:00:00",strtotime("-3 hours"));
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` where `when` between '".$dateb."' and '".$datee."'";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite` where `when` between '".$dateb."' and '".$datee."'";
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "Downloading connections (all / finished) started between(".$dateb." and ".$datee.") : ".$down_active." / ".$down_finish."  <b>(".($down_finish/$down_active*100)."%)</b><br>";
+
+	$dateb = date("Y-m-d H:00:00",strtotime("-3 hours"));
+	$datee = date("Y-m-d H:00:00",strtotime("-2 hours"));
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` where `when` between '".$dateb."' and '".$datee."'";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite` where `when` between '".$dateb."' and '".$datee."'";
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "Downloading connections (all / finished) started between(".$dateb." and ".$datee.") : ".$down_active." / ".$down_finish."  <b>(".($down_finish/$down_active*100)."%)</b><br>";
+
+	$dateb = date("Y-m-d H:00:00",strtotime("-2 hours"));
+	$datee = date("Y-m-d H:00:00",strtotime("-1 hours"));
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` where `when` between '".$dateb."' and '".$datee."'";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite` where `when` between '".$dateb."' and '".$datee."'";
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "Downloading connections (all / finished) started between(".$dateb." and ".$datee.") : ".$down_active." / ".$down_finish."  <b>(".($down_finish/$down_active*100)."%)</b><br>";
+	
+	$dateb = date("Y-m-d H:00:00",strtotime("-1 hours"));
+	$datee =  $lastdate;
+	$down_active_q = "SELECT COUNT( distinct IP ) as c FROM  `downloading_android_data` where `when` between '".$dateb."' and '".$datee."'";
+	$down_finish_q = "SELECT COUNT( distinct IP ) as c FROM  `download_complite` where `when` between '".$dateb."' and '".$datee."'";
+	$Q10 = mysql_query ($down_active_q,$sqlDB);
+	if ($Q10) {
+		if ( mysql_num_rows($Q10)) {		
+			$row = mysql_fetch_assoc($Q10);
+			$down_active = $row['c'];
+			mysql_free_result($Q10);
+		}
+	}
+	$Q11 = mysql_query ($down_finish_q,$sqlDB);
+	if ($Q11) {
+		if ( mysql_num_rows($Q11)) {		
+			$row = mysql_fetch_assoc($Q11);
+			$down_finish = $row['c'];
+			mysql_free_result($Q11);
+		}
+	}
+	echo "Downloading connections (all / finished) started between(".$dateb." and ".$datee.") : ".$down_active." / ".$down_finish."  <b>(".($down_finish/$down_active*100)."%)</b><br>";
+	echo "<br>";
+	echo "<br>";
+	
+	$dateb = date("Y-m-d H:00:00",strtotime("-10 hours"));
+	$lastmax = 0;
+	$Q12 = mysql_query ("select * from stat_hourly_usertable where StatTime >= '".$dateb."'",$sqlDB);
+	if ($Q12) {
+		if ( mysql_num_rows($Q12)) {		
+			while ($row = mysql_fetch_assoc($Q12)) {
+				echo $row['StatTime']."        iOSDev: ".$row['Dev_iOS']."        androidDev: ".$row['Dev_ANDROID']."  <b>(+".($row['Dev_ANDROID']-$limit).")</b><br>";
+				$limit = $row['Dev_ANDROID'];
+			}
+			mysql_free_result($Q12);
+		}
+	}
+	echo date("Y-m-d H:i:s",strtotime("-1 hours"))."        iOSDev: ".$d_ios_res."        androidDev: ".$d_and_res."  <b>(+".($d_and_res-$limit).")</b><br>";
+?>	

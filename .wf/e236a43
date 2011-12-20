@@ -1,0 +1,30 @@
+        
+        <h3><a href = "index.php?<?=time()?>">Facebook snadbox</a></h3>
+
+        <a href="dialog.html?<?= time() ?>" rel = "ajax">dialog</a>
+        <a href="requests.html?<?= time() ?>" rel = "ajax">requests</a>
+        <a href="login.html?<?= time() ?>" rel = "ajax">login</a>
+        <a href="me.html?<?= time() ?>" rel = "ajax">adobi</a> 
+        <a href="friends.html?<?= time() ?>l" rel = "ajax">friends</a>
+        <a href="lajks.html?<?= time() ?>" rel = "ajax">likes</a>        
+   
+	    <div id = "result">
+	        
+	    </div>
+	    <div id = "console">
+	        <em>debug console</em>
+	        <pre>
+	            
+	        </pre>
+	    </div>
+	    
+	    <script>
+	        jQuery(function() {
+	            jQuery('body').delegate('a[rel=ajax]', 'click', function() {
+	                
+	                jQuery('#result').load(jQuery(this).attr('href'));
+	                
+	                return false; 
+	            });
+	        });
+	    </script>

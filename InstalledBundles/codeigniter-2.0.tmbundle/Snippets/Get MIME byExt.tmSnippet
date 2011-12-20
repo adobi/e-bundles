@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Get MIME byExt</string>
+        <key>uuid</key>
+        <string>978E5176-09D3-4DC7-BA5C-EBC1373808AD</string>
+        <key>tabTrigger</key>
+        <string>getmime</string>
+        <key>content</key>
+        <string>get_mime_by_extension(${1:'${2:file}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

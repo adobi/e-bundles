@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;table-&gt;set_heading(${1:'${2:heading}'}${3:,'${4:heading}'${5:,'${6:heading}'${7:,'${8:heading}'${9:,'${10:heading}'}}}});${0}</string>
+	<key>name</key>
+	<string>Set Heading</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>citableheading</string>
+	<key>uuid</key>
+	<string>67E3D05B-60BE-4CE4-BCF5-F68D5AFA2D16</string>
+</dict>
+</plist>

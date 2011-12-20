@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;load-&gt;plugin(${1:'${2:name}'${3:, '${4:name}'${5:, '${6:name}'}}});${0}</string>
+	<key>name</key>
+	<string>Plugin</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciloadplugin</string>
+	<key>uuid</key>
+	<string>D65AD78F-9D59-4339-99B2-45076C230458</string>
+</dict>
+</plist>

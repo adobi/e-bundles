@@ -1,0 +1,52 @@
+
+<?php if($allNews) :?>
+<div style="float:left; overflow:hidden;" class = "all-news" >
+    
+    <?php foreach ($allNews as $allnews):?>
+    <div  class="news"  style="margin-top:0px; margin-left:0px; margin-bottom:10px;float:left; width: 100%;border-bottom:1px dashed #ddd;">
+        <h2 align="left" class="newstitle" style = "margin-bottom: 5px;"><?= $allnews['title']?></h2>
+        
+        <p style = "border:0px solid red; padding-top:0px;"><?php  
+           echo htmlspecialchars_decode($allnews["short_description"]);
+           ?>
+           <a  class="newsurl" href="<?=BASE_URL?>news/<?=$allnews['url']?>"> More <span class = "raquo" style = "top:0px;">&raquo;</span> </a></p> 
+        </p>    
+    </div>
+    <?php endforeach;?> 
+</div>
+<?php endif;?>
+ 
+<?php if($hir):?>
+    <div  class="news all-news"  align="justify" style="margin-top:0px; margin-left:0px; margin-bottom:10px;float:left;">
+        
+        <h2 align="left"  class="newstitle" style = "margin-bottom: 5px;"><?=$hir['title']?></h2>
+       
+        <p align="left"><?=htmlspecialchars_decode($hir['content'])?></p>
+    
+      
+    </div> 
+ <a href="<?= BASE_URL ?>news"><span class = "laquo" style = "top:0px;">&laquo;</span>Go back</a>
+<?php endif;?>
+     
+<script type="text/javascript">
+    $(window).load(function() {
+        
+        //$('.all-news').jScrollPane({showArrows:false});
+        
+        if( navigator.userAgent.match(/Android/i) ||
+            navigator.userAgent.match(/webOS/i) ||
+            navigator.userAgent.match(/iPhone/i) ||
+            navigator.userAgent.match(/iPod/i)
+        ){
+
+            $('.all-news').jScrollPane({showArrows:true}); 
+        } else {
+
+            $('.all-news').jScrollPane({showArrows:false}); 
+        }        
+    });
+</script>       
+     
+
+ 
+ 

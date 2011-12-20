@@ -1,0 +1,424 @@
+<?php  
+	require_once 'functions.php';
+	require_once 'crosspromo.php';
+?>
+
+    <?php require_once 'header.php'; ?>
+	
+	<body  style="" class="body-with-bg">    
+			
+		<div id="fb-root"></div>	
+		
+		<div class="container" id = "container">
+		    <p style="color:#fff;text-align:right; padding-top:5px; margin-bottom:0px;">
+    		    <a style="color:#fff;" href="javascript:void(0)" id="snow-off">turn off the snow</a> | 
+    		    <a  style="color:#fff;" href="javascript:void(0)" id="snow-on">turn on the snow</a>
+		    </p>
+			<div class="content">  
+				<div class="row" style="margin-bottom:5px;">
+					<div class="span3" id="logo">
+						<img src="<?php echo base_url() ?>images/logo.png" alt="">
+					</div>
+					<div class="span13" id = "header-ad">
+						<img src="http://placehold.it/810x90" alt="">
+					</div>
+				</div>  <!-- header-row -->    
+				<div class="row">
+					<div class="span4" id = "leftside-ad">
+						<img src="http://placehold.it/120x%20600" alt="">
+					</div>
+					<div class="span8" id="content">
+						<div class="span8" id="game-canvas">
+							<iframe src_="http://fbtest.invictus.hu/SantaRide/ipad0WebPlayer.html" frameborder="0"></iframe>
+						</div>
+						<div class="span8" id = "crosspromo" style="background-color:rgba(238,238,238,0.6);border-radius:4px;margin-bottom:20px; min-height:50px; height:auto;">
+						    <h5 style="margin-left:5px;color:#000;">More Invictus Games:</h6>
+							<ul class=" media-grid" data-tabs = "tabs"  id ="crosspromo-tabs">
+									
+								<?php foreach ($crosspromo as $i=>$item): ?>
+									<li>
+									<a href = "#<?php echo 'crosspromo-' . $i ?>" rel = "twipsy" title = "<strong style='font-size:1.1em;'><?php echo $item['title'] ?></strong>" data-html="true" data-placement="below" >
+										<img src="<?php echo base_url() ?>images/icons/<?php echo $item['small_icon'] ?>" alt="">
+									</a>
+									</li>
+								<?php endforeach ?>
+									
+							</ul>
+                    		<div class="span8 pill-content" style="display_:none;">
+                    			<?php foreach ($crosspromo as $i=>$item): ?>
+                    					
+                    				<div class="my-modal" id="crosspromo-<?php echo $i ?>"  style="margin-left:5px;" style_="position:inherit;margin:0px; z-index:1;top:inherit; min-width:480px;width:480px; left: inherit;">
+                    					<div class="modal-header">
+                    						<!-- <a class="close" href="#">×</a> -->
+                    						<h3 style="text-align:center;"><?php echo $item['title'] ?></h3>
+                    					</div>
+                    					<div class="modal-body">
+                    						<div class="row">
+                    							<div class="span3">
+                    								<img src="<?php echo base_url() ?>images/icons/<?php echo $item['big_icon'] ?>" alt="">
+                    							</div>
+                    							<div class="span5" style="margin-left:0px;">
+                    								<p><?php echo $item['description'] ?></p>
+                            						<div class="fb-like" data-href="<?php echo $item['facebook_page'] ?>" data-send="true" data-width="270" data-show-faces="true"></div>
+                    								
+                    							</div>
+                    						</div>
+                    						<?php if (isset($item['links']) && $item['links']): ?>
+                    							<h5>Available in:</h5>
+                    							<div class="row">
+                    								<?php foreach ($item['links'] as $link): ?>
+                    									<div class="span2" style = "width: 120px;">
+                    										<a href="<?php echo $link['url'] ?>" target = "_blank">
+                    											<img src="<?php echo base_url() ?>images/icons/<?php echo $link['image'] ?>" alt="">
+                    										</a>
+                    									</div>
+                    								<?php endforeach ?>
+                    							</div>
+                    						<?php endif ?>
+                    					</div>
+                    					<div class="modal-footer">
+                    						<a class="btn primary" href="javascript:void(0)" onclick = "jQuery('.active').removeClass('active')">Close</a>
+                    					</div>
+                    				</div>        
+                    			<?php endforeach ?>
+                    		</div>
+							
+						</div>	
+						
+						<div class="span8" id = "facebook-comment" style="clear:left;padding-top:20px; float:left">
+							<div class="fb-comments" data-href="invictus.hu/games/pc-games/santa-ride-1-2" data-num-posts="2" data-width="500"></div>
+						</div>
+					</div>
+					<div class="span5" id = "rightside-ad">
+					    <div id = "social">
+					       <span style="position:relative; top:-3px;"> <div class="fb-send" data-href="example.com"></div></span>
+					        
+					        <span><div class="g-plusone" data-size="medium" data-annotation="none"></div></span>
+
+					        <span><a href="https://twitter.com/share" class="twitter-share-button" data-url="example.com" data-text="Some text..." data-count="none" data-via="invictusgames">Tweet</a></span>
+					    </div>
+						<div id="donation">
+						    <div class="donation-header"></div>
+							<h4>Donate!</h4>
+							<p style="text-align:left; padding:5px;">
+								Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book
+							</p>
+                            <?php require_once 'paypal.php'; ?>
+						</div>
+						<div style="margin-bottom:10px;">
+							<img src="http://placehold.it/300x%20130" alt="">
+						</div>
+						<div id="facebook-like-box">
+							<div class="fb-like-box" data-href="http://www.facebook.com/raceofchampions.game" data-width="300" data-show-faces="true" data-stream="false" data-header="true"></div>        	                
+						</div>
+						
+						<div id="video-ad">
+							<img src="http://placehold.it/300x%20250" alt="">
+						</div>
+					</div>
+				</div> <!-- content-row -->
+				<div class="row">
+					<!-- 
+					<div class="span16" id = "facebook-comment">
+						<div class="fb-comments" data-href="invictus.hu" data-num-posts="2" data-width="480"></div>
+					</div>
+					 -->
+				</div> 
+			</div> <!-- /content -->   
+		</div> <!-- /container -->
+		<div style="display:none;">
+			<?php foreach ($crosspromo as $i=>$item): ?>
+					
+				<div class="modal hide fade" id="crosspromo-<?php echo $i ?>">
+					<div class="modal-header">
+						<a class="close" href="#">×</a>
+						<h3><?php echo $item['title'] ?></h3>
+					</div>
+					<div class="modal-body">
+						<div class="row">
+							<div class="span3">
+								<img src="<?php echo base_url() ?>images/icons/<?php echo $item['big_icon'] ?>" alt="">
+							</div>
+							<div class="span6">
+								<p><?php echo $item['description'] ?></p>
+        						<div class="fb-like" data-href="<?php echo $item['facebook_page'] ?>" data-send="true" data-width="400" data-show-faces="true"></div>
+								
+							</div>
+						</div>
+						<?php if (isset($item['links']) && $item['links']): ?>
+							<h5>Available in:</h5>
+							<div class="row">
+								<?php foreach ($item['links'] as $link): ?>
+									<div class="span2" style = "width: 120px;">
+										<a href="<?php echo $link['url'] ?>" target = "_blank">
+											<img src="<?php echo base_url() ?>images/icons/<?php echo $link['image'] ?>" alt="">
+										</a>
+									</div>
+								<?php endforeach ?>
+							</div>
+						<?php endif ?>
+					</div>
+					<div class="modal-footer">
+						<a class="btn primary" href="#" onclick = "jQuery('#crosspromo-<?php echo $i ?>').modal('hide')">Close</a>
+					</div>
+				</div>        
+			<?php endforeach ?>
+		</div>
+		
+		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1&appId=<?php echo app_id() ?>"></script>
+		<script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>
+        <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>		
+        <script type="text/javascript">
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+        
+		
+		<script type="text/javascript" src = "<?= base_url() ?>scripts/Three.js"></script>     	    
+		<script type="text/javascript" src = "<?= base_url() ?>scripts/Snow.js"></script>     	    
+		<script type="text/javascript" src = "<?php echo base_url() ?>scripts/snow-init.js"></script>		
+		<script type="text/javascript">
+			(function($) {
+				$(function() {
+					$('#my-modal').modal();
+					
+					$('[rel=twipsy]').twipsy();
+					
+					$('#snow-off').bind('click', function() {
+					    $('canvas').hide();
+					    $('#container').css('margin-top', -3);
+					});
+
+					$('#snow-on').bind('click', function() {
+					    $('canvas').show();
+					    $('#container').css('margin-top', -1*window.innerHeight);
+					});					
+					
+					//$('#crosspromo-tabs').pills();
+				});
+			}) (jQuery)
+		</script>
+		
+	</body>
+</html>    <?php  
+	require_once 'functions.php';
+	require_once 'crosspromo.php';
+?>
+
+    <?php require_once 'header.php'; ?>
+
+		<div class="container" id = "container">
+		    <div  class="span1" style="background-color:rgba(238,238,238,0.6);border-top-left-radius:4px;border-bottom-left-radius:4px;color:#000;text-align:right; padding-top:5px; margin-bottom:0px; position:fixed; top:50%; right:0;">
+    		    <a  style="color:#000;" href="javascript:void(0)" id="snow-on">
+    		        <img src="<?php base_url() ?>images/snow-on.png" alt="">
+    		    </a>
+    		    <br>
+    		    <a style="color:#000;" href="javascript:void(0)" id="snow-off">
+    		        <img src="<?php base_url() ?>images/snow-off.png" alt="">
+    		    </a>
+		    </div>
+			<div class="content">  
+				<div class="row" style="margin-bottom:5px;">
+					<div class="span3" id="logo">
+						<img src="<?php echo base_url() ?>images/120x90.png" alt="">
+					</div>
+					<div class="span13" id = "header-ad">
+					    <a href="http://invictus.com/news/race-of-champions-mobile-racing-game">
+						    <img src="<?php echo base_url() ?>images/banner_810x90.png" alt="">
+						</a>
+					</div>
+				</div>  <!-- header-row -->    
+				<div class="row">
+					<div class="span4" id = "leftside-ad">
+					    <a href="http://invictus.com/news/greed-corp">
+						    <img src="<?php echo base_url() ?>images/banner_120x600.png" alt="">
+						</a>
+					</div>
+					<div class="span8" id="content">
+						<div class="span8" id="game-canvas">
+						    <?php if ($_SERVER['SERVER_NAME'] !== 'localhost'): ?>
+								<iframe src="http://fbtest.invictus.hu/SantaRide/ipad0WebPlayer.html" frameborder="0"></iframe>
+						    <?php endif ?>
+						</div>
+						<div class="span8" style="width:500px;margin-top:10px;background-color:rgba(238,238,238,0.6);border-radius:4px;">
+						    <h5 style="margin-left:5px;color:#000;">Santa Ride also available on:</h6>
+    						<div  class="santa-stores media-grid" style="padding-top:8px;">
+    							<!-- <img src="http://placehold.it/300x%20130" alt=""> -->
+    							<a href="#" onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', 'Santa - Android Market - Phone', 1]);"><img src="<?php echo base_url() ?>images/icons/android_phone_badge_cs.png" alt=""></a>
+    							<a href="#" onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', 'Santa - Android Market - Tablet', 1]);"><img src="<?php echo base_url() ?>images/icons/android_tablet_badge_cs.png" alt=""></a>
+    							<a href="#" onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', 'Santa - iTunes - iPad', 1]);"><img src="<?php echo base_url() ?>images/icons/ipad_store_badge_cs.png" alt=""></a>
+    							<a href="#" onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', 'Santa - iTunes - iPhone', 1]);"><img src="<?php echo base_url() ?>images/icons/iphone_store_badge_cs.png" alt=""></a>
+    						</div>
+						    
+						</div>
+						<div class="span8" id = "crosspromo" style="background-color:rgba(238,238,238,0.6);border-radius:4px;margin-bottom:20px; min-height:50px; height:auto;">
+						    <h5 style="margin-left:5px;color:#000; margin-bottom:20px;">More Invictus Games:</h6>
+							<ul class=" media-grid" data-tabs = "tabs"  id ="crosspromo-tabs">
+									
+								<?php foreach ($crosspromo as $i=>$item): ?>
+									<li>
+									<a href = "#<?php echo 'crosspromo-' . $i ?>" rel = "twipsy" title = "<strong style='font-size:1.1em;'><?php echo $item['title'] ?></strong>" data-html="true" data-placement="above" 
+									    <?php if (isset($item['gaq_label'])): ?>
+									          onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', '<?php echo $item['gaq_label'] ?>', 1]);" 
+									    <?php endif ?>									    
+									>
+										<img src="<?php echo base_url() ?>images/icons/<?php echo $item['small_icon'] ?>" alt="">
+									</a>
+									</li>
+								<?php endforeach ?>
+									
+							</ul>
+                    		<div class="span8 pill-content" style="display_:none;">
+                    			<?php foreach ($crosspromo as $i=>$item): ?>
+                    					
+                    				<div class="my-modal" id="crosspromo-<?php echo $i ?>"  style="margin-left:5px;" style_="position:inherit;margin:0px; z-index:1;top:inherit; min-width:480px;width:480px; left: inherit;">
+                    					<div class="modal-header">
+                    						<!-- <a class="close" href="#">×</a> -->
+                    						<h3>
+                    						    <img src="<?php echo base_url() ?>images/icons/<?php echo $item['icon'] ?>" alt="">
+                    						    <span style="position:relative; top:-10px;"><?php echo $item['title'] ?></span>
+                						    </h3>
+                    					</div>
+                    					<div class="modal-body">
+                    					    <div class="span7" style="margin-bottom:10px;">
+                						    <div class="fb-like" data-href = "<?php echo $item['facebook_page'] ?>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+                						    </div>
+                    						<div class="span7 media-grid">
+                    						    <?php echo $item['youtube'] ?>
+                    						</div>
+                    						<div class="span7">
+                    						    <h5>About the game:</h5>
+                								<p><?php echo $item['description'] ?></p>
+                    						</div>
+                    						<?php if (isset($item['links']) && $item['links']): ?>
+                    							<h5>Available in:</h5>
+                    							<div class="span9  media-grid" style="margin-left:-10px;">
+                    								<?php foreach ($item['links'] as $link): ?>
+                    									<!-- <div class="span2" style = "width: 110px; margin-left:10px"> -->
+                    										<a href="<?php echo $link['url'] ?>" target = "_blank" style = "display:inline-block; height:41px;width: 110px;"
+                    										    <?php if (isset($link['gaq_label'])): ?>
+                    										          onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', '<?php echo $link['gaq_label'] ?>', 1]);" 
+                    										    <?php endif ?>
+                    										>
+                    											<img src="<?php echo base_url() ?>images/icons/<?php echo $link['image'] ?>" alt="">
+                    										</a>
+                    									<!-- </div> -->
+                    								<?php endforeach ?>
+                    							</div>
+                    						<?php endif ?>
+                    						
+                    					</div>
+                    					
+                    					<div class="modal-footer">
+                    						    
+                    						<a class="btn primary" href="javascript:void(0)" onclick = "jQuery('.active').removeClass('active')">Close</a>
+                    					</div>
+                    				</div>        
+                    			<?php endforeach ?>
+                    		</div>
+							
+						</div>	
+						
+						<div class="span8" id = "facebook-comment" style="clear:left;padding-top:20px; float:left">
+							<div class="fb-comments" data-href="http://santaride.invictus.com" data-num-posts="2" data-width="500"></div>
+						</div>
+					</div>
+					<div class="span5" id = "rightside-ad">
+					    <div id = "social">
+					       <span style="position:relative; top:-3px;"><div class="fb-send" data-href="http://bit.ly/santaridegame"></div></span>
+					        
+					        <span><div class="g-plusone" data-size="medium" data-annotation="none"></div></span>
+
+					        <span><a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/santaridegame" data-text="Check out Santa Ride, the official Christmas game of Invictus Games Ltd! " data-count="none" data-via="invictusgames">Tweet</a></span>
+					    </div>
+						<div id="donation">
+						    <div class="donation-header"></div>
+							<p style="text-align:left; padding:5px;">
+							    <p>Santa asks for your help to collect and distribute the lost gifts to children by making him ride through the valley and racing to their houses.</p>
+                                <p>Santa and Invictus also ask you to help children in the real world: in this year, we give a platform for <a target = "_blank" href="http://www.facebook.com/pages/K%C5%91szikla-Alap%C3%ADtv%C3%A1ny/292861434080669?sk=wall">Kőszikla Alapítvány - The Rock Foundation</a>  helping children and adults from two underdeveloped countries, Ukraine and Romania, to get medical care in Hungary. </p>
+                                <p>We also transfer the whole profit Invictus will be earning from Santa Ride to the foundation.</p>
+							</p>
+                            <?php require_once 'paypal.php'; ?>
+						</div>
+						<!-- 
+						<div  class="santa-stores" style="margin-bottom:10px;">
+							<a href="#"><img src="<?php echo base_url() ?>images/icons/android_phone_badge_cs.png" alt=""></a>
+							<a href="#"><img src="<?php echo base_url() ?>images/icons/android_tablet_badges_cs.png" alt=""></a>
+							<a href="#"><img src="<?php echo base_url() ?>images/icons/ipad_store_badge_cs.png" alt=""></a>
+							<a href="#"><img src="<?php echo base_url() ?>images/icons/iphone_store_badge_cs.png" alt=""></a>
+						</div>
+					    -->
+						<div id="facebook-like-box">
+							<div class="fb-like-box" data-href="https://www.facebook.com/santaride.game" data-width="300" data-show-faces="true" data-stream="false" data-header="true"></div>        	                
+						</div>
+						
+						<div id="video-ad">
+						    <div class="slides_container">
+						        <div>
+						            <iframe width="300" height="250" src="http://www.youtube.com/embed/m94CTguzqqA" frameborder="0" allowfullscreen></iframe>
+						        </div>
+						        <div>
+						            <iframe width="300" height="250" src="http://www.youtube.com/embed/A3pRaAub07c" frameborder="0" allowfullscreen></iframe>
+						        </div>						        
+						        <div>
+						            <iframe width="300" height="250" src="http://www.youtube.com/embed/enIejTuR9Fk" frameborder="0" allowfullscreen></iframe>
+						        </div>
+						    </div>
+							<!-- <img src="http://placehold.it/300x%20250" alt=""> -->
+						</div>
+					</div>
+				</div> <!-- content-row -->
+				<div class="row">
+					<!-- 
+					<div class="span16" id = "facebook-comment">
+						<div class="fb-comments" data-href="invictus.hu" data-num-posts="2" data-width="480"></div>
+					</div>
+					 -->
+				</div> 
+			</div> <!-- /content -->   
+		</div> <!-- /container -->
+
+		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1&appId=<?php echo app_id() ?>"></script>
+		<script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>
+        <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>		
+        <script type="text/javascript">
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+        
+		
+		<script type="text/javascript" src = "<?= base_url() ?>scripts/Three.js"></script>     	    
+		<script type="text/javascript" src = "<?= base_url() ?>scripts/Snow.js"></script>     	    
+		<script type="text/javascript" src = "<?php echo base_url() ?>scripts/snow-init.js"></script>		
+		<script type="text/javascript">
+			(function($) {
+				$(function() {
+					$('#my-modal').modal();
+					
+					$('[rel=twipsy]').twipsy();
+					
+					$('#snow-off').bind('click', function() {
+					    //$('canvas').hide();
+					    //$('#container').css('margin-top', 0);
+					    stop();
+					});
+
+					$('#snow-on').bind('click', function() {
+					    //$('canvas').show();
+					    //$('#container').css('margin-top', -1*window.innerHeight);
+					    start();
+					});					
+					
+					//$('#crosspromo-tabs').pills();
+				});
+			}) (jQuery)
+		</script>
+		
+	</body>
+</html>    

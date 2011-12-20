@@ -1,0 +1,22 @@
+        <script type="text/javascript">
+             
+             FB.api('/adobi', function(response) {
+                 
+                 $('#console pre').html(JSON.stringify(response, null, '\t'));
+             });
+                                
+        </script>           <script type="text/javascript">
+             
+             FB.api('/adobi', function(response) {
+                 
+                 $('#console pre').html(JSON.stringify(response, null, '\t'));
+             });
+                                
+        </script>           <script type="text/javascript">
+             
+             FB.api('/adobi', function(response) {
+                 
+                 jQuery('#console pre').html(JSON.stringify(response, null, '\t'));
+             });
+                                
+        </script>   

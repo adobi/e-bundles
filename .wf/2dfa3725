@@ -1,0 +1,30 @@
+
+<!-- <div class="row" style="margin-top:20px;">
+    <div class = "span1"  style="width: 72px;">
+        <img src="<?php echo base_url() ?>images/roc-icon.png" alt="">
+    </div>
+    <div class = "span6"  style="border:0px solid red;padding-top:30px;">
+        <span style="font-size:1.4em; font-weight:bold;" class="orange">Race Of Champions Mobile Game</span>
+    </div>
+</div>
+ -->
+<div id="leaderboard-container" class="span8" style="margin-top:0px; padding-top:120px;">
+    <ul class="tabs">
+        <li class="active">
+            <a href="<?php echo base_url() ?>leaderboard/prestige" data-link = "tab" id = "prestige-tab">By prestige</a>
+        </li>
+        <li>
+            <a href="<?php echo base_url() ?>leaderboard/country" data-link = "tab">By country</a>
+        </li>
+        <li>
+            <a href="<?php echo base_url() ?>leaderboard/track" data-link = "tab">By track</a>
+        </li>
+        <li>
+            <a href="<?php echo base_url() ?>leaderboard/top" data-link = "tab">Top recorders</a>
+        </li>
+    </ul>
+    <div class="span8 tab-content">
+        
+    </div>
+</div>
+

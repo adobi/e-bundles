@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;typography-&gt;protect_braced_quotes = ${1:TRUE};${0}</string>
+	<key>name</key>
+	<string>Protect Braced Quotes</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>citypobracedquotes</string>
+	<key>uuid</key>
+	<string>2A74C0BB-359A-41D6-B47C-F6AD25C11E40</string>
+</dict>
+</plist>

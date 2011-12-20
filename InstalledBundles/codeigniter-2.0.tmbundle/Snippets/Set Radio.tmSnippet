@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>echo set_radio('${1:name}', '${2:value}'${3:, ${4:TRUE}});${0}</string>
+	<key>name</key>
+	<string>Set Radio</string>
+	<key>tabTrigger</key>
+	<string>cisetradio</string>
+	<key>uuid</key>
+	<string>F02D9229-61B9-4638-94AA-441F152AFF85</string>
+</dict>
+</plist>

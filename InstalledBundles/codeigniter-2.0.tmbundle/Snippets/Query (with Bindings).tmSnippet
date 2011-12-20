@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;db-&gt;query('\$${1:sqlvar}', '\$${2:arrayvar}');${0}</string>
+	<key>name</key>
+	<string>Query (with Bindings)</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cidbquerybind</string>
+	<key>uuid</key>
+	<string>E79A8224-5184-4CE6-A982-753E225F8BD1</string>
+</dict>
+</plist>

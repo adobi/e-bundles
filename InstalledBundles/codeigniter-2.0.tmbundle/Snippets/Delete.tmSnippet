@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;db-&gt;delete('${1:table}');$[0}</string>
+	<key>name</key>
+	<string>Delete</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cidbdel</string>
+	<key>uuid</key>
+	<string>00DCB9F6-C36A-487B-966D-40B2FCFD8ECF</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;cart-&gt;destroy();${0}</string>
+	<key>name</key>
+	<string>Destroy</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cicartdestroy</string>
+	<key>uuid</key>
+	<string>4110975D-D15F-4488-9F73-D839B1E0EABD</string>
+</dict>
+</plist>

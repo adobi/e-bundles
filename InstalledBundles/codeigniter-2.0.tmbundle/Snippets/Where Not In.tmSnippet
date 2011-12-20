@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;db-&gt;where_in('${1:field}', \$${2:array});${0}</string>
+	<key>name</key>
+	<string>Where Not In</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cidbwherenotin</string>
+	<key>uuid</key>
+	<string>6A7F69F2-94B3-4757-8939-B76E0745FA49</string>
+</dict>
+</plist>

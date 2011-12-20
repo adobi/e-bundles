@@ -1,0 +1,52 @@
+      
+   <?php   if (isset($mainMenus) && $mainMenus) : ?>
+       
+            <div style="width:950px; height: 25px;  position:relative;overflow: hidden; top:40px; left:2px; z-index:8;">
+     <div style="position:relative;top:0px; left:80px; width:950px; padding:0px; float:left;clear:right">
+           
+            <img  src="<?= BASE_URL ?>img/main_menu_button_bg2.gif" style="float: left; margin-right: 5px;"/> 
+            <img  src="<?= BASE_URL ?>img/main_menu_button_bg2.gif" style="float: left; margin-right: 5px;"/> 
+            <img  src="<?= BASE_URL ?>img/main_menu_button_bg2.gif" style="float: left; margin-right: 5px;"/> 
+            <img  src="<?= BASE_URL ?>img/main_menu_button_bg2.gif" style="float: left; margin-right: 5px;"/> 
+            <img  src="<?= BASE_URL ?>img/main_menu_button_bg2.gif" style="float: left; margin-right: 5px;"/> 
+            <img  src="<?= BASE_URL ?>img/main_menu_button_bg2.gif" style="float: left; margin-right: 5px;"/> 
+            <img  src="<?= BASE_URL ?>img/main_menu_button_bg2.gif" style="float: left; margin-right: 5px;"/> 
+            <img  src="<?= BASE_URL ?>img/main_menu_button_bg2.gif" style="float: left; margin-right: 5px;"/> 
+					<a href="http://twitter.com/invictusgames" target = "_blank" class = "twitter"></a>
+					<a href="http://www.facebook.com/pages/Invictus-Games/109331229092886" target = "_blank" class = "facebook"></a>
+            </div>
+             
+            <?php  foreach ($mainMenus as $menu) : ?>
+               
+       <div class="menuelem" style="height: 50px; width:85px; float:left; position:relative; left:80px; top:-25px;margin-right:5px;vertical-align:top; padding-left: 2px;">
+            <div style="text-align:center;width:85px;">       
+                         <a class="menuelem" href="<?= BASE_URL . ($menu['url'] === 'home' ? '' : $menu['url'])  ?>" style="font-weight:bold; color:white; font-size:14px;text-decoration:none; text-align:center;">
+                             <?= $menu['name'] ?> 
+                        </a>
+                    </div >
+                   <div style="text-align:center;position:relative; width:85px;  ">
+                        <a class="menuelem"  href="<?= BASE_URL . ($menu['url'] === 'home' ? '' : $menu['url']) ?>" style="font-weight:bold; color:yellow; font-size:14px;text-decoration:none;">
+                             <?= $menu['name'] ?> 
+                        </a>
+                  </div>
+              </div>
+                 
+            <?php endforeach; ?>
+             </div> 
+             <?php endif ;?>
+            
+   <script language="javascript">
+    $(document).ready(function(){
+        $(".menuelem").hover(
+        function(){
+            //onmouseover
+            $(this).animate({top:'-48'},500);
+        },
+        function(){
+            //onmouseout
+            $(this).animate({top:'-25'},500);
+        });
+    });
+
+ 
+</script>

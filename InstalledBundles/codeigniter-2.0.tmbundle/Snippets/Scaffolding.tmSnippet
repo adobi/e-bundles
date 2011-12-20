@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;load-&gt;scaffolding('${1:table_name}');${0}</string>
+	<key>name</key>
+	<string>Scaffolding</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciloadscaffold</string>
+	<key>uuid</key>
+	<string>EBC12906-EF4D-4FF7-BEC4-6D662D2052DC</string>
+</dict>
+</plist>

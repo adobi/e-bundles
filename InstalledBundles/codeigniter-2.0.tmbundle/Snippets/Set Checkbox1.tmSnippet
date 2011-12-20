@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Set Checkbox</string>
+        <key>uuid</key>
+        <string>4581B40F-26CF-4CC3-8158-F91F23FB9641</string>
+        <key>content</key>
+        <string>set_checkbox(${1:'${2:name}', '${3:value}'${4:, ${5:TRUE}}});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+        <key>tabTrigger</key>
+        <string>setcheckbox</string>
+    </dict>
+</plist>

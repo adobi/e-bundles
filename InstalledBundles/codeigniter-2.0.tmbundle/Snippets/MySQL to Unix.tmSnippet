@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>MySQL to Unix</string>
+        <key>uuid</key>
+        <string>D05FD49D-48C8-45E0-8E33-EFB25119FA46</string>
+        <key>tabTrigger</key>
+        <string>mysql2unix</string>
+        <key>content</key>
+        <string>mysql_to_unix(${1:'${2:mysql_time}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

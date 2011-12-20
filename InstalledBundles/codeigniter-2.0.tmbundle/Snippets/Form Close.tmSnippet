@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Form Close</string>
+        <key>uuid</key>
+        <string>F8CCF39F-9CDA-490E-A78A-EBDAE5948E3B</string>
+        <key>content</key>
+        <string>form_close(${1:'${2:below tag}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+        <key>tabTrigger</key>
+        <string>formclose</string>
+    </dict>
+</plist>

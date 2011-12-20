@@ -1,0 +1,53 @@
+<?php		
+	include_once('config.php');
+	$testSecretCode=md5("A89lm2hJk".$_POST['devid']."S4nyi".$_POST['rnum']."Z2Wbe".$_POST['fbid']."l4szl0");
+	if ($_POST['secretcode'] != $testSecretCode) {
+	            die("FAIL");
+	}
+	//Van hozzá már megvásárolva a devid-hoz license?
+   	$testDevID = "select count(*) as FullVersion from used_licenses where devid = '".$_POST['devid']."'";
+	$QTest = mysql_query ($testDevID,$sqlDB);
+	if (!$QTest) die("FAIL");		
+	if ( mysql_num_rows( $QTest )) {
+		$row = mysql_fetch_assoc($QTest);
+		if ($row['FullVersion'] > 0 ) {
+			$backSecretCode=md5("l1tTl3bOB".$_POST['devid']."R3teK".$_POST['rnum']."OffM3");
+			echo $backSecretCode;
+			die();
+		}
+		mysql_free_result($QTest);
+	}
+
+	$maxLicenses = 0;
+   	$getMaxLincenses = "select IF (sum(pieces) is NULL, 0, sum(pieces)) as maxl from orders as o join licenses as l on o.license = l.id where facebook_id = '".$_POST['fbid']."'";
+	$QGetML = mysql_query ($getMaxLincenses,$sqlDB);
+	if (!$QGetML) die("FAIL");		
+	if ( mysql_num_rows( $QGetML )) {
+		$row = mysql_fetch_assoc($QGetML);
+		$maxlicenses = $row['maxl'];
+	}
+	
+	//Van még license?
+	$usedLicenses = 0;
+	$getUsedLicenses = "select count(*) as usedl from used_licenses where fbid = '".$_POST['fbid']."'";
+	$QGetUL = mysql_query ($getUsedLicenses,$sqlDB);
+	if (!$QGetUL) die("FAIL");		
+	if ( mysql_num_rows( $QGetUL )) {
+		$row = mysql_fetch_assoc($QGetUL);
+		$usedLicenses = $row['usedl'];
+		mysql_free_result($QGetUL);
+	}
+	
+	
+	//Megadjuk neki!
+	if ($usedLicenses < $getMaxLincenses) {
+		$addLicenses = "insert into used_licenses(fbid,devid) values('".$_POST['devid']."','".$_POST['fbid']."')";
+		$QAddL = mysql_query ($addLicenses,$sqlDB);
+		if (!$QAddL) die("FAIL");		
+		$backSecretCode=md5("m4R1sKa73".$_POST['devid']."L4kAt0S".$_POST['rnum']."onT7b3".$_POST['fbid']."m4X1m");
+		echo $backSecretCode;
+		die();		
+	} else {
+		die("NOLICENSE");
+	}
+?>

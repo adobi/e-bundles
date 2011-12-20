@@ -1,0 +1,4 @@
+   <script>
+     FB.ui({ method: 'apprequests', 
+       message: 'Here is a new Requests dialog...'});
+   </script>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Unix to Human</string>
+        <key>uuid</key>
+        <string>7DDAC413-64F0-4067-A0A8-D6B0003F5CFB</string>
+        <key>tabTrigger</key>
+        <string>unix2human</string>
+        <key>content</key>
+        <string>unix_to_human(${1:'${2:timestamp}'}${3:, ${4:TRUE}${5:, ${6:'us'}}});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

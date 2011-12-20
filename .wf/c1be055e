@@ -1,0 +1,253 @@
+<style type="text/css">
+    #stat-filter-time .selected-filter, #stat-filter-type .selected-filter, #license-filter-type .selected-filter {
+        color:#ffffff;text-decoration:none;text-shadow:0 1px 1px rgba(0, 0, 0, 0.25);background-color:#00438a;
+    }
+    #chart_div table td {
+        padding:0px;
+        border-top:0px;
+    }
+    .pills .close {
+        background-color: transparent!important;
+        text-shadow:none;
+        display:inline-block;
+        line-height:inherit;
+        margin:0;
+        padding:0;
+        margin-left:5px;
+        margin-right:-7px;
+        opacity: 0.4;
+        
+    }
+    
+    #charts div {
+        border-bottom:1px solid #ddd;
+        margin-bottom:20px;
+    }
+</style>
+
+
+<?php if ($this->session->userdata('logged_in')): ?>
+    
+<ul class="pills" data-pills = "pills" id = "main-content-pills">
+    <li <?php echo $_POST ? (isset($_POST['stat_type']) && $_POST['stat_type'] === 'usage' ? 'class = "active"' : '') : 'class = "active"' ?>><a href="#usage-filters">Usage</a></li>
+    <li <?php echo isset($_POST['stat_type']) && $_POST['stat_type'] === 'orders' ? 'class = "active"' : '' ?>><a href="#orders-filters">Orders</a></li>
+</ul>
+
+<?php endif; ?>
+<div class="pill-content">
+    <?php if ($this->session->userdata('logged_in')): ?>
+    <div <?php echo $_POST ? (isset($_POST['stat_type']) && $_POST['stat_type'] === 'usage' ? 'class = "active"' : '') : 'class = "active"' ?> id="usage-filters">
+        <?php echo form_open('', array('id'=>'filters-form')) ?>
+        
+            <div class="span7" style="float:left;">
+                <p>
+                    Select a chart type
+                </p>
+                <ul class="pills" id ="stat-filter-time">
+                    <li class="active">
+                        <a href="javascript:void(0);" <?php echo $_POST && isset($_POST['hourly']) && $_POST['hourly'] ? 'class = "selected-filter"' : '' ?>>Hourly</a>
+                        <input type="hidden" name="hourly" value = "<?php echo $_POST && isset($_POST['weekly']) ? $_POST['hourly'] : '' ?>"/>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:void(0);" <?php echo $_POST && isset($_POST['daily']) && $_POST['daily'] ? 'class = "selected-filter"' : '' ?>>Daily</a>
+                        <input type="hidden" name="daily" value = "<?php echo $_POST && isset($_POST['daily']) ? $_POST['daily'] : '' ?>"/>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:void(0);" <?php echo $_POST && isset($_POST['weekly']) && $_POST['weekly'] ? 'class = "selected-filter"' : '' ?>>Weekly</a>
+                        <input type="hidden" name="weekly" value = "<?php echo $_POST && isset($_POST['weekly']) ? $_POST['weekly'] : '' ?>"/>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:void(0);" <?php echo $_POST && isset($_POST['monthly']) && $_POST['monthly'] ? 'class = "selected-filter"' : '' ?>>Monthly</a>
+                        <input type="hidden" name="monthly" value = "<?php echo $_POST && isset($_POST['monthly']) ? $_POST['monthly'] : '' ?>"/>
+                    </li>
+                </ul>
+            </div>
+            <div class="span9" style="float:left;" id="stat-filter-type">
+                <p>
+                    Select a device and user type
+                </p>
+                <ul class="pills span4" style="float:left;">
+                    <li><span>iOS:</span></li>
+                    <li class="active">
+                        <a href="javascript:void(0);" data-column = "Users_iOS" <?php echo $_POST && isset($_POST['columns'][0]) && $_POST['columns'][0] === 'Users_iOS' ? 'class = "selected-filter"' : '' ?>>User</a>
+                        <input type="hidden" name="columns[]" value = "<?php echo $_POST && isset($_POST['columns'][0]) ? $_POST['columns'][0] : '' ?>"/>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:void(0);" data-column = "Dev_iOS" <?php echo $_POST && isset($_POST['columns'][1]) && $_POST['columns'][1] === 'Dev_iOS' ? 'class = "selected-filter"' : '' ?>>Device</a>
+                        <input type="hidden" name="columns[]" value = "<?php echo $_POST && isset($_POST['columns'][1]) ? $_POST['columns'][1] : '' ?>"/>
+                    </li>
+                </ul>
+                <ul class="pills span5" style="float:left">
+                    <li><span>Android:</span></li>
+                    <li class="active">
+                        <a href="javascript:void(0);" data-column = "Users_ANDROID"  <?php echo $_POST && isset($_POST['columns'][2]) && $_POST['columns'][2] === 'Users_ANDROID' ? 'class = "selected-filter"' : '' ?>>User</a>
+                        <input type="hidden" name="columns[]" value = "<?php echo $_POST && isset($_POST['columns'][2]) ? $_POST['columns'][2] : '' ?>"/>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:void(0);" data-column = "Dev_ANDROID"  <?php echo $_POST && isset($_POST['columns'][3]) && $_POST['columns'][3] === 'Dev_ANDROID' ? 'class = "selected-filter"' : '' ?>>Device</a>
+                        <input type="hidden" name="columns[]" value = "<?php echo $_POST && isset($_POST['columns'][3]) ? $_POST['columns'][3] : '' ?>"/>
+                    </li>
+                </ul>
+                <!--
+                <ul class="pills">
+                    <li><span>Other:</span></li>
+                    <li class="active">
+                        <a href="javascript:void(0)">Replay</a>
+                        <input type="hidden" name="replay" value = ""/>
+                    </li>
+                </ul>
+                -->
+            </div>
+            <div class="span16" style="float:left; margin-bottom:20px;">
+                <div class="span5" style="float:left">
+                    <p>Start date</p>
+                    <input type="text" name = "start_date"  class = "large datepicker" value = "<?php echo $_POST ? $_POST['start_date'] : date('Y-m-d') ?>"/>
+                </div>
+                <div class="span5" style="float:left">
+                    <p>End date</p>
+                    <input type="text" name = "end_date"  class = "large datepicker" value = "<?php echo $_POST ? $_POST['end_date'] : date('Y-m-d') ?>"/>
+                </div>
+            </div>
+            <div class="actions" style="clear:both;padding-left:15px;">
+                <input type="submit" value="Show" class="btn primary"> &nbsp; <a href = "javascript:void(0)" class="btn" type="reset" id="reset-filters">Reset Filters</a>
+            </div> 
+            
+            <input type="hidden" name = "stat_type" value = "usage">
+             
+        <?php echo form_close(); ?>
+    </div>
+    <?php endif; ?>    
+    <div id="orders-filters" <?php echo $_POST ? (isset($_POST['stat_type']) && $_POST['stat_type'] === 'orders' ? 'class = "active"' : '') : ($this->session->userdata('logged_in_visitor') ? 'class="active"':'') ?>>
+        <?php echo form_open('', array('id'=>'_orders-filters')) ?>
+        
+            <div class="span15" id = "license-filter-type">
+                <p>Select a license</p>
+                <ul class="pills">
+                    <?php foreach ($licenses as $item): ?>
+                        <li class="active">
+                            <a href="javascript:;" data-column = "<?php echo $item->id ?>" <?php echo $_POST && isset($_POST['license_ids']) && in_array($item->id, $_POST['license_ids']) ? 'class="selected-filter"' : '' ?>><?php echo $item->name ?></a>
+                            <input type="hidden" name="license_ids[]" value = "<?php echo $_POST && isset($_POST['license_ids']) && in_array($item->id, $_POST['license_ids']) ? $item->id : '' ?>"/>
+                        </li>
+                    <?php endforeach ?>
+                </ul>
+            </div>
+            <div class="span16" style="float:left; margin-bottom:20px;">
+                <div class="span5" style="float:left">
+                    <p>Start date</p>
+                    <input type="text" name = "start_date"  class = "large datepicker" value = "<?php echo $_POST ? $_POST['start_date'] : date('Y-m-d') ?>"/>
+                </div>
+                <div class="span5" style="float:left">
+                    <p>End date</p>
+                    <input type="text" name = "end_date"  class = "large datepicker" value = "<?php echo $_POST ? $_POST['end_date'] : date('Y-m-d') ?>"/>
+                </div>
+            </div>
+            
+            <div class="span16" style="float:left; margin-bottom:20px;">
+                <label>
+                    <input type="checkbox" value = "1" name="accumulative_data" <?php echo $_POST && isset($_POST['accumulative_data']) ? 'checked = "checked"' : '' ?>> Accumulative data
+                </label>
+            </div>
+            
+            <div class="actions" style="clear:both;padding-left:15px;">
+                <input type="submit" value="Show" class="btn primary"> &nbsp; <a href = "javascript:void(0)" class="btn" type="reset" id="reset-filters">Reset Filters</a>
+            </div> 
+            
+            <input type="hidden" name = "stat_type" value = "orders">
+             
+        <?php echo form_close(); ?>
+    </div>
+</div>
+
+<?php if ($_POST && isset($_POST['stat_type']) && $_POST['stat_type'] === 'orders'): ?>
+    <h3 style="text-align:center">Orders</h3>
+    <table class="bordered-table zebra-striped">
+        <thead>
+            <tr>
+                <th>License</th>
+                <th>Sum</th>
+            </tr>
+        </thead>
+        <tbody>
+            <?php $sum=0; foreach ($incomes as $item): ?>
+                <tr>
+                    <td><?php echo $item->license_name ?></td>
+                    <td><?php echo $item->license_income ?> $</td>
+                </tr>
+                <?php $sum += $item->license_income ?>
+            <?php endforeach ?>
+        </tbody>
+        <tfoot>
+            <tr>
+                <td colspan="2" style="text-align:right; font-weight:bold;">Total: <?php echo $sum ?> $</td>
+            </tr>
+        </tfoot>
+    </table>
+    
+<?php endif ?>
+
+<div class="span16" id="charts">
+
+</div>
+
+<script type='text/javascript' src='http://www.google.com/jsapi'></script>
+<script type="text/javascript">
+    google.load('visualization', '1', {'packages':['annotatedtimeline', 'corechart']});
+    google.setOnLoadCallback(drawVisualization);
+    
+    <?php if ($data): ?>
+        function drawVisualization() {
+            
+            var serverData = JSON.parse('<?php echo $data ?>');
+            console.log(serverData);
+            for (var j in serverData) {
+                var chartData = serverData[j];
+                // Create and populate the data table.
+                var data = new google.visualization.DataTable();
+                //console.log(chartData);
+                //console.log('Columns');
+                
+                for (var c in chartData.columns) {
+                    var type = 'number';
+                  
+                    if (chartData.columns[c] == 'StatTime') {
+                        type = 'string';
+                    }
+                    //console.log(values.columns[c]);
+                    data.addColumn(type, chartData.columns[c]);
+                }
+                //console.log(data.toJSON());
+                //console.log('Values');
+              
+                for (var i = 0; i < chartData.values.length; i++) {
+                    var val = chartData.values[i];
+                    var param = [];
+                    for (var p in val) {
+                        if (p === 'StatTime') {
+                            param.push(val[p]);
+                        } else {
+                            param.push(parseInt(val[p], 10));
+                        }
+                      //param.push(parseInt(val[p], 10));
+                      }
+                      //console.log(val);
+                      data.addRow(param);
+                }
+                //console.log(data.toJSON());
+            
+                jQuery('#charts').append(jQuery('<div />', {id: chartData.div, style: 'width: 940px; height: 500px;'}));
+                
+                // Create and draw the visualization.
+                new google.visualization.LineChart(document.getElementById(chartData.div)).
+                  draw(data, {curveType: "function",
+                              width: 940, height: 500,
+                              }
+                      );
+                var selector = '#' + chartData.div;
+                
+                jQuery(selector).before('<h3 style="text-align:center">' + chartData.chart_title + '</h3>');
+            }
+        }
+    <?php else: ?>
+        function drawVisualization() {};
+    <?php endif ?>
+</script>

@@ -1,0 +1,105 @@
+
+<div class='newsindex' style="width: 350px;font-family:tahoma, arial, sans-seriff!important;position:relative;top:-560px;left:741px; z-index:1000!important;">
+  <?php if($newsindex): ?>
+       <?php foreach ($newsindex as $newse):?>
+     
+<!--       <div  class="news-alma" style="float: left; margin-top:0px;" >
+        <div style='float:left;width:234px;height:25px;padding-top:px;border:0px solid red;'>
+            <img class='news_link_more' src='img/design/news_bg.png'/> 
+        </div>
+      
+        <div  class="newsindexshadow">
+            <div class = "news-inner">
+                    
+                <img style = "border:0px solid red" class='news_link_more' src='img/news_link_more.gif'/> 
+                <a style=" width: 153px; display:inline-block;font-size:12px;text-decoration: none; color: white;" href="<?=BASE_URL?>news/<?=$newse['url']?>">
+                    <?=$newse['title']?>
+                </a>  
+            </div>
+        </div>     
+    </div> -->
+    <div  class="newsindexshadow" style="float: left; margin-bottom:5px;" >
+        <table width="100%" height="10px" border=0>
+            <tr>
+                <td width="228px" height="25px" align="left" style="vertical-align:top;">
+                    <table width="100%" height="100%" border=0>
+                        <tr>
+                            <td colspan="2" height="3px"></td>
+                        </tr>
+                        <tr>
+                            <td width="15px" style="background: url(<?=BASE_URL."img/design/news_bg_left_top.gif"  ?>)" hegiht="25px">
+                            </td>
+                            <td style="background:#ff9600;">
+                                <table width="100%" height="100%" border=0>
+                                <tr>
+                                    <td style = "vertical-align:middle; padding:5px 0;"> <img style = "border:0px solid red" class='news_link_more' src='img/news_link_more.gif'/> </td>
+                                    <td style = " text-align:left; padding:5px 0;">
+                                        <a style="display:inline-block;font-size:12px;text-decoration: none; color: white;" href="<?=BASE_URL?>news/<?=$newse['url']?>">
+                                            <?=$newse['title']?>
+                                        </a>  
+                                    </td>
+                                </tr>
+                                </table>    
+                            </td>
+                        </tr>
+                    </table>    
+                </td>
+                <td width="6px" height="25px" style="background: url(<?=BASE_URL."img/design/news_bg_right.gif"  ?>)"></td>
+            </tr>
+            <tr>
+        </table>    
+    </div>
+    
+  <?php endforeach;?>
+  
+            <!-- 
+      <div  class="news-alma" style="float: left; margin-top:0px; " >
+          <div style='width: 15px;height: 35px; float:left;'>
+            <img src='img/news_link_left.gif' /> 
+         </div>
+        <div style='float:left;width:234px;height:25px;padding-top:0px;border:0px solid red;'>
+            <img class='news_link_more' src='img/design/news_bg.png'/> 
+        </div>
+      
+        <div class="newsindexshadow" _style='float:left;width:200px;overflow:hidden;height:25px;padding-top: 0px;background:#ff9600;'>
+            <img style = "border:1px solid red" class='news_link_more' src='img/news_link_more.gif'/> 
+            <a  style="font-size:13px;text-decoration: none; color: white;"href="<?=BASE_URL?>news/<?php $newsurl['url']?>">more news...</a>  
+         
+        </div>     
+    </div>
+             -->
+    <div  class="newsindexshadow" style="float: left; margin-bottom:5px;" >
+        <table width="100%" height="10px" border=0 >
+            <tr>
+                <td width="228px" height="25px" align="left" style="vertical-align:top;">
+                    <table width="100%" height="100%" border=0 >
+                        <tr>
+                            <td colspan="2" height="3px"></td>
+                        </tr>
+                        <tr>
+                            <td width="15px" style="background: url(<?=BASE_URL."img/design/news_bg_left_top.gif"  ?>)" hegiht="25px">
+                            </td>
+                            <td style="background:#ff9600;">
+                                <table width="100%" height="100%" border="0">
+                                <tr>
+                                    <td style = "vertical-align:middle; padding:5px 0;"> <img style = "border:0px solid red" class='news_link_more' src='img/news_link_more.gif'/> </td>
+                                    <td style = " text-align:left; padding:10px 0;">
+                                        <a  style="font-size:12px;text-decoration: none; color: white;"href="<?=BASE_URL?>news/<?php $newsurl['url']?>">more news...</a>                                      
+                                    </td>
+                                </tr>
+                                </table>    
+                            </td>
+                        </tr>
+                    </table>    
+                </td>
+                <td width="6px" height="25px" style="background: url(<?=BASE_URL."img/design/news_bg_right.gif"  ?>)"></td>
+            </tr>
+            <tr>
+        </table>    
+    </div>   
+    <?php endif;?>
+  </div>      
+    
+    
+    
+       

@@ -1,0 +1,414 @@
+<?php  
+	require_once 'functions.php';
+	require_once 'crosspromo.php';
+?>
+
+    <?php require_once 'header.php'; ?>
+
+		<div class="container" id = "container">
+		    <!-- 
+		    <div  class="span1" style="background-color:rgba(238,238,238,0.6);border-top-left-radius:4px;border-bottom-left-radius:4px;color:#000;text-align:right; padding-top:5px; margin-bottom:0px; position:fixed; top:50%; right:0;">
+    		    <a  style="color:#000;" href="javascript:void(0)" id="snow-on">
+    		        <img src="<?php base_url() ?>images/snow-on.png" alt="">
+    		    </a>
+    		    <br>
+    		    <a style="color:#000;" href="javascript:void(0)" id="snow-off">
+    		        <img src="<?php base_url() ?>images/snow-off.png" alt="">
+    		    </a>
+		    </div>
+		     -->
+			<div class="content" style="margin-top:10px;">  
+				<div class="row" style="margin-bottom:5px;">
+					<div class="span3" id="logo">
+						<a href="<?php base_url() ?>">
+						    <img src="<?php echo base_url() ?>images/120x90.png" alt="">
+						</a>
+					</div>
+					<div class="span13" id = "header-ad">
+
+                            <script type="text/javascript">
+                            
+                            google_ad_client = "ca-pub-9949578068331254";
+                            
+                            /* Santa Ride Microsite - Top Banner */
+                            
+                            google_ad_slot = "9628395313";
+                            
+                            google_ad_width = 728;
+                            
+                            google_ad_height = 90;
+                            
+                            </script>
+                            
+                            <script type="text/javascript"
+                            
+                            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                            
+                            </script>
+					    <!-- 
+					    <a href="http://invictus.com/news/race-of-champions-mobile-racing-game" target = "_blank">
+						    <img src="<?php echo base_url() ?>images/banner_810x90.png" alt="">
+						</a>
+						 -->
+					</div>
+				</div>  <!-- header-row -->    
+				<div class="row">
+					<div class="span4" id = "leftside-ad">
+ 
+                            <script type="text/javascript">
+                            
+                            google_ad_client = "ca-pub-9949578068331254";
+                            
+                            /* Santa Ride Microstie - Skyscraper */
+                            
+                            google_ad_slot = "8078378346";
+                            
+                            google_ad_width = 120;
+                            
+                            google_ad_height = 600;
+                            
+                            </script>
+                            
+                            <script type="text/javascript"
+                            
+                            src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                            
+                            </script>
+                        <!-- 
+					    <a href="http://invictus.com/news/greed-corp">
+						    <img src="<?php echo base_url() ?>images/banner_120x600.png" alt="" target = "_blank">
+						</a>
+						 -->
+					</div>
+					<div class="span8" id="content">
+						<div class="span8" id="game-canvas">
+						    <?php if ($_SERVER['SERVER_NAME'] !== 'localhost'): ?>
+								<iframe src="http://fbtest.invictus.hu/SantaRide/ipad0WebPlayer.html" frameborder="0"></iframe>
+						    <?php endif ?>
+						</div>
+						<div class="span8" style="width:500px;margin-top:10px;background-color:rgb(238,238,238);background-color:rgba(238,238,238,0.6);border-radius:4px;">
+						    <h5 style="margin-left:5px;color:#000;">Santa Ride! coming soon on:</h6>
+    						<div  class="santa-stores media-grid" style="padding-top:8px;">
+    							<!-- <img src="http://placehold.it/300x%20130" alt=""> -->
+    							<a href="#" onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', 'Santa - Android Market - Phone', 1]);"><img src="<?php echo base_url() ?>images/icons/store_android_phone_cs.png" alt=""></a>
+    							<a href="#" onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', 'Santa - Android Market - Tablet', 1]);"><img src="<?php echo base_url() ?>images/icons/store_android_tablet_cs.png" alt=""></a>
+    							<a href="#" onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', 'Santa - iTunes - iPad', 1]);"><img src="<?php echo base_url() ?>images/icons/store_ipad_cs.png" alt=""></a>
+    							<a href="#" onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', 'Santa - iTunes - iPhone', 1]);"><img src="<?php echo base_url() ?>images/icons/store_iphone_cs.png" alt=""></a>
+    						</div>
+						    
+						</div>
+						<div class="span8" id = "crosspromo" style="background-color:rgb(238,238,238);background-color:rgba(238,238,238,0.6);border-radius:4px;margin-bottom:20px; min-height:50px; height:auto;">
+						    <h5 style="margin-left:5px;color:#000; margin-bottom:20px;">More Invictus Games:</h6>
+							<ul class=" media-grid" data-tabs = "tabs"  id ="crosspromo-tabs">
+									
+								<?php foreach ($crosspromo as $i=>$item): ?>
+									<li>
+									<a href = "#<?php echo 'crosspromo-' . $i ?>" rel = "twipsy" title = "<strong style='font-size:1.1em;'><?php echo $item['title'] ?></strong>" data-html="true" data-placement="above" 
+									    <?php if (isset($item['gaq_label'])): ?>
+									          onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', '<?php echo $item['gaq_label'] ?>', 1]);" 
+									    <?php endif ?>									    
+									>
+										<img src="<?php echo base_url() ?>images/icons/<?php echo $item['small_icon'] ?>" alt="">
+									</a>
+									</li>
+								<?php endforeach ?>
+									
+							</ul>
+                    		<div class="span8 pill-content" style="display_:none;">
+                    			<?php foreach ($crosspromo as $i=>$item): ?>
+                    					
+                    				<div class="my-modal" id="crosspromo-<?php echo $i ?>"  style="margin-left:5px;" style_="position:inherit;margin:0px; z-index:1;top:inherit; min-width:480px;width:480px; left: inherit;">
+                    					<div class="modal-header">
+                    						<!-- <a class="close" href="#">×</a> -->
+                    						<h3>
+                    						    <img src="<?php echo base_url() ?>images/icons/<?php echo $item['icon'] ?>" alt="">
+                    						    <span style="position:relative; top:-10px;"><?php echo $item['title'] ?></span>
+                						    </h3>
+                    					</div>
+                    					<div class="modal-body">
+                    					    <div class="span7" style="margin-bottom:10px;">
+                    					        <script type="text/javascript">_ga.trackFacebook();</script>
+                						        <div class="fb-like" data-href = "<?php echo $item['facebook_page'] ?>" data-send="true" data-layout="button_count" data-width="450" data-show-faces="true"></div>
+                						    </div>
+                    						<div class="span7 media-grid">
+                    						    <?php echo $item['youtube'] ?>
+                    						</div>
+                    						<div class="span7">
+                    						    <h5>About the game:</h5>
+                								<p><?php echo $item['description'] ?></p>
+                    						</div>
+                    						<?php if (isset($item['appstore']) || isset($item['android_market'])): ?>
+                    							<h5>Available on:</h5>
+                    							<style type="text/css">
+                    							    .available-in td {
+                    							        text-align:center;
+                    							        vertical-align:middle;
+                    							    }
+                    							</style>
+                    							<table class="bordered-table media-grid available-in" style="margin-left:-7px; text-align:center">
+                    							    <thead>
+                    							        <tr>
+                    							            <th style="width:10%; text-align:center;"></th>
+                    							            <th style="width:30%; text-align:center;">Phone</th>
+                    							            <th style="width:30%; text-align:center;">Tablet</th>
+                    							            <th style="width:30%; text-align:center;">MAC</th>
+                    							        </tr>
+                    							    </thead>
+                    							    <tbody>
+                    							        <tr>
+                    							            <td style="text-align:center;"><strong>iOS</strong></td>
+                    							            <td>
+                    							                <?php if (isset($item['appstore']['phone']['url'])): ?>
+                    							                    <a href="<?php echo $item['appstore']['phone']['url'] ?>" target = "_blank" style = "display:inline-block; height:41px;width: 110px;"
+                            										    <?php if (isset($item['appstore']['phone']['gaq_label'])): ?>
+                            										          onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', '<?php echo $item['appstore']['phone']['gaq_label'] ?>', 1]);" 
+                            										    <?php endif ?>
+                            										>
+                    							                        <img src="<?php echo base_url() ?>images/icons/<?php echo $item['appstore']['phone']['image'] ?>" alt="">
+                    							                    </a>
+                    							                <?php else: ?>
+                    							                    <?php if (isset($item['appstore']['phone']['image'])): ?>
+                    							                        coming soon
+                    							                    <?php endif ?>
+                    							                <?php endif ?>
+                    							            </td>
+                    							            <td>
+                    							                <?php if (isset($item['appstore']['tablet']['url'])): ?>
+                    							                    <a href="<?php echo $item['appstore']['tablet']['url'] ?>" target = "_blank" style = "display:inline-block; height:41px;width: 110px;"
+                            										    <?php if (isset($item['appstore']['tablet']['gaq_label'])): ?>
+                            										          onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', '<?php echo $item['appstore']['tablet']['gaq_label'] ?>', 1]);" 
+                            										    <?php endif ?>
+                            										>
+                    							                        <img src="<?php echo base_url() ?>images/icons/<?php echo $item['appstore']['tablet']['image'] ?>" alt="">
+                    							                    </a>
+                    							                <?php else: ?>
+                    							                    <?php if (isset($item['appstore']['tablet']['image'])): ?>
+                    							                        coming soon
+                    							                    <?php endif ?>
+                    							                <?php endif ?>
+                    							                
+                    							            </td>
+                    							            <td>
+                    							                <?php if (isset($item['appstore']['mac']['url'])): ?>
+                    							                    <a href="<?php echo $item['appstore']['mac']['url'] ?>" target = "_blank" style = "display:inline-block; height:41px;width: 110px;"
+                            										    <?php if (isset($item['appstore']['mac']['gaq_label'])): ?>
+                            										          onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', '<?php echo $item['appstore']['mac']['gaq_label'] ?>', 1]);" 
+                            										    <?php endif ?>
+                            										>
+                    							                        <img src="<?php echo base_url() ?>images/icons/<?php echo $item['appstore']['mac']['image'] ?>" alt="">
+                    							                    </a>
+                    							                <?php else: ?>
+                    							                    <?php if (isset($item['appstore']['mac']['image'])): ?>
+                    							                        coming soon
+                    							                    <?php endif ?>
+                    							                <?php endif ?>
+                    							            </td>
+                    							        </tr>
+                    							        <tr>
+                    							            <td style="text-align:center;"><strong>Androrid</strong></td>
+                    							            <td>
+                    							                <?php if (isset($item['android_market']['phone']['url'])): ?>
+                    							                    <a href="<?php echo $item['android_market']['phone']['url'] ?>" target = "_blank" style = "display:inline-block; height:41px;width: 110px;"
+                            										    <?php if (isset($item['android_market']['phone']['gaq_label'])): ?>
+                            										          onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', '<?php echo $item['android_market']['phone']['gaq_label'] ?>', 1]);" 
+                            										    <?php endif ?>
+                            										>
+                    							                        <img src="<?php echo base_url() ?>images/icons/<?php echo $item['android_market']['phone']['image'] ?>" alt="">
+                    							                    </a>
+                    							                <?php else: ?>
+                    							                    <?php if (isset($item['android_market']['phone']['image'])): ?>
+                    							                        coming soon
+                    							                    <?php endif ?>
+                    							                <?php endif ?>
+                    							            </td>
+                    							            <td>
+                    							                <?php if (isset($item['android_market']['tablet']['url'])): ?>
+                    							                    <a href="<?php echo $item['android_market']['tablet']['url'] ?>" target = "_blank" style = "display:inline-block; height:41px;width: 110px;"
+                            										    <?php if (isset($item['android_market']['tablet']['gaq_label'])): ?>
+                            										          onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', '<?php echo $item['android_market']['tablet']['gaq_label'] ?>', 1]);" 
+                            										    <?php endif ?>
+                            										>
+                    							                        <img src="<?php echo base_url() ?>images/icons/<?php echo $item['android_market']['tablet']['image'] ?>" alt="">
+                    							                    </a>
+                    							                <?php else: ?>
+                    							                    <?php if (isset($item['android_market']['tablet']['image'])): ?>
+                    							                        coming soon
+                    							                    <?php endif ?>
+                    							                <?php endif ?>
+                    							                
+                    							            </td>
+                    							            <td>
+                    							                <?php if (isset($item['android_market']['mac']['url'])): ?>
+                    							                    <a href="<?php echo$item['android_market']['mac']['url'] ?>" target = "_blank" style = "display:inline-block; height:41px;width: 110px;"
+                            										    <?php if (isset($item['android_market']['mac']['gaq_label'])): ?>
+                            										          onClick="_gaq.push(['_trackEvent', 'Outbound links', 'Click', '<?php echo $item['android_market']['mac']['gaq_label'] ?>', 1]);" 
+                            										    <?php endif ?>
+                            										>
+                    							                        <img src="<?php echo base_url() ?>images/icons/<?php echo $item['android_market']['mac']['image'] ?>" alt="">
+                    							                    </a>
+                    							                <?php else: ?>
+                    							                    
+                    							                <?php endif ?>
+                    							            </td>
+                    							        </tr>
+                    							    </tbody>
+                    							</table>
+
+                    						<?php endif ?>
+                    						
+                    					</div>
+                    					
+                    					<div class="modal-footer">
+                    						    
+                    						<a class="btn primary" href="javascript:void(0)" onclick = "jQuery('.active').removeClass('active')">Close</a>
+                    					</div>
+                    				</div>        
+                    			<?php endforeach ?>
+                    		</div>
+							
+						</div>	
+						
+						<div class="span8" id = "facebook-comment" style="clear:left;padding-top:20px; float:left">
+						    <script type="text/javascript">_ga.trackFacebook();</script>
+							<div class="fb-comments" data-href="http://santaride.invictus.com" data-num-posts="2" data-width="500"></div>
+						</div>
+					</div>
+					<div class="span5" id = "rightside-ad">
+					    <div id = "social">
+					       <span style="position:relative; top:-3px;">
+					           <script type="text/javascript">_ga.trackFacebook();</script>
+					           <div class="fb-send" data-href="http://bit.ly/santaridegame"></div>
+				           </span>
+					        
+					        <span><div class="g-plusone" data-size="medium" data-annotation="none"></div></span>
+
+					        <span>
+					            <a href="https://twitter.com/share" class="twitter-share-button" data-url="http://bit.ly/santaridegame" data-text="Check out Santa Ride, the official Christmas game of Invictus Games Ltd! " data-count="none" data-via="invictusgames">Tweet</a>
+				            </span>
+					    </div>
+						<div id="facebook-like-box">
+						    
+							<h4 style="margin-bottom:10px;padding-left:5px;background-color:rgb(238,238,238);background:rgba(165, 175, 200, 0.4);border-width: 0 0 1px;border: 1px solid #C6CEDD; border-color:#315C99 #AAAAAA #AAAAAA">
+							    <a href="https://www.facebook.com/santaride.game" target = "_blank" style="color:#000;">Find Us on Facebook</a>
+						    </h4>
+						    <script type="text/javascript">_ga.trackFacebook();</script>
+                            <div class="fb-like" data-href="https://www.facebook.com/santaride.game" data-send="false" data-width="280" data-show-faces="true"></div>
+						</div>
+						
+						<div id="donation">
+						    <div class="donation-header"></div>
+							<p style="text-align:left; padding:5px;">
+							    <p>Santa asks for your help to collect and distribute the lost gifts to children by making him ride through the valley and racing to their houses.</p>
+                                <p>Santa and Invictus also ask you to help children in the real world: in this year, we give a platform for <a target = "_blank" href="http://www.facebook.com/pages/K%C5%91szikla-Alap%C3%ADtv%C3%A1ny/292861434080669?sk=wall">Kőszikla Alapítvány - The Rock Foundation</a>  helping children and adults from two underdeveloped countries, Ukraine and Romania, to get medical care in Hungary. </p>
+                                <p>We also transfer the whole profit Invictus will be earning from Santa Ride to the foundation.</p>
+							</p>
+                            <?php require_once 'paypal.php'; ?>
+						</div>
+
+						<div id="video-ad">
+						    
+                            <script type="text/javascript">
+                                
+                                google_ad_client = "ca-pub-9949578068331254";
+                                
+                                /* Santa Ride Microsite - Medium Rectangle */
+                                
+                                google_ad_slot = "5548925624";
+                                
+                                google_ad_width = 300;
+                                
+                                google_ad_height = 250;
+                            
+                            </script>
+                            
+                            <script type="text/javascript"
+                            
+                                src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+                            
+                            </script>
+						    <!-- 
+						    <div class="slides_container">
+						        <div>
+						            <iframe width="300" height="250" src="http://www.youtube.com/embed/m94CTguzqqA" frameborder="0" allowfullscreen></iframe>
+						        </div>
+						        <div>
+						            <iframe width="300" height="250" src="http://www.youtube.com/embed/A3pRaAub07c" frameborder="0" allowfullscreen></iframe>
+						        </div>						        
+						        <div>
+						            <iframe width="300" height="250" src="http://www.youtube.com/embed/enIejTuR9Fk" frameborder="0" allowfullscreen></iframe>
+						        </div>
+						    </div>
+						     -->
+						</div>
+					</div>
+				</div> <!-- content-row -->
+			</div> <!-- /content -->   
+		</div> <!-- /container -->
+        
+		<footer  class="footer">
+            <div class="container">
+                <p style="text-align:center">
+                    <?php echo date('Y') ?> &copy; <a href="http://invictus.com">Invictus Games</a>
+                    &nbsp; | &nbsp;
+                    <a href="http://privacy.invictus.com">Privacy Policy</a>
+                </p>
+            </div>		    
+            <!-- 
+		    <div class="span16" style="margin:0 auto;">
+                <div class="row">
+    		        <div class="span8">
+    		            
+		            </div>
+		            <div class="span8" style="text-align:right">
+    		            
+                    </div>    		            
+    		    </div>
+		    </div>
+		     -->
+		</footer>
+		
+		<script src="http://connect.facebook.net/en_US/all.js#xfbml=1&appId=<?php echo app_id() ?>"></script>
+		<script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>
+        <!-- <script type="text/javascript" src="//platform.twitter.com/widgets.js"></script>		 -->
+        <!-- Load Twitter JS-API asynchronously -->
+       
+        <script type="text/javascript">
+            (function() {
+                var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+                po.src = 'https://apis.google.com/js/plusone.js';
+                var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+            })();
+        </script>
+        
+		<!-- 
+		<script type="text/javascript" src = "<?= base_url() ?>scripts/Three.js"></script>     	    
+		<script type="text/javascript" src = "<?= base_url() ?>scripts/Snow.js"></script>     	    
+		<script type="text/javascript" src = "<?php echo base_url() ?>scripts/snow-init.js"></script>		
+		 -->
+		<script type="text/javascript">
+			(function($) {
+				$(function() {
+					$('#my-modal').modal();
+					
+					$('[rel=twipsy]').twipsy();
+					$('[rel="twipsy-visible"]').twipsy();
+					/*
+					$('#snow-off').bind('click', function() {
+					    //$('canvas').hide();
+					    //$('#container').css('margin-top', 0);
+					    stop();
+					});
+
+					$('#snow-on').bind('click', function() {
+					    //$('canvas').show();
+					    //$('#container').css('margin-top', -1*window.innerHeight);
+					    start();
+					});					
+					*/
+					//$('#crosspromo-tabs').pills();
+				});
+			}) (jQuery)
+		</script>
+		
+	</body>
+</html>    

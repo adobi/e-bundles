@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;uri-&gt;rsegment_array();${0}</string>
+	<key>name</key>
+	<string>RSegment Array</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciurirsegarray</string>
+	<key>uuid</key>
+	<string>468CFA91-71BF-45B0-B592-44AB77DAFC86</string>
+</dict>
+</plist>

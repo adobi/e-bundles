@@ -1,0 +1,12 @@
+<?php if ($items): ?>
+    <ul data-role="listview" id = "items-list">
+        <?php $i = 1 + $page*10; foreach ($items as $item): ?>
+            <li>
+                <span style="width:30px;display:inline-block;"><?php echo $i++; ?>. </span><?php echo display_flag($item->Nation) ?> <?php echo $item->Name ?> <span class="ui-li-count"><?php echo $item->pp_sum ?></span>
+            </li>
+        <?php endforeach ?>
+    </ul>
+    <p style="margin-top:30px;">
+        <a href="<?php echo base_url() ?>mobile/prestigelist/<?php echo $type ?>/" data-page = "<?php echo $page; ?>" data-role="button" data-theme = "a" id = "pagination-link">More</a>
+    </p>
+<?php endif ?>

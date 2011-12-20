@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;form_validation-&gt;${1:function}(${2});${0}</string>
+	<key>name</key>
+	<string>Form Validation Class</string>
+	<key>tabTrigger</key>
+	<string>ciformval</string>
+	<key>uuid</key>
+	<string>6D2333CB-3282-4EC1-B373-34ECCC37F057</string>
+</dict>
+</plist>

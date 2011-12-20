@@ -1,0 +1,9 @@
+<?php  
+    
+    defined('DBNAME') || define('DBNAME', 'c26_invictus');
+    defined('HOST') || define('HOST', 'localhost');
+    defined('USERNAME') || define('USERNAME', 'c26_invictus');
+    defined('PASSWORD') || define('PASSWORD', '1NxsAYxu');
+    
+ 
+?>

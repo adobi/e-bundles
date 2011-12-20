@@ -1,0 +1,426 @@
+			
+            </div> <!-- content -->
+            
+<?php if ($controller !== '' && $controller !== 'main'): ?>
+     
+     <span class = "released-games hidden">&nbsp;</span>
+
+     <div id = "carousel">
+  
+        <div class="marquee" id="mycrawler">
+            <a href="<?=BASE_URL?>games/pc-games/la-street-racing"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/1.jpg" />
+            </a>  
+            <a href="<?=BASE_URL?>games/pc-games/monster-garage"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/2.jpg" />
+            </a>  
+            <a href="<?=BASE_URL?>games/pc-games/street-legal"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/3.jpg" />
+            </a>  
+            <a href="<?=BASE_URL?>games/iphone-games/roc"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/webthumb_ROC_iPhone.png" />
+            </a>  
+            <a href="<?=BASE_URL?>games/ipad-games/greed-corp"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/webthumb_GreedCorp_iPad.png" />
+            </a>  
+            <a href="<?=BASE_URL?>games/pc-games/street-legal-racing-redline"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/4.jpg" />
+            </a>  
+            <a href="<?=BASE_URL ?>games/pc-games/1nsane"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/5.jpg" />
+            </a>  
+            <!-- 
+            <a href="<?=BASE_URL?>games/iphone-games/the-escapee" target="_blank"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/6.jpg" /></a>  
+            -->    
+            <a href="<?=BASE_URL ?>games/pc-games/santa-ride-1-2"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/7.jpg" />
+            </a>  
+            <!-- 
+            <a href="<?=BASE_URL?>games/pc-games/invictus-live" target="_blank"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/8.jpg" /></a>  
+             -->    
+            <a href="<?= BASE_URL ?>games/iphone-games/picosaic"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/9.jpg" />
+            </a>  
+            <a href="<?= BASE_URL ?>games/iphone-games/brim"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/10.jpg" />
+            </a>  
+            <a href="http://www.4x4jam.com" target="_blank"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/11.jpg" />
+            </a>  
+            <a href="<?= BASE_URL ?>games/iphone-games/blastwave"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/12.jpg" />
+            </a>  
+            <a href="<?=BASE_URL?>games/mac-games/greed-corp"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/webthumb_GreedCorp_OSX.png" />
+            </a>  
+            <a href="<?= BASE_URL ?>games/iphone-games/fly-control"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/13.jpg" />
+            </a>  
+            <a href="<?= BASE_URL ?>games/mac-games/truck-jam"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/truckjam_imac.png" />
+            </a>
+            <a href="<?=BASE_URL?>games/iphone-games/fly-fu"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/14.jpg" />
+            </a> 
+            <a href="<?=BASE_URL?>games/iphone-games/froggy-jump"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/15.jpg" />
+            </a>  
+            <a href="<?= BASE_URL ?>games/ipad-games/roc"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/webthumb_ROC_iPad.png" />
+            </a>  
+            <a href="<?= BASE_URL ?>games/iphone-games/grim-filler"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/16.jpg" />
+            </a>  
+            <a href="<?= BASE_URL ?>games/iphone-games/pinfrog"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/17.jpg" />
+            </a>  
+            <a href="<?= BASE_URL ?>games/iphone-games/rollit-smartly"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/18.jpg" />
+            </a> 
+            <a href="<?= BASE_URL ?>games/psp-games/4x4-jam-psp"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/4x4jam_psp.png" />
+            </a> 
+            <a href="<?= BASE_URL ?>games/pc-games/cross-racing-championship"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/crc_pc.png" />
+            </a> 
+            <a href="<?= BASE_URL ?>games/ipad-games/fly-control-hd"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/flycontrol_ipad.png" />
+            </a>             
+            <a href="<?= BASE_URL ?>games/mac-games/fly-fu-pro"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/flyfu_pro_imac.png" />
+            </a> 
+            <a href="<?= BASE_URL ?>games/android-games/froggy-jump"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/froggyjump_android.png" />
+            </a>
+            <a href="<?= BASE_URL ?>games/iphone-games/froggy-launcher"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/froggylauncher_iphone.png" />
+            </a>
+            <a href="<?= BASE_URL ?>games/pc-games/level-r-heat-online"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/heat_pc.png" />
+            </a>            
+            <a href="<?= BASE_URL ?>games/ipad-games/truck-jam-hd"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/truckjam_ipad.png" />
+            </a>
+            <a href="<?= BASE_URL ?>games/iphone-games/fly-fu-pro"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/flyfu_pro_iphone.png" />
+            </a>
+            <a href="<?=BASE_URL?>games/android-games/greed-corp"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/webthumb_GreedCorp_android.png" />
+            </a>  
+            <a href="<?= BASE_URL ?>games/android-games/roc"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/webthumb_ROC_android.png" />
+            </a>  
+            <a href="<?= BASE_URL ?>games/pc-games/level-r-heat-online"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/levelr_pc.png" />
+            </a>               
+            <a href="<?= BASE_URL ?>games/pc-games/overspeed"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/overspeed_pc.png" />
+            </a>               
+            <a href="<?= BASE_URL ?>games/psp-games/fly-fu-psp"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/flyfu_psp.png" />
+            </a>
+            <a href="<?= BASE_URL ?>games/ipad-games/picosaic-hd"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/picosaic_ipad.png" />
+            </a>               
+            <a href="<?= BASE_URL ?>games/iphone-games/the-escapee"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/the_escapee_iphone.png" />
+            </a>
+            <a href="<?= BASE_URL ?>games/iphone-games/truck-jam"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/truckjam_iphone.png" />
+            </a>
+            <a href="<?= BASE_URL ?>games/iphone-games/wild-slide"> 
+                <img src="<?=BASE_URL?>img/games-pic-little/wildslide.png" />
+            </a>
+        </div>
+
+
+ 
+	 </div> <!-- carousel -->
+ <?php endif ?> 
+		</div> <!-- container -->
+		
+		<div id="footer">
+		    <div class = "cols">
+		        <br />
+                <div class = "col-1">
+                    <img src="<?= BASE_URL ?>img/design/mail_to.png" border="0" />
+                    <br />
+                    <img src="<?= BASE_URL ?>img/mail-to-refl.gif" border="0"     />
+                </div>
+                <div class = "col-2">
+                    &copy; <?= date('Y') ?> All rights reserved.<br />
+                    Invictus-Games Ltd.<br />
+                    9 Kartacs Str., Debrecen 4032 Hungary; <br />Phone/Fax: 36-52/485-034;<br /> E-mail: <img style = "position:relative; top:2px;" src="<?= BASE_URL ?>img/design/support_mail.gif" border="0" /><!-- &#115&#117&#112&#112&#111&#114&#116&#64&#105&#110&#118&#105&#99&#116&#117&#115&#46&#104&#117 -->
+                </div>                
+                <?php if ($_SERVER['HTTP_HOST'] === 'invictus.hu' || $_SERVER['HTTP_HOST'] === 'www.invictus.hu'): ?>
+                        
+                    <div class = "col-3">
+                        <h3>Elnyert pályázat</h3>
+                        <p>
+                            <!-- <a id = "showSimpleModal" href="javascript:void(0)" style = "padding:0px;margin:0px; font-weight:normal;"> -->
+                            <a href="http://www.invictus.hu/VehicleSimulation/" style = "padding:0px;margin:0px; font-weight:normal;">
+                                <strong>GOP-1.3.1./A-2009</strong> 
+                                <br />
+                                Új generációs jármű-szimulációs szoftvermotor<br /> 
+                                kifejlesztése vezetésoktatási - demonstrációs és <br />
+                                baleseti-rekonstrukciós célokra                            
+                            </a>
+                        </p>
+    
+                        <p class = "nfu" style = "border: 0px solid red;">
+                            <a href="http://www.nfu.hu" target = "_blank">www.nfu.hu</a> | <a href="http://www.magzrt.hu" target = "_blank">www.magzrt.hu </a>
+                            <br />
+                            <a href="http://www.nfu.hu" target = "_blank">
+                                <img src="<?= BASE_URL ?>img/ujmagy_logo.jpg" alt=""/>
+                            </a>
+                            <a href="http://www.nfu.hu" target = "_blank">
+                                <img src="<?= BASE_URL ?>img/ujmagy_tars_logo.jpg" alt=""/>
+                            </a>
+                        </p>
+                    </div>
+                <?php endif ?>
+                <!-- 
+                <img src="<?= BASE_URL; ?>img/mail_send_refl.png" alt=""  style="position:relative; top:-15px; left: -250px;">
+                 -->
+		    </div>
+		    
+			
+		</div> <!-- footer -->
+        <div id="simpleModal" class="modal">
+            <a href="javascript:void(0);" id="closeSimple" class = "close-icon" style = "float:right; top:-10px;right:-5px;"></a>
+            <h3>GOP-1.3.1./A-2009   Új generációs jármű-szimulációs szoftvermotor kifejlesztése vezetésoktatási - demonstrációs és baleseti-rekonstrukciós célokra</h3>
+
+                <br />
+                <p>
+                Az Invictus-Games Kft. a pályázat során olyan platformfüggetlen járműszimulációs szoftvermotort kíván létrehozni, mely járművek működésének teljes modellezésére alkalmas, beleértve azok normál működését, a járművek irányítását, valamint a járműveket érő fizikai hatások eredményeinek pontos leképezését hűen vizualizálva a jármű gyalogossal való ütközést, mint rekonstrukciós eszköz. 
+                </p>
+                <p>
+                Szoftverünk egy olyan számítógépes keretrendszert biztosít, amely személyi számítógépeken valós időben szimulálja a gépjárművezetést a vezetés-oktatásban mind személygépjárművek, mind buszok, teherautók esetében, és hűen ábrázolja a járművek mozgását a baleset-rekonstrukcióban. Továbbá virtuálisan bemutathatóvá teszi a gépjárműveket és viselkedésüket az autógyárak szakmai bemutatóikon és egyben felhasználható a számítógépes játék-szimulációban, mint szórakoztatva oktató anyag.
+                </p>
+                <p>
+                Kedvezményezett: Invictus-Games Kft. Székhely: 4032, Debrecen, Kartács u. 9. Adószám: 11991999-2-09
+                </p>
+                <p>
+                Közreműködő szervezet: Magyar Gazdaságfejlesztési Központ
+                </p>
+                <br /><br />
+                <br />
+                <p class = "nfu">
+                    <a href="http://www.nfu.hu" target = "_blank" style = "color:black;">www.nfu.hu</a> | <a style = "color:black;" href="http://www.magzrt.hu" target = "_blank">www.magzrt.hu </a>
+                    <br />
+                    <a href="http://www.nfu.hu" target = "_blank">
+                        <img src="<?= BASE_URL ?>img/ujmagy_logo.jpg" alt=""/>
+                    </a>
+                    <a href="http://www.nfu.hu" target = "_blank">
+                        <img src="<?= BASE_URL ?>img/ujmagy_tars_logo.jpg" alt=""/>
+                    </a>
+                </p>
+                    <span style = " position:relative; top:-10px;float:right;display:inline-block; width: 320px; height:80px; border:0px solid red; text-align:left;">
+                        A projekt az Európai Unió támogatásával és az Európai Regionális Fejlesztési Alap társfinanszírozásával valósult meg.
+                    </span>
+
+
+        </div>
+        
+                        
+		<script type="text/javascript" charset="utf-8">
+		    $(function() {
+               
+     			$("#showSimpleModal").click(function() {
+     			    
+     				//$("div#simpleModal").addClass("show");
+     				/*$("#footer, #container, #header").css({
+                        'opacity': 0.4
+
+                    });*/
+     				//$("div#simpleModal").css('opacity', 1).show();
+                    $("div#simpleModal").addClass('shown').show();
+     				return false;
+     			});
+     			
+     			
+     			$("#closeSimple").click(function() {
+     				//$("div#simpleModal").removeClass("show");
+                    
+     				/*$("#footer, #container, #header").css({
+                        'opacity': 1
+                    });*/
+                    /*
+     				$("div#simpleModal").css({
+                        'opacity': 0,
+                        'z-index': -1
+                    });
+                    */
+                    $("div#simpleModal").removeClass('shown').hide();
+     				return false;
+     			});		        
+		        //if ($('#content').length)
+		            //$('.jScrollPaneContainer').css('height', $('#content').height() - $('.game-header').height() +500 );
+		            //console.log($('.a-game').height());
+                //$('#sidebar').jScrollPane({showArrows:false}); 
+                $('.searchbar_search_button').bind('click', function() {
+                    $(this).parents('form').submit(); 
+                });
+                
+                if ($.browser.msie && $.browser.version === '7.0') {
+                    //alert('hello')
+                    $('#content').height($('#content').height()+20);
+                }
+            });
+            $(window).load(function() {
+                $('a[rel=images-fancybox]').fancybox({
+            		'transitionIn'		: 'elastic',
+            		'transitionOut'		: 'elastic',
+            		'titlePosition' 	: 'over',
+                        'cyclic'            : true
+                }); 
+		        
+                marqueeInit({
+                	uniqueid: 'mycrawler',
+                	style: {
+                		'padding': '2px',
+                		'width': '935px', //3276px
+                		'height': '35px',
+                        'margin-left':'5px',
+                        'margin-right': '5px',
+                        'border': '0px solid red'
+                	},
+                	inc: 5, //speed - pixel increment for each iteration of this marquee's movement
+                	mouse: 'cursor driven', //mouseover behavior ('pause' 'cursor driven' or false)
+                	moveatleast: 2,
+                	neutral: 150,
+                	savedirection: true
+                });
+                
+		        $('.game-description, .page-content').height(
+		            $('#content').outerHeight(true) - 
+		            $('.game-header').outerHeight(true) - 
+		            $('.inner-nav').outerHeight(true) -40
+		        );
+		        
+		        if (/partners/.test(window.location.href)) {
+		            
+		            //$('.page-content').height(528);
+		        }
+		        
+		        
+                if ($('.game-description').height() > 400) {
+                    $('.game-description').height(400);
+                }
+                
+                if( navigator.userAgent.match(/Android/i) ||
+                 navigator.userAgent.match(/webOS/i) ||
+                 navigator.userAgent.match(/iPhone/i) ||
+                 navigator.userAgent.match(/iPod/i)
+                ){
+                
+                    $('.game-description, .page-content').jScrollPane({showArrows:true}); 
+                } else {
+                    
+                    $('.game-description, .page-content').jScrollPane({showArrows:false}); 
+                    
+                }
+                
+                
+		       /* $('.game-description').height(
+		            $('#content').outerHeight(true) - 
+		            $('.game-header').outerHeight(true) - 
+		            $('.inner-nav').outerHeight(true) -40
+		        );
+		        */
+		        
+		        /*
+		        console.log('game description: '+$('.game-description').outerHeight(true));
+		        
+                
+                
+		        console.log('content: '+$('#content').outerHeight(true));
+		        console.log('game header: '+$('.game-header').outerHeight(true));
+		        console.log('nav: '+$('.inner-nav').outerHeight(true));
+		        */
+		        //console.log('scroll pane:'+$('.jScrollPaneContainer').height(400));
+		        
+                if ($('.gallery-images').length) {
+
+                    $.each($('.page-img-wrapper'), function(i, v) {
+
+                        if ($(v).find('img-title').length) {
+
+                            $(v).height($(v).outerHeight()+10);                            
+                        } 
+                    });      
+                    $('.gallery-images').masonry();
+
+                }
+            });
+		</script>
+		<?php if ($_SERVER['HTTP_HOST'] === 'invictusgames.com' || $_SERVER['HTTP_HOST'] === 'www.invictusgames.com') { ?>		
+			<script type="text/javascript">
+
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-26547746-1']);
+			  _gaq.push(['_setDomainName', 'invictusgames.com']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+
+			</script>        
+		<?php } ?>
+		<?php if ($_SERVER['HTTP_HOST'] === 'invictus.hu' || $_SERVER['HTTP_HOST'] === 'www.invictus.hu') { ?>		
+			<script type="text/javascript">
+
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-26547746-2']);
+			  _gaq.push(['_setDomainName', 'invictus.hu']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+
+			</script>      
+		<?php } ?>
+		<?php if ($_SERVER['HTTP_HOST'] === 'invictus-games.com' || $_SERVER['HTTP_HOST'] === 'www.invictus-games.com') { ?>		
+			<script type="text/javascript">
+
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-26547746-3']);
+			  _gaq.push(['_setDomainName', 'invictus-games.com']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+
+			</script>       
+		<?php } ?>
+		<?php if ($_SERVER['HTTP_HOST'] === 'invictus.com' || $_SERVER['HTTP_HOST'] === 'www.invictus.com') { ?>		
+			<script type="text/javascript">
+
+			  var _gaq = _gaq || [];
+			  _gaq.push(['_setAccount', 'UA-26547746-4']);
+			  _gaq.push(['_setDomainName', 'invictus-games.com']);
+			  _gaq.push(['_trackPageview']);
+
+			  (function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			  })();
+
+			</script>       
+		<?php } ?>
+	</body>
+
+</html>
+ 

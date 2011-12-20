@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;db-&gt;select_avg('${1:feild}');${0}</string>
+	<key>name</key>
+	<string>Select Avg</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cidbselavg</string>
+	<key>uuid</key>
+	<string>31871DD0-2FD8-4BDE-8AD7-C55866BC30A7</string>
+</dict>
+</plist>

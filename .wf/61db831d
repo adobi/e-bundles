@@ -1,0 +1,17 @@
+<ul data-role="listview" data-theme="c">
+    <li>
+        <a href="<?php echo base_url() ?>mobile/prestigelist/all">All</a>
+    </li>
+    <li>
+        <a href="<?php echo base_url() ?>mobile/prestigelist/wembly">London</a>
+    </li>
+    <li>
+        <a href="<?php echo base_url() ?>mobile/prestigelist/grancanaria" >Gran Canaria</a>
+    </li>
+    <li>
+        <a href="<?php echo base_url() ?>mobile/prestigelist/espritarena">Düsseldorf</a>
+    </li>
+    <li>
+        <a href="<?php echo base_url() ?>mobile/prestigelist/stadefrance" >Paris</a>
+    </li>
+</ul>

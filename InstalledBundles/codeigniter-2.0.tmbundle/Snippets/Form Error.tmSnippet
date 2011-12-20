@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>echo form_error('${1:field_name}', '${2:start}', '${3:end}');${0}</string>
+	<key>name</key>
+	<string>Form Error</string>
+	<key>tabTrigger</key>
+	<string>ciformerror</string>
+	<key>uuid</key>
+	<string>50D3F09C-1AA8-40D9-BE9B-0B1E2ED2FDBE</string>
+</dict>
+</plist>

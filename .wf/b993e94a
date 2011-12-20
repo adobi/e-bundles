@@ -1,0 +1,494 @@
+//
+//  checkinAppDelegate.m
+//  checkin
+//
+//  Created by iwebleopard on 02/05/2011.
+//  Copyright 2011 __MyCompanyName__. All rights reserved.
+//
+
+#import "checkinAppDelegate.h"
+#import <CommonCrypto/CommonDigest.h>
+#import "XMLParserUser.h"
+#import "XMLParserClock.h"
+#import "XMLParserApp.h"
+
+@implementation checkinAppDelegate
+
+@synthesize window;
+@synthesize UserNameField;
+@synthesize PasswordField;
+@synthesize LogWindow;
+@synthesize clockInBTN;
+@synthesize clockOutBTN;
+
+UniChar lastkey;
+NSDate *lastActive = nil;
+NSDate *lastPassive = nil;
+NSDate *lastSavedTime = nil;
+
+BOOL loggedIN=false;
+int UserID = -1;
+int UserSate = 1;
+NSTimer *timer;
+NSTimer *appTimer;
+int lastPID;
+NSString *lastTitle;
+NSString *lastApp;
+NSString *logThis = nil;
+BOOL needConfirm = true;
+
+void saveLogFile(NSString* s) {
+    NSError *fileError;
+    NSMutableString *saveText = [NSMutableString stringWithFormat:@"%@ - %@",[[NSDate date] description],s];
+    NSFileHandle * op = [NSFileHandle fileHandleForWritingAtPath:@"logFile.dat"];
+    if (op == nil) {
+        [saveText writeToFile:@"logFile.dat" atomically:YES encoding:NSUnicodeStringEncoding error:&fileError];
+    } else {
+        [op seekToEndOfFile];
+        [op writeData:[saveText dataUsingEncoding:NSUnicodeStringEncoding]];
+    }
+}
+
+
+
+CGEventRef myCGEventCallback(CGEventTapProxy proxy, CGEventType type, CGEventRef event, void *refcon) {
+    CGPoint location;
+    UniChar unicodeString[10];
+    UniCharCount actualStringLength;
+    if (loggedIN) {
+    switch(type){
+        case kCGEventKeyDown: CGEventKeyboardGetUnicodeString(event,sizeof(unicodeString)/sizeof(*unicodeString),&actualStringLength,unicodeString);
+            if (lastkey != unicodeString[0]) {
+                lastActive = [[NSDate date] retain];
+                UserSate = 1;
+                saveLogFile(@"LOGGED key!\r\n");
+                logThis  = [[NSString stringWithFormat:@"LOGGED key!\r\n"] retain];
+                //NSLog([NSString stringWithFormat: @"%C\n", unicodeString[0]]);
+            } else {
+                saveLogFile(@"NOT LOGGED key - same as last key!\r\n");
+                logThis  = [[NSString stringWithFormat:@"NOT LOGGED key - (same as last key)!\r\n"] retain];                                
+                //NSLog(@"lastkey again");
+            }
+            lastkey = unicodeString[0];
+            break;
+        case kCGEventLeftMouseDown: location = CGEventGetLocation(event);
+            lastActive = [[NSDate date] retain];
+            UserSate = 1;
+            saveLogFile(@"LOGGED mouse click left!\r\n");
+            logThis  = [[NSString stringWithFormat:@"LOGGED mouse click (left)!\r\n"] retain]; 
+            //NSLog([NSString stringWithFormat: @"leftclick\t%4.0f,%4.0f\n",location.x,location.y]);
+            break;
+        case kCGEventRightMouseDown: location = CGEventGetLocation(event);
+            lastActive = [[NSDate date] retain];
+            UserSate = 1;
+            saveLogFile(@"LOGGED mouse click right!\r\n");
+            logThis  = [[NSString stringWithFormat:@"LOGGED mouse click (right)!\r\n"] retain];
+            //NSLog([NSString stringWithFormat:@"rightclick\t%4.0f,%4.0f\n",location.x,location.y]);
+            break;
+    }
+    }
+    return event;
+
+}
+
+-(void) saveClock:(int)active: (int) passive {
+    //Try to connect to the server
+    NSData *returnData;
+    int sInt = (arc4random() % 1000) + 1000;
+    NSData *SecData = [NSString stringWithFormat:@"al%dmafa_%d_k_%dqWe1s%d",sInt,UserID,active,passive];
+    //[LogWindow insertText:[NSString stringWithFormat:@"%@\r\n",SecData]];
+    NSString *post = [NSString stringWithFormat:@"UserID=%@&Active=%@&Passive=%@&SecData=%@&sInt=%@",
+                      [self urlEncodeValue:[NSString stringWithFormat:@"%d",UserID]],
+                      [self urlEncodeValue:[NSString stringWithFormat:@"%d",active]],
+                      [self urlEncodeValue:[NSString stringWithFormat:@"%d",passive]],
+                      [self urlEncodeValue:[SecData MD5]],                      
+                      [self urlEncodeValue:[NSString stringWithFormat:@"%d",sInt]]
+                      ];
+    
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    [request setURL:[NSURL URLWithString:@"http://192.168.125.10/mac/clock.php"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error: nil];
+    
+    NSXMLParser *nsparser = [[NSXMLParser alloc] initWithData:returnData];
+    XMLParserClock *parser = [[XMLParserClock alloc] initXMLParser];
+    [nsparser setDelegate:parser];
+    BOOL success = [nsparser parse];
+    if (success) {
+        int backData = [[parser backData] intValue];                          
+        if (backData != 1) {
+            saveLogFile(@"Couldn't save active/passive times!\r\n");
+            [LogWindow insertText:@"Couldn't save active/passive times!\r\n"];
+        } else {
+            saveLogFile(@"Clock Data Saved!\r\n");
+            [LogWindow insertText:@"Clock Data Saved!\r\n"];
+        }
+    } else {
+        saveLogFile(@"Couldn't save active/passive times!\r\n");
+        [LogWindow insertText:@"Couldn't save active/passive times!\r\n"];
+    }
+  
+}
+
+-(void) saveApp:(NSString*)appName: (NSString*)appTitle {
+    //Try to connect to the server
+    NSData *returnData;
+    int sInt = (arc4random() % 1000) + 1000;
+    NSData *SecData = [NSString stringWithFormat:@"al%dmafa_%d_k_%@qWe1s%@",sInt,UserID,appName,appTitle];
+    //[LogWindow insertText:[NSString stringWithFormat:@"%@\r\n",SecData]];
+    NSString *post = [NSString stringWithFormat:@"UserID=%@&AppName=%@&AppTitle=%@&SecData=%@&sInt=%@",
+                      [self urlEncodeValue:[NSString stringWithFormat:@"%d",UserID]],
+                      [self urlEncodeValue:appName],
+                      [self urlEncodeValue:appTitle],
+                      [self urlEncodeValue:[SecData MD5]],                      
+                      [self urlEncodeValue:[NSString stringWithFormat:@"%d",sInt]]
+                      ];
+    
+    NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+    NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
+    NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+    [request setURL:[NSURL URLWithString:@"http://192.168.125.10/mac/saveapp.php"]];
+    [request setHTTPMethod:@"POST"];
+    [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+    [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+    [request setHTTPBody:postData];
+    
+    returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error: nil];
+    
+    NSXMLParser *nsparser = [[NSXMLParser alloc] initWithData:returnData];
+    XMLParserApp *parser = [[XMLParserApp alloc] initXMLParser];
+    [nsparser setDelegate:parser];
+    BOOL success = [nsparser parse];
+    if (success) {
+        int backData = [[parser backData] intValue];                          
+        if (backData != 1) {
+            saveLogFile(@"Couldn't save appName and appTitle!\r\n");
+            [LogWindow insertText:@"Couldn't save appName and appTitle!\r\n"];
+        } else {
+            saveLogFile(@"AppName and Title Saved!\r\n");
+            [LogWindow insertText:@"AppName and Title Saved!\r\n"];
+        }
+    } else {
+        saveLogFile(@"Couldn't save appName and appTitle!\r\n");
+        [LogWindow insertText:@"Couldn't save appName and appTitle!\r\n"];
+    }
+    
+}
+
+- (void) onTick:(NSTimer *)timer {
+    if (logThis != nil) {
+        [LogWindow insertText:logThis];
+        logThis = nil;
+    }
+    if (loggedIN) {
+        NSDate *timenow = [[NSDate date] retain];
+        NSTimeInterval differenceActive;
+        NSTimeInterval differenceSaved;
+        NSTimeInterval differencePassive;
+        //NSLog(lastActive);
+        differenceActive = abs([lastActive timeIntervalSinceDate:timenow]);
+        differenceSaved = abs([lastSavedTime timeIntervalSinceDate:timenow]);
+        differencePassive = abs([lastPassive timeIntervalSinceDate:timenow]);
+        if ((UserSate == 1) && (differenceActive >= 5)) {
+            //NSLog(@"10 sec ota nincs semmi");
+            UserSate = 0;
+            lastPassive = [lastActive retain];
+        }
+        if ((UserSate == 0) && (differencePassive >= 120)) {
+            //NSLog(@"Saved passive");
+            NSTimeInterval diffA;
+            diffA = abs([lastSavedTime timeIntervalSinceDate:lastActive]);
+            
+            //NSLog(@"Active: %f, Passive: %f",diffA,(differenceSaved-diffA));
+            [self saveClock: diffA: (differenceSaved-diffA)];
+            saveLogFile([NSString stringWithFormat:@"SAVE - Times, Active=%d, Passive=%d\n",diffA,(differenceSaved-diffA)]);
+            [LogWindow insertText:[NSString stringWithFormat:@"SAVE - Times, Active=%d, Passive=%d\n",diffA,(differenceSaved-diffA)]];
+            lastSavedTime = [[NSDate date] retain];
+            lastSavedTime = [timenow retain];
+            lastActive = [timenow retain];
+            lastPassive= [timenow retain];
+        }
+        if ((UserSate == 1) && (differenceSaved >= 300)) {
+            //NSLog(@"Saved active");
+            //NSLog(@"Active: %f",differenceSaved);
+            [self saveClock: differenceSaved: 0];
+            saveLogFile([NSString stringWithFormat:@"SAVE - Times, Active=%d, Passive=0\n",differenceSaved]);
+            [LogWindow insertText:[NSString stringWithFormat:@"SAVE - Times, Active=%d, Passive=0\n",differenceSaved]];
+            lastSavedTime = [timenow retain];
+            lastActive = [timenow retain];
+        }
+        
+        
+    }    
+}
+
+- (void) onAppTick:(NSTimer *)timer {
+    if (loggedIN) {
+        CFArrayRef windowArray = CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly, kCGNullWindowID);
+        NSString *pTitle = [[NSString alloc] init]; 
+        for (int i=0; i<CFArrayGetCount(windowArray) ; i++) {
+                NSDictionary *entry = (NSDictionary*) CFArrayGetValueAtIndex(windowArray, i);
+                NSString *ppid=[entry objectForKey:(id)kCGWindowOwnerPID];
+                if ([ppid integerValue] == lastPID ) {
+                    if (![pTitle isEqualToString:[NSString stringWithFormat:@""]]) {
+                        pTitle = [pTitle stringByAppendingString:[NSString stringWithFormat:@" "]];
+                    }
+                    pTitle = [[pTitle stringByAppendingString:[entry objectForKey:(id)kCGWindowName]] retain];
+                }
+        }
+        CFRelease(windowArray);
+        if (![lastTitle isEqualToString:pTitle]) {
+            saveLogFile(@"SAVE - AppTitle\n");
+            [LogWindow insertText:[NSString stringWithFormat:@"SAVE - AppTitle\n"]];
+            //NSLog([NSString stringWithFormat:@"save new Title:%@",pTitle]);
+            lastTitle = [pTitle retain];
+            [self saveApp:lastApp : lastTitle];
+        } else {
+           // NSLog(@"no new Title");
+        }
+    }    
+}
+
+- (void)applicationDidFinishLaunching:(NSNotification *)aNotification
+{
+    // Insert code here to initialize your application
+    
+    NSString *lastUser = [[[NSString alloc] initWithContentsOfFile:@"LastUser.dat"] retain];
+    
+    if (lastUser != nil) {
+        [UserNameField setStringValue:lastUser];
+        [window makeFirstResponder:PasswordField]; 
+    }
+
+    timer = [NSTimer scheduledTimerWithTimeInterval:0.1
+                     target: self
+                     selector:@selector(onTick:) userInfo:nil repeats:YES];
+    appTimer = [NSTimer scheduledTimerWithTimeInterval:1
+                                             target: self
+                                           selector:@selector(onAppTick:) userInfo:nil repeats:YES];
+             
+    CFMachPortRef eventTap;
+    CGEventMask eventMask;
+    CFRunLoopSourceRef runLoopSource;
+    
+    eventMask = CGEventMaskBit(kCGEventLeftMouseDown) |
+    CGEventMaskBit(kCGEventRightMouseDown) |
+    CGEventMaskBit(kCGEventKeyDown);
+       
+    eventTap = CGEventTapCreate(
+                                kCGSessionEventTap, kCGHeadInsertEventTap,
+                                0, eventMask, myCGEventCallback, self);
+    if (!eventTap) {
+                    saveLogFile(@"ERROR - Failed to create event tap!\n");
+        [LogWindow insertText:[NSString stringWithFormat:@"ERROR - Failed to create event tap!\n"]];
+    }
+    
+    // Create a run loop source.
+    runLoopSource = CFMachPortCreateRunLoopSource(
+                                                  kCFAllocatorDefault, eventTap, 0);
+    
+    CFRelease(eventTap);
+    // Add to the current run loop.
+    CFRunLoopAddSource([[NSRunLoop currentRunLoop] getCFRunLoop], runLoopSource, kCFRunLoopCommonModes);
+    
+    
+    CFRelease(runLoopSource);
+    
+    //AppNames
+    NSNotificationCenter *center = [[NSWorkspace sharedWorkspace] notificationCenter];
+    [center addObserver:self selector:@selector(appNames:) name:NSWorkspaceDidActivateApplicationNotification object:nil];
+    saveLogFile(@"Event tap created.\n");
+    [LogWindow insertText:[NSString stringWithFormat:@"Event tap created.\n"]];
+
+}
+
+- (void) appNames:(NSNotification *)notification {
+   //NSLog(@"activated");
+    ProcessSerialNumber psn = { 0L, 0L };
+    pid_t pid;
+    OSStatus err = GetFrontProcess(&psn);
+    CFStringRef processName = NULL;
+    CFArrayRef windowArray = CGWindowListCopyWindowInfo(kCGWindowListOptionOnScreenOnly, kCGNullWindowID);
+    err = CopyProcessName(&psn, &processName);
+    err = GetProcessPID(&psn, &pid);
+    if (!err) {
+        NSString *pName = [(NSString*) processName retain];
+        NSString *pTitle = [[NSString alloc] init]; 
+      //  NSLog([NSString stringWithFormat:@"Name:%@, pid:%d", pName,pid]);
+        for (int i=0; i<CFArrayGetCount(windowArray) ; i++) {
+            NSDictionary *entry = (NSDictionary*) CFArrayGetValueAtIndex(windowArray, i);
+            NSString *ppid=[entry objectForKey:(id)kCGWindowOwnerPID];
+            if ([ppid integerValue] == pid ) {
+                if (![pTitle isEqualToString:[NSString stringWithFormat:@""]]) {
+                    pTitle = [pTitle stringByAppendingString:[NSString stringWithFormat:@" "]];
+                }
+                pTitle = [[pTitle stringByAppendingString:[entry objectForKey:(id)kCGWindowName]] retain];
+            }
+        }
+      //  NSLog([NSString stringWithFormat:@"Title:%@",pTitle]);
+        lastPID = pid;
+        lastTitle = [pTitle retain];
+        lastApp = [pName retain];
+        if (loggedIN) {        
+            [self saveApp:lastApp : lastTitle]; 
+        }
+        CFRelease(processName);
+        CFRelease(windowArray);
+
+        //saveapp name and title, keep last pid, last title. check every 5 sec the title
+    } else {
+        NSLog(@"somethingBad");
+    }
+  
+}
+
+- (void)awakeFromNib {
+    [window setDelegate:self];
+}
+
+-(void) alertDidEnd:(NSAlert*)alert returnCode:(NSInteger)returnCode contextInfo:(void*)contextInfo {
+    if (returnCode == NSAlertSecondButtonReturn) {
+        if (loggedIN) {
+            saveLogFile(@"LOGOUT\n");
+            [self saveClock: -2 : -2];
+            loggedIN = FALSE;
+            // needConfirm = false;
+        }    
+       [NSApp terminate:self];
+    }
+}
+
+- (void) windowWillClose:(NSNotification *)aNotification
+{
+    if (loggedIN) {
+        [window miniaturize:self];
+        [NSApp showWindows];
+    } else {
+        NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+        [alert addButtonWithTitle:@"NO"];
+        [alert addButtonWithTitle:@"YES"];
+        [alert setMessageText:@"Do you want to close the CheckIn?"];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        [alert beginSheetModalForWindow:[self window] modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
+        [NSApp showWindows];
+    }
+}
+
+
+- (IBAction)clockInTouched:(id)sender{
+    if (loggedIN) return;
+    NSString* uname;
+    NSString* pass;
+    BOOL hasError = false;
+    uname = [UserNameField stringValue];
+    pass = [PasswordField stringValue];
+    if (uname == @"") {
+        [LogWindow insertText:@"Wrong UserName!\r\n"];
+        hasError = true;
+    }
+    if (pass == @"") {
+        [LogWindow insertText:@"Wrong Password!\r\n"];
+        hasError = true;
+    }    
+    //[LogWindow insertText:pass];
+    //[LogWindow insertText:@"\r\n"];
+    if (!hasError) {
+        //Try to connect to the server
+        NSData *returnData;
+        int sInt = (arc4random() % 1000) + 1000;
+        NSData *SecData = [NSString stringWithFormat:@"al%@mafa_%@_k_%dqWe1s",uname,[pass MD5],sInt];
+        //[LogWindow insertText:[NSString stringWithFormat:@"SecData=%@\r\n", SecData]];
+        NSString *post = [NSString stringWithFormat:@"LoginName=%@&Password=%@&SecData=%@&sInt=%@",
+                          [self urlEncodeValue:uname],
+                          [self urlEncodeValue:[pass MD5]],
+                          [self urlEncodeValue:[SecData MD5]],
+                          [self urlEncodeValue:[NSString stringWithFormat:@"%d",sInt]]
+                          ];
+        //[LogWindow insertText:post];
+        //[LogWindow insertText:@"\r\n"];
+        
+        NSData *postData = [post dataUsingEncoding:NSASCIIStringEncoding allowLossyConversion:YES];
+        NSString *postLength = [NSString stringWithFormat:@"%d",[postData length]];
+        NSMutableURLRequest *request = [[[NSMutableURLRequest alloc] init] autorelease];
+        [request setURL:[NSURL URLWithString:@"http://192.168.125.10/mac/clockin.php"]];
+        [request setHTTPMethod:@"POST"];
+        [request setValue:postLength forHTTPHeaderField:@"Content-Length"];
+        [request setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
+        [request setHTTPBody:postData];
+        
+        returnData = [NSURLConnection sendSynchronousRequest:request returningResponse:nil error: nil];
+            
+            NSXMLParser *nsparser = [[NSXMLParser alloc] initWithData:returnData];
+            XMLParserUser *parser = [[XMLParserUser alloc] initXMLParser];
+            [nsparser setDelegate:parser];
+            BOOL success = [nsparser parse];
+            if (success) {
+                UserID = [[parser UserID] intValue];                          
+                if (UserID == -1) {
+                    [LogWindow insertText:@"Wrong UserName or Password!\r\n"];
+                } else {
+                    NSError *fileError;
+                    NSMutableString *loggedUserName = [NSMutableString stringWithFormat:@"%@",uname];
+                    [loggedUserName writeToFile:@"LastUser.dat" atomically:YES encoding:NSUnicodeStringEncoding error:&fileError];
+                    
+                    saveLogFile(@"LogIN\n");
+                    [LogWindow insertText:@"User Logged In\r\n"];
+                    [self saveApp:lastApp : lastTitle];
+                    //[LogWindow insertText:[NSString stringWithFormat:@"UserID=%d\r\n",UserID]];
+                    // get server date
+                    [clockInBTN setEnabled:NO];
+                    //start timer
+                    lastActive = [[NSDate date] retain];
+                    lastSavedTime = [lastActive retain];
+                    loggedIN = TRUE;
+                    [window miniaturize:self];
+                }
+            } else {
+                [LogWindow insertText:@"Wrong Response! Network problem!\r\n"];
+                
+            }
+    }
+}
+
+-(IBAction)clockOutTouched:(id)sender{
+         NSAlert *alert = [[[NSAlert alloc] init] autorelease];
+        [alert addButtonWithTitle:@"NO"];
+        [alert addButtonWithTitle:@"YES"];
+        [alert setMessageText:@"Do you want to close the CheckIn?"];
+        [alert setAlertStyle:NSWarningAlertStyle];
+        [alert beginSheetModalForWindow:[self window] modalDelegate:self didEndSelector:@selector(alertDidEnd:returnCode:contextInfo:) contextInfo:nil];
+        [NSApp showWindows];
+   
+}
+
+-(NSString*) urlEncodeValue:(NSString*)str {
+    NSString *result = (NSString*)
+        CFURLCreateStringByAddingPercentEscapes(kCFAllocatorDefault,(CFStringRef)str, NULL, 
+        CFSTR("?=&+"),kCFStringEncodingUTF8);
+    return [result autorelease];
+}
+
+@end
+
+@implementation NSString (md5)
+
+-(NSString*) MD5 {
+    const char *cStr = [self UTF8String];
+    unsigned char result[16];
+    CC_MD5(cStr, strlen(cStr), result);
+    return [NSString stringWithFormat:
+            @"%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X%02X",
+            result[0],result[1],result[2],result[3],result[4],result[5],result[6],
+            result[7],result[8],result[9],result[10],result[11],result[12],result[13],
+            result[14],result[15]
+            ];
+}
+
+
+@end

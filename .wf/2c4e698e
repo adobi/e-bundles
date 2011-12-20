@@ -1,0 +1,49 @@
+            
+    <h1  style="text-align:center">
+        <img src="<?php echo base_url() ?>images/roc-icon.png" alt="" />
+    </h1>
+    <h2 class="orange">
+        Win a co-drive with a champion!
+        
+    </h2>
+    <p>
+        <span class="orange">Join our Race Of Champions Mobile Game competition:</span> be amongst the best 50 players each week to qualify yourself.
+    </p>
+    <p>
+        <span class="orange">1 winner of the actual Top 50</span> players will be drawn out each week until 28 November and <span class="orange">get 2 tickets</span> for the Race Of Champions 2011 event held in Düsseldorf.
+    </p>
+    <p>
+        <span class="orange">The best player</span>, who sign up for the competition and earns the most prestige points until 27 November 2011, 12:00pm (GMC), <span class="orange">will win 4 tickets</span> and a co-drive with one of the best racers of the world.
+    </p>
+<?php echo form_open(base_url().'registration/mobile/'); ?>
+    <h2 class="bg-orange">Step 1</h2>
+    <p>Fill the form below:</p>
+    <p>
+        <label for="roc_username" class="ui-hidden-accessible">ROC Username:</label>
+        <input type="text" name="roc_username" id="roc_username" value="" placeholder="ROC Username"/>
+    </p>
+    <p>
+        <label for="udid" class="ui-hidden-accessible">Device's UDID number:</label>
+        <input type="text" name="udid" id="udid" value="" placeholder="UDID"/>        
+    </p>
+    
+    <h2 class="bg-orange">Step 2</h2>
+    <p> Be in the game's prestige point high score <span class="orange">TOP 50</span> at <span class="orange">EVERY WEEK!</span></p>
+    
+    <h2 class="bg-orange">Step 3</h2>
+    <p> <span class="orange">EACH WEEK</span> you have the chance to <span class="orange">WIN TWO TICKETS</span> to the 2011. RoC. 
+        Remember to check back on <span class="orange">EACH MONDAY</span> the RoC Facebook wall to see who won the weekly contest.
+    </p>
+    <p>
+        <input type="submit" name="" value="Sign Up Now!" id="" data-theme="a"/>
+    </p>
+
+<?php echo form_close(); ?>
+
+
+<script type="text/javascript" charset="utf-8">
+    $(function() {
+        
+        $("[type='submit']").button(); 
+    })
+</script>

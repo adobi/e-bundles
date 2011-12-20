@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;output-&gt;cache(${1:minutes to cache});${0}</string>
+	<key>name</key>
+	<string>Cache</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cioutputcache</string>
+	<key>uuid</key>
+	<string>77A26B1A-5D84-4CDE-9C9C-456307970A2C</string>
+</dict>
+</plist>

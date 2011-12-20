@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Load Typography Helper</string>
+        <key>uuid</key>
+        <string>CA5783AF-9248-4294-B743-96891A1705F0</string>
+        <key>tabTrigger</key>
+        <string>typohelper</string>
+        <key>content</key>
+        <string>\$this-&gt;load-&gt;helper('typography');$0</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

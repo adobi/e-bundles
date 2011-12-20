@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Next Row</string>
+        <key>uuid</key>
+        <string>6A92FF13-712A-41D4-818C-96C2DB3A8B8C</string>
+        <key>tabTrigger</key>
+        <string>cidbnextrow</string>
+        <key>content</key>
+        <string>\$query-&gt;next_row();$0</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

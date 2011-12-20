@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;pagination-&gt;${1:function}(${2});${0}</string>
+	<key>name</key>
+	<string>Pagination Class</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cipagination</string>
+	<key>uuid</key>
+	<string>1D74FF79-D66B-4DBA-8B24-FAFE8942D683</string>
+</dict>
+</plist>

@@ -1,0 +1,57 @@
+<?php 
+
+if (! defined('BASEPATH')) exit('No direct script access');
+
+require_once 'MY_Controller.php';
+
+class Register extends MY_Controller 
+{
+    
+    //php 5 constructor
+    public function __construct() 
+    {
+    	
+        parent::__construct();
+        
+    }
+    
+    public function index()
+    {
+    	
+        $this->template->build('register/index');
+    }
+
+    public function first_step()
+    {
+        $this->template->build('register/first');
+    }
+
+    public function second_step()
+    {
+        $this->form_validation->set_rules('roc_username', 'ROC username', 'trim|required');
+        $this->form_validation->set_rules('udid', 'UDID', 'trim|required');
+        
+        if ($this->form_validation->run()) {
+            
+            $this->load->model('Registrations', 'registration');
+            
+            //dump($this->registration);
+            
+            $_POST['registered_at'] = date('Y-m-d H:i:s');
+            
+            $this->registration->insert($_POST);
+            echo 1;
+            die;
+            //redirect(base_url() . 'register/thanx');
+        } else {
+            $this->session->set_userdata('validation_errors', validation_errors());
+        }
+        
+        $this->template->build('register/second');
+    }
+    
+    public function thanx() 
+    {
+        $this->template->build('register/thanx');
+    }
+}

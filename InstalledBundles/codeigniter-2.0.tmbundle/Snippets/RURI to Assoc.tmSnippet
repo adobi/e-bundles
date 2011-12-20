@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;uri-&gt;ruri_to_assoc(${1:${2:offset}${3:, ${4:key_names}}});${0}</string>
+	<key>name</key>
+	<string>RURI to Assoc</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciuriruritoassoc</string>
+	<key>uuid</key>
+	<string>D8DE8D8D-219F-4C8B-A2F4-F605B562969F</string>
+</dict>
+</plist>

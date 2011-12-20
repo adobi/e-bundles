@@ -1,0 +1,59 @@
+(function($) {
+	
+	App = {
+		PAGE_ID: '226467557415341',
+		ID: '219947674704766',
+		SESSION: false,
+		
+		Init: function() 
+		{
+		    FB.init({ 
+		        appId:App.ID, cookie:true, 
+		        status:true, xfbml:true 
+		    });         
+		
+			if (window.App.SESSION) {
+				
+				FB.login(function(response) {
+				
+					window.App.SESSION = response.session;
+					
+					if (response.authResponse) {
+						
+					}	
+				}, {scope: 'email'});
+				    
+			}
+			FB.api('/me', function(response) {
+			 
+				console.log(response);
+				FB.api({
+				    method: 'pages.isFan',
+				    page_id: App.PAGE_ID,
+				    uid: response.id
+				}, function (resp) {
+				    if (resp == true) {
+				        jQuery('.content').load(App.URL+'register/second_step', function() {
+				       	
+				   		});
+				    } else if (resp.error_code) {
+				        //alert(resp.error_msg);
+				        console.log(resp);
+				        jQuery('.content').load(App.URL+'register/first_step', function() {
+				        	
+				        });			        
+				    } else {
+				        jQuery('.content').load(App.URL+'register/first_step', function() {
+				        	
+				        });
+				    }
+				});
+			});	
+		}
+	};
+	
+	$(function() {
+		App.Init();
+	});
+	
+}) (jQuery);

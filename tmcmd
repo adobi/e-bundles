@@ -1,0 +1,11 @@
+#!/usr/bin/python
+# -*- coding: utf-8 -*-
+
+import sys, os
+sys.path.append(os.environ["TM_BUNDLE_SUPPORT"])
+
+from zencoding import zen_core as zen_coding
+from zen_editor import ZenEditor
+
+editor = ZenEditor()
+zen_coding.run_action('expand_abbreviation', editor)

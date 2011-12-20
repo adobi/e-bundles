@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;typography-&gt;nl2br_except_pre(${1:string});${0}</string>
+	<key>name</key>
+	<string>New Line to Break</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cityponl2br</string>
+	<key>uuid</key>
+	<string>8D5F8F99-6091-4F5F-8A66-3149BDE83870</string>
+</dict>
+</plist>

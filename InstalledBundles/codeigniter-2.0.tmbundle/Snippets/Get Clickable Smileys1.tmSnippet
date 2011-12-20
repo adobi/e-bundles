@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Get Clickable Smileys</string>
+        <key>uuid</key>
+        <string>A7DAB2F6-1E4B-47A5-8154-567B4C8E9428</string>
+        <key>tabTrigger</key>
+        <string>getsmileys</string>
+        <key>content</key>
+        <string>get_clickable_smileys(${1:'${2:folder}'}, ${3:'${4:field}'});$0</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

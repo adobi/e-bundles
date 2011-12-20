@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>GMT to Local</string>
+        <key>uuid</key>
+        <string>8DBEC3DD-6DB9-4A7F-B80F-4BA7BA79DEC5</string>
+        <key>tabTrigger</key>
+        <string>gmt2local</string>
+        <key>content</key>
+        <string>gmt_to_local(${1:"${2:timestamp}"},${3:"${4:timezone}"},${5:"${6:dst}"});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

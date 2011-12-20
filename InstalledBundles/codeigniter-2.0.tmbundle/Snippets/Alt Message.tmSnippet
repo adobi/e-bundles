@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;email-&gt;set_alt_message(${1:'${2:message}'});${0}</string>
+	<key>name</key>
+	<string>Alt Message</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cimailalt</string>
+	<key>uuid</key>
+	<string>9BC2281C-1345-4C60-B88B-F900904E032E</string>
+</dict>
+</plist>

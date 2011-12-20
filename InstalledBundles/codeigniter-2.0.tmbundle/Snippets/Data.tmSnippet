@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;trackback-&gt;data('${1:index}');${0}</string>
+	<key>name</key>
+	<string>Data</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>citrackdata</string>
+	<key>uuid</key>
+	<string>1EB30423-E01C-42BA-AF10-61395DB1EAFB</string>
+</dict>
+</plist>

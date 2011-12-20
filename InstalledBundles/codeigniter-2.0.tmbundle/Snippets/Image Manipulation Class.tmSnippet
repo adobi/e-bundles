@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;image_lib-&gt;${1:function}(${2});${0}</string>
+	<key>name</key>
+	<string>Image Manipulation Class</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciimg</string>
+	<key>uuid</key>
+	<string>C446F69A-8729-42A1-A391-02F41E404CD9</string>
+</dict>
+</plist>

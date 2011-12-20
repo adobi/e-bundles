@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Form Textarea</string>
+        <key>uuid</key>
+        <string>3DEE4A7F-1321-470E-9588-B1212C22FF52</string>
+        <key>tabTrigger</key>
+        <string>formarea</string>
+        <key>content</key>
+        <string>form_textarea(${1:'${2:name}', '${3:value}'${4:, ${5:js}}});${0}</string>
+        <key>scope</key>
+        <string>sourec.php</string>
+    </dict>
+</plist>

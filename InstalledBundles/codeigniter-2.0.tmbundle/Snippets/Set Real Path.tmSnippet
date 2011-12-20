@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Set Real Path</string>
+        <key>uuid</key>
+        <string>62C12BF3-8DF0-4012-AD47-D9B58A377E7A</string>
+        <key>tabTrigger</key>
+        <string>realpath</string>
+        <key>content</key>
+        <string>set_realpath(${1:'${2:path}'}${3:, ${4:TRUE}});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

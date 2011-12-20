@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Encode PHP Tags</string>
+        <key>uuid</key>
+        <string>C1A55A85-E9CA-49A1-8402-E2215636BCBF</string>
+        <key>tabTrigger</key>
+        <string>encodephptags</string>
+        <key>content</key>
+        <string>encode_php_tags(${1:'${2:string}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

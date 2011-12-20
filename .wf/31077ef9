@@ -1,0 +1,243 @@
+<?php  
+    $crosspromo = array(
+        array(
+            'title'=>'Race Of Champions Mobile Game', 
+            'small_icon'=>'roc_90.png', 
+            'big_icon'=>'roc_150.png', 
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'links'=> array(
+                array(
+                    'image'=>'android_phone_badge.png',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'android_tablet_badges.png',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'iphone_store_badge.png',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'ipad_store_badge.png',
+                    'url'=>'#'
+                ),
+            ),
+            'facebook_page'=>'',
+        ),
+        array(
+            'title'=>'Groovy Garage', 
+            'small_icon'=>'gg_90.jpg', 
+            'big_icon'=>'gg_150.jpg', 
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'links'=> array(
+            ),
+            'facebook_page'=>'',
+        ),
+        array(
+            'title'=>'Greed Corp', 
+            'small_icon'=>'greedcorp_90.png', 
+            'big_icon'=>'greedcorp_150.png', 
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'links'=> array(
+                array(
+                    'image'=>'android_phone_badge.png',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'android_phone_badge.png',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'iphone_store_badge.png',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'ipad_store_badge.png',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'mac_app_store_badge.png',
+                    'url'=>'#'
+                ),
+                
+            ),
+            'facebook_page'=>'',
+
+        ),
+        array(
+            'title'=>'Mist Bouncer', 
+            'small_icon'=>'mistbouncer_90.png', 
+            'big_icon'=>'mistbouncer_150.png', 
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'links'=> array(
+                array(
+                    'image'=>'iphone_store_badge.png',
+                    'url'=>'#'
+                ),
+                
+            ),
+            'facebook_page'=>'',
+
+        ),
+        array(
+            'title'=>'Froggy Jump', 
+            'small_icon'=>'froggyjump_90.png', 
+            'big_icon'=>'froggyjump_150.png', 
+            'description' => 'Lorem Ipsum is simply dummy text of the printing and typesetting industry.',
+            'links'=> array(
+                array(
+                    'image'=>'android_phone_badge.png',
+                    'url'=>'#'
+                ),
+                array(
+                    'image'=>'iphone_store_badge.png',
+                    'url'=>'#'
+                ),
+
+            ),
+            'facebook_page'=>'',
+
+        ),
+    );
+
+?><?php  
+    $crosspromo = array(
+        array(
+            'title'=>'Race Of Champions Mobile Game', 
+            'small_icon'=>'roc_90.png', 
+            'big_icon'=>'roc_150.png', 
+            'icon'=>'roc_36.png', 
+            'description' => '<p>Fans of the yearly Race Of Champions event and race game fans in general are now able to try what specialists see as the most technologically advanced racing game on mobile platforms. </p>
+                <p>The game include tracks and cars from different editions of the renowned event with tarmac and off-road racing. The different game modes let players compete against friends and challenge players to beat the times of the actual participating champions.</p>',
+            'links'=> array(
+                array(
+                    'image'=>'android_phone_badge.png',
+                    'url'=>'https://market.android.com/details?id=com.invictus.roc',
+                    'gaq_label'=>'ROC- Android Market - Universal'
+                ),
+
+                array(
+                    'image'=>'iphone_store_badge.png',
+                    'url'=>'http://itunes.apple.com/us/app/race-of-champions-the-official/id469354336',
+                    'gaq_label'=>'ROC - iTunes - Universal'
+                ),
+            ),
+            'facebook_page'=>'https://www.facebook.com/raceofchampions.game',
+            'youtube'=>'<iframe width="460" height="285" src="http://www.youtube.com/embed/m94CTguzqqA" frameborder="0" allowfullscreen></iframe>',
+            'gaq_label'=>'ROC - Tab'
+        ),
+        array(
+            'title'=>'Groovy Garage', 
+            'small_icon'=>'gg_90.jpg', 
+            'big_icon'=>'gg_150.jpg', 
+            'icon'=>'gg_36.jpg', 
+            'description' => '<p>Welcome to Groovy Garage - the cozy workshop of gears, spanners and oily hammers. Build your garage and make your customers happy by fixing their cars and providing them a comfortable Groovy atmosphere while they are waiting.</p>
+                             <p><h5>Coming soon on <a class = "on-facebook" target = "_blank" href="http://www.facebook.com/groovygarage.game"><img src="'.base_url().'images/FacebookBadge.png" alt=""></a></h5></p>',
+            'links'=> array(
+            ),
+            'facebook_page'=>'http://www.facebook.com/groovygarage.game',
+            'youtube'=>'<a href="http://apps.facebook.com/groovygarage/" target = "_blank"><img src="'.base_url().'images/Groovy_Garage_460x285.jpg" alt=""></a>',
+            'gaq_label'=>'Groovy Garage - Tab'
+        ),
+        array(
+            'title'=>'Greed Corp', 
+            'small_icon'=>'greedcorp_90.png', 
+            'big_icon'=>'greedcorp_150.png', 
+            'icon'=>'greedcorp_36.png', 
+            'description' => '<p>Invictus Games is bringing the console and PC Turn-Based Strategy hit Greed Corp to Mac OS X, iPad and Android Tablet devices! </p>
+                             <p>Greed Corp is all about finding a balance between harvesting the land for resources and preserving it to stay alive. Manage the finite available resources to build your army, destroy your enemies, or destroy the very land they stand on, before they do it to you!</p>',
+            'links'=> array(
+                array(
+                    'image'=>'android_phone_badge_cs.png',
+                    'url'=>'javascript:;',
+                    'gaq_label'=>'Greed Corp - Android Market - Phone'
+                ),                
+                array(
+                    'image'=>'android_tablet_badge.png',
+                    'url'=>'https://market.android.com/details?id=com.Invictus.GreedCorp',
+                    'gaq_label'=>'Greed Corp - Android Market - Tablet'
+                ),
+                array(
+                    'image'=>'iphone_store_badge.png',
+                    'url'=>'http://itunes.apple.com/us/app/greed-corp/id484852980',
+                    'gaq_label'=>'Greed Corp - iTunes - iPhone'
+                ),
+                array(
+                    'image'=>'ipad_store_badge.png',
+                    'url'=>'http://itunes.apple.com/us/app/greed-corp-hd/id468398642',
+                    'gaq_label'=>'Greed Corp - iTunes - iPad'
+                ),
+                array(
+                    'image'=>'mac_app_store_badge.png',
+                    'url'=>'http://itunes.apple.com/us/app/greed-corp/id470513549',
+                    'gaq_label'=>'Greed Corp - iTunes - MacOS'
+                ),
+                
+            ),
+            'facebook_page'=>'http://www.facebook.com/greedcorp.mobile',
+            'youtube'=>'<iframe width="460" height="285" src="http://www.youtube.com/embed/A3pRaAub07c" frameborder="0" allowfullscreen></iframe>',
+            'gaq_label'=>'Greed Corp - Tab'
+
+        ),
+        array(
+            'title'=>'Mist Bouncer', 
+            'small_icon'=>'mistbouncer_90.png', 
+            'big_icon'=>'mistbouncer_150.png', 
+            'icon'=>'mistbouncer_36.png', 
+            'description' => '<p>The robots are escaping from the collapse of tiles of the Mistbound Universe. Reach the top of the tile by jumping up on platforms and get safely transported by a plane to another tile. During being in the cargo space of the plane, falling boxes keep you busy to eliminate them whitin a Mistbound-style brick braker game.</p>',
+            'links'=> array(
+                array(
+                    'image'=>'android_phone_badge_cs.png',
+                    'url'=>'javascript:;',
+                    'gaq_label'=>'Mist Bouncer - Android Market - Phone'
+                ),
+                array(
+                    'image'=>'android_tablet_badge_cs.png',
+                    'url'=>'javascript:;',
+                    'gaq_label'=>'Mist Bouncer - Android Market - Tablet'
+                ),
+                array(
+                    'image'=>'iphone_store_badge_cs.png',
+                    'url'=>'javascript:;',
+                    'gaq_label'=>'Mist Bouncer - iTunes - iPhone'
+                ),
+                array(
+                    'image'=>'ipad_store_badge_cs.png',
+                    'url'=>'javascript:;',
+                    'gaq_label'=>'Mist Bouncer - iTunes - iPad'
+                ),
+                
+            ),
+            'facebook_page'=>'http://www.facebook.com/mistbouncer',
+            'youtube'=>'<a href="http://apps.facebook.com/groovygarage/" target = "_blank"><img src="'.base_url().'images/mistbouncer_cs.png" alt=""></a>',
+            'gaq_label'=>'Mist Bouncer - Tab'
+
+        ),
+        array(
+            'title'=>'Froggy Jump', 
+            'small_icon'=>'froggyjump_90.png', 
+            'big_icon'=>'froggyjump_150.png', 
+            'icon'=>'froggyjump_36.png', 
+            'description' => '<p>Make Froggy jump into the air and begin the journey to the galaxy and beyond! Just tilt your device to control your Frog and jump up on the platforms higher and higher and compete against others through OpenFeint! Meet the alien frogs in the sky and reach new achievements as you go higher.</p>',
+            'links'=> array(
+                array(
+                    'image'=>'android_phone_badge.png',
+                    'url'=>'https://market.android.com/details?id=org.invictus.froggyjumpx',
+                    'gaq_label'=>'Froggy Jump - Android Market - Universal'
+                ),
+                array(
+                    'image'=>'iphone_store_badge.png',
+                    'url'=>'http://itunes.apple.com/us/app/froggy-jump/id364355046',
+                    'gaq_label'=>'Froggy Jump - iTunes - Universal'
+                ),
+
+            ),
+            'facebook_page'=>'http://www.facebook.com/froggyjump.ios',
+            'youtube'=>'<iframe width="460" height="285" src="http://www.youtube.com/embed/enIejTuR9Fk" frameborder="0" allowfullscreen></iframe>',
+            'gaq_label'=>'Froggy Jump - Tab'
+
+        ),
+    );
+
+?>

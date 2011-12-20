@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;cart-&gt;total_items();${0}</string>
+	<key>name</key>
+	<string>Total Items</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cicartnumitems</string>
+	<key>uuid</key>
+	<string>8EA2CB9C-5CE2-4FF8-8C54-870F19B65775</string>
+</dict>
+</plist>

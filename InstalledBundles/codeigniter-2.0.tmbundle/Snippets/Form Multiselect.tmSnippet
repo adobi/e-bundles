@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Form Multiselect</string>
+        <key>uuid</key>
+        <string>BE030DAF-A423-482E-A464-DC0F680A3356</string>
+        <key>content</key>
+        <string>form_multiselect('${1:name}', ${2:options}, '${3:selected}'${4:, ${5:js or id}});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+        <key>tabTrigger</key>
+        <string>formmulti</string>
+    </dict>
+</plist>

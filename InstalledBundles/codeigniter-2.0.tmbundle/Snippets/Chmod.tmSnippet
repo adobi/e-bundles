@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;ftp-&gt;chmod(${1:'${2:path}'},${3:permissions});${0}</string>
+	<key>name</key>
+	<string>Chmod</string>
+	<key>tabTrigger</key>
+	<string>ciftpchmod</string>
+	<key>uuid</key>
+	<string>92E3AE4E-E796-493D-99CF-4D45173160A6</string>
+</dict>
+</plist>

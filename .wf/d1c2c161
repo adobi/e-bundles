@@ -1,0 +1,70 @@
+	</div> 
+	<div data-role="footer">
+        <div data-role="navbar">
+        		<ul>
+        		    <li>
+        		        <a href="<?php echo base_url() ?>mobile" data-icon="home">Home</a
+        		    </li>
+        			<li><a href="<?php echo base_url() ?>mobile/terms" data-icon ="info">Terms</a></li>
+        			<li><a href="#" data-icon ="info">Privacy</a></li>
+        		</ul>
+        </div><!-- /navbar -->	    
+        <!--
+	    <p style="font-size:0.6em; text-align:center;">
+    		    Prizes to be drawn out on 14, 21 and 28 November 2011 and will be posted on  <a href="www.facebook.com/raceofchampions.game">www.facebook.com/raceofchampions.game</a> and on <span class="orange">Race Of Champions Mobile Game in-game news</span>.
+    		    Only users who can prove the origin and genuineness of their copy of the Race Of Champions Mobile game by sending their iTunes confirmation e-mail to <a href="mailto:roc.game@invictusgames.com">roc.game@invictusgames.com</a> are entitled to become a winner and receive their prizes. 
+    		    <br /><br />
+    		    <a href="<?php echo base_url() ?>registration/terms" target = "_blank">Terms of conditions</a> &nbsp;&nbsp;&nbsp; <a href="#" target = "_blank">Privacy policy</a> 
+	    </p>
+        -->
+	</div> 
+</div> <!-- page -->
+</body>
+</html>
+
+	</div> 
+
+	    <div id = "footer" data-role="footer" data-position="fixed">
+            <div data-role="navbar" id="footer-nav">
+            		<ul>
+            		    <?php if ($this->uri->segment(2) === 'prestige' || $this->uri->segment(2) === 'prestigelist'): ?>
+                		    <li>
+                		        <a href="<?php echo base_url() ?>mobile/leaderboard" data-icon="home">Home</a
+                		    </li>
+            		    <?php else: ?>
+                		    <li>
+                		        <a href="<?php echo base_url() ?>mobile/register" data-icon="home">Home</a
+                		    </li>
+            		    <?php endif ?>
+                			<li><a href="<?php echo base_url() ?>mobile/terms" data-icon ="info">Terms</a></li>
+                			<li><a href="http://privacy.invictus.hu/" data-icon ="info">Privacy</a></li>        			
+            		    
+            		</ul>
+            </div><!-- /navbar -->	    
+        <!--
+
+        -->
+	</div> 
+</div> <!-- page -->
+
+<script type="text/javascript">
+
+    $(function() {
+        $('body').delegate('#pagination-link', 'click', function() {
+            var self = $(this), url = self.attr('href'), page = self.attr('data-page');
+            $.get(url+ (parseInt(page, 10) + 1) + '/ajax', function(response) {
+                //console.log(response);
+                //console.log($('#items-list'));
+                $('#items-list').append(response);
+                
+                self.attr('data-page', parseInt(page, 10) + 1); 
+            });
+            
+            return false;
+        });
+    })
+
+</script>
+
+</body>
+</html>

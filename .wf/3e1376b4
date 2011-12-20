@@ -1,0 +1,179 @@
+<?php 
+
+if (! defined('BASEPATH')) exit('No direct script access');
+
+require_once'MY_Controller.php';
+
+class Mobile extends MY_Controller 
+{
+    private $faceboook;
+    
+    //php 5 constructor
+    public function __construct() 
+    {
+        parent::__construct();
+        
+        
+        $this->template->set_layout('mobile');
+        
+        require_once APPPATH . 'libraries/facebook.php';
+        
+    	$this->facebook = new Facebook(array(
+            'appId'  => '221014684620305',//FACEBOOK_APPLICATION_ID,
+            'secret' => '4edf3a8c5e93a74822e13be9a72002c1', //FACEBOOK_APPLICATION_SECRET,
+        ));           
+    }
+    
+    public function index()
+    {
+        $user = $this->facebook->getUser();
+        //dump($user); die;
+        /*
+        if ($user) {
+            
+            redirect(base_url() . 'mobile/register');
+        }
+
+        if ($user) {
+            
+            $logoutUrl = $this->facebook->getLogoutUrl();
+        } else {
+            $loginUrl = $this->facebook->getLoginUrl(array( 
+                'scope' => 'email,user_activities,user_birthday,user_groups,user_hometown,user_interests,user_likes,user_location', 
+                'canvas'    => 1,
+                'fbconnect' => 1, 
+                'redirect_uri'=>base_url() . 'mobile/redirect'
+            ));
+            
+            echo '<script>top.window.location = "', $loginUrl, '"</script>';
+            //header('Location:'.$loginUrl);
+            exit;
+        }        
+        */
+        //$this->template->build('rocmobile/welcome');
+    }
+    
+    public function redirect()
+    {
+        redirect(base_url() . 'mobile/register');
+    }
+    
+    public function register()
+    {
+        //$facebookData = $this->facebook->api('/me');
+        
+        //dump($facebookData);
+        
+        $this->form_validation->set_rules('roc_username', 'ROC username', 'trim|required');
+        $this->form_validation->set_rules('udid', 'UDID', 'trim|required|callback_udid_exists');
+        
+        if ($this->form_validation->run()) {
+            
+            $this->load->model('Registrations', 'registration');
+            
+            $facebookData = json_decode($_POST['facebook_data']);
+            
+            unset($_POST['facebook_data']);
+            
+            //unset($_POST['facebook_data']);
+            if ($facebookData) {
+                $_POST['facebook_id'] = $facebookData->id;
+                $_POST['name'] = @$facebookData->name;
+                $_POST['email'] = @$facebookData->email;
+                $_POST['location'] = @$facebookData->location->name;
+                $_POST['hometown'] = @$facebookData->hometown->name;
+                $_POST['birthday'] = date('Y-m-d H:i:s', strtotime(@$facebookData->birthday));
+                $_POST['gender'] = @$facebookData->gender;
+            }
+            //dump($_POST); die;
+            $_POST['registered_at'] = date('Y-m-d H:i:s');
+            $_POST['origin'] = 2;  
+            
+            $this->registration->insert($_POST);   
+            
+            $this->template->build('rocmobile/thanks');       
+        } else {
+            if ($_POST) {
+                
+                $this->template->build('rocmobile/error');
+            }
+        }
+        
+        if (!$_POST) {
+            
+            $this->template->build('rocmobile/welcome');
+        }
+    }
+    
+    public function thanks()
+    {
+        $this->template->build('rocmobile/thanks');
+    }
+    
+    public function terms()
+    {
+        $this->template->build('registration/terms');
+    }
+    
+    public function help() 
+    {
+        $this->template->build('rocmobile/help');
+    }
+    
+    public function leaderboard()
+    {
+        $this->template->build('rocmobile/leaderboard');
+    }
+    
+    public function prestige()
+    {
+        $this->template->build('rocmobile/prestige');
+    }
+    
+    public function prestigelist()
+    {
+        $data = array();
+        
+        $page = $this->uri->segment(4) ? $this->uri->segment(4) : 0;
+        $type = $this->uri->segment(3) ? $this->uri->segment(3) : 0;
+        
+        $data['page'] = $page;
+        $data['type'] = $type;
+        
+        $trackMap = array(
+            'all'=>0,
+            'wembly'=>1,
+            'grancanaria'=>3,
+            'espritarena'=>4,
+            'stadefrance'=>8,
+                );
+        
+        $this->load->model('Prestigepoints', 'prestige');
+        
+        $data['items'] = $this->prestige->fetchPrestigePoints($page, 10, $trackMap[$type]);
+        
+        if ($this->uri->segment(5) === 'ajax') {
+            
+            $html = '';
+            
+            if ($data['items']) {
+                $i = $page*10+1;
+                foreach ($data['items'] as $item) {
+                    $html .= '<li class = "ui-li ui-li-static ui-body-c ui-li-has-count">';
+                    $html .= '<span style="width:30px;display:inline-block;">'.$i++.'.</span>' . ' ' . display_flag($item->Nation) . ' ';
+                    $html .= $item->Name;
+                    $html .= '<span class="ui-li-count ui-btn-up-c ui-btn-corner-all">';
+                    $html .= $item->pp_sum;
+                    $html .= '</span>';
+                    $html .= '</li>';
+                }
+                
+                echo $html; die;
+            }
+        } else {
+            if (is_string($this->uri->segment(5))) die;
+        }
+        
+        $this->template->build('rocmobile/prestigelist', $data);        
+    }
+}

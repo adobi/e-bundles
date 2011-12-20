@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Number of Fields</string>
+        <key>uuid</key>
+        <string>A2492E66-5ABB-461B-96A5-13385ECE49EF</string>
+        <key>tabTrigger</key>
+        <string>cidbnumfields</string>
+        <key>content</key>
+        <string>\$query-&gt;num_fields();$0</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

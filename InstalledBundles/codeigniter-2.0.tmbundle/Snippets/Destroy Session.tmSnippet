@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;session-&gt;sess_destroy();${0}</string>
+	<key>name</key>
+	<string>Destroy Session</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cisessiondestroy</string>
+	<key>uuid</key>
+	<string>7CE23792-47A5-48F2-A3F6-E7628F88E5A7</string>
+</dict>
+</plist>

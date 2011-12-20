@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Form Reset</string>
+        <key>uuid</key>
+        <string>EA06D4E7-A3F4-40C2-8ACF-BD4BDF7C082C</string>
+        <key>tabTrigger</key>
+        <string>formreset</string>
+        <key>content</key>
+        <string>form_reset(${1:'${2:name}', '${3:value}'${4:, ${5:js}}});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

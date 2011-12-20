@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;ftp-&gt;close();${0}</string>
+	<key>name</key>
+	<string>Close</string>
+	<key>tabTrigger</key>
+	<string>ciftpclose</string>
+	<key>uuid</key>
+	<string>08E5EC03-A052-43D7-B64B-3C01A739B9CA</string>
+</dict>
+</plist>

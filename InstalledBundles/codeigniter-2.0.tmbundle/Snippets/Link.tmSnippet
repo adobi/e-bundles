@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Link</string>
+        <key>uuid</key>
+        <string>A944AB31-AF86-4A51-BD01-203EE0B24209</string>
+        <key>tabTrigger</key>
+        <string>link</string>
+        <key>content</key>
+        <string>link_tag(${1:'${2:href}'${3:, '${4:rel}'${5:, '${6:type}'${7:, '${8:title}'${9:, '${10:media}'${11:, ${12:TRUE}}}}}}});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

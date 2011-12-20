@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;upload-&gt;display_errors(${1:'${2:delimiter}'});${0}</string>
+	<key>name</key>
+	<string>Display Errors</string>
+	<key>tabTrigger</key>
+	<string>ciuploaderrors</string>
+	<key>uuid</key>
+	<string>6CB3F406-5EBE-406E-8D64-B2E4FFE38A45</string>
+</dict>
+</plist>

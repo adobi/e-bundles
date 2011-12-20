@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Form Open</string>
+        <key>uuid</key>
+        <string>0CE0C23D-1520-41FA-842B-8E4744264612</string>
+        <key>tabTrigger</key>
+        <string>formopen</string>
+        <key>content</key>
+        <string>form_open('${1:post_to}'${2:, ${3:attribs}${4:, ${5:hidden_fields}}});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

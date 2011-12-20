@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;unit-&gt;use_strict(${1:TRUE});${0}</string>
+	<key>name</key>
+	<string>Use Strict</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciunitstrict</string>
+	<key>uuid</key>
+	<string>C9F704F8-A438-458A-AE93-4613A6EA8493</string>
+</dict>
+</plist>

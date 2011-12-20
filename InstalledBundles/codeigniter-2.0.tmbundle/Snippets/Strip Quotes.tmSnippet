@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Strip Quotes</string>
+        <key>uuid</key>
+        <string>EDF87C8A-4336-4FD8-9EF0-975FE93AD3DE</string>
+        <key>tabTrigger</key>
+        <string>stripquotes</string>
+        <key>content</key>
+        <string>strip_quotes(${1:'${2:string}'});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

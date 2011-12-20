@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;agent-&gt;robot();${0}</string>
+	<key>name</key>
+	<string>Robot</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciagentrobot</string>
+	<key>uuid</key>
+	<string>59F04AAA-6E78-4AE0-BEE2-571A77A15175</string>
+</dict>
+</plist>

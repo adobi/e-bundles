@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;encrypt-&gt;encode(${1:'${2:msg}'${3:, ${4:key}}});${0}</string>
+	<key>name</key>
+	<string>Encode</string>
+	<key>tabTrigger</key>
+	<string>ciencryptenc</string>
+	<key>uuid</key>
+	<string>67FE34AC-CA65-4627-B5DA-35BD7D4A3AB9</string>
+</dict>
+</plist>

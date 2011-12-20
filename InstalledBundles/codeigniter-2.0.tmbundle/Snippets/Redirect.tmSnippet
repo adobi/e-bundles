@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>redirect(${1:'${2:url}'${3:, ${4:method(location/refresh)}${5:, ${6:response_code}}}});${0}</string>
+	<key>name</key>
+	<string>Redirect</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>redirect</string>
+	<key>uuid</key>
+	<string>7CC1D8B1-FE6B-4E5E-9ABD-B25CCB63B4F9</string>
+</dict>
+</plist>

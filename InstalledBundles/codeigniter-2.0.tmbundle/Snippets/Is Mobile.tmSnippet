@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;agent-&gt;is_mobile();${0}</string>
+	<key>name</key>
+	<string>Is Mobile</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>ciagentismobile</string>
+	<key>uuid</key>
+	<string>3CB2AF85-572A-44C4-A46B-B9B040F760FC</string>
+</dict>
+</plist>

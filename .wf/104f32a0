@@ -1,0 +1,1374 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+    
+    <title>FB snadbox</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+    
+    <style type="text/css">
+    
+        html {margin:0;padding:0;border:0;}
+        body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+        article, aside, details, figcaption, figure, dialog, footer, header, hgroup, menu, nav, section {display:block;}
+        body {line-height:1.5;background:white;}
+        table {border-collapse:separate;border-spacing:0;}
+        caption, th, td {text-align:left;font-weight:normal;float:none !important;}
+        table, th, td {vertical-align:middle;}
+        blockquote:before, blockquote:after, q:before, q:after {content:'';}
+        blockquote, q {quotes:"" "";}
+        a img {border:none;}
+        :focus {outline:0;}
+        
+        /* typography.css */
+        html {font-size:100.01%;}
+        body {font-size:75%;color:#222;background:#fff;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
+        h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#666;}
+        h1 {font-size:2.5em;line-height:1;margin-bottom:0.5em;}
+        h2 {font-size:2em;margin-bottom:0.75em;}
+        h3 {font-size:1.5em;line-height:1;margin-bottom:1em;}  
+        pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}          
+        
+        .container {
+            width:750px;
+            margin:10px auto;
+            background:#f2f2f2;
+            padding:5px;
+        }
+        
+        a {
+            color:#FF0052;
+            text-decoration: none;
+            margin:5px 10px;
+        }
+        
+        .container a {
+            font-size:2em;
+        }
+        
+        #console {
+            width:740px;
+            margin:10px auto;
+            background:#f5f5f5;
+            padding:10px;
+        }        
+        
+    </style>    
+</head>
+<body>
+    <div id="fb-root"></div>
+    <div class  = "container">
+
+	</div>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+    <script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>
+    <script type="text/javascript">
+        FB.init({ 
+            appId:'219947674704766', cookie:true, 
+            status:true, xfbml:true 
+        });         
+
+		if (window.session) {
+			
+			FB.login(function(response) {
+			
+				window.session = response.session;
+				
+				if (response.authResponse) {
+					
+				}	
+			}, {scope: 'email'});
+			    
+		}
+		FB.api('/me', function(response) {
+		 
+			console.log(response);
+			FB.api({
+			    method: 'pages.isFan',
+			    page_id: '226467557415341',
+			    uid: response.id
+			}, function (resp) {
+			    if (resp == true) {
+			        jQuery('.container').load('content.php', function() {
+			       	
+			   		});
+			    } else if (resp.error_code) {
+			        //alert(resp.error_msg);
+			        console.log(resp);
+			        jQuery('.container').load('error.html', function() {
+			        	
+			        });			        
+			    } else {
+			        jQuery('.container').load('error.html', function() {
+			        	
+			        });
+			    }
+			});
+		});        
+
+    </script>
+
+</body>
+</html>    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+    
+    <title>FB snadbox</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+    
+    <style type="text/css">
+    
+        html {margin:0;padding:0;border:0;}
+        body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+        article, aside, details, figcaption, figure, dialog, footer, header, hgroup, menu, nav, section {display:block;}
+        body {line-height:1.5;background:white;}
+        table {border-collapse:separate;border-spacing:0;}
+        caption, th, td {text-align:left;font-weight:normal;float:none !important;}
+        table, th, td {vertical-align:middle;}
+        blockquote:before, blockquote:after, q:before, q:after {content:'';}
+        blockquote, q {quotes:"" "";}
+        a img {border:none;}
+        :focus {outline:0;}
+        
+        /* typography.css */
+        html {font-size:100.01%;}
+        body {font-size:75%;color:#222;background:#fff;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
+        h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#666;}
+        h1 {font-size:2.5em;line-height:1;margin-bottom:0.5em;}
+        h2 {font-size:2em;margin-bottom:0.75em;}
+        h3 {font-size:1.5em;line-height:1;margin-bottom:1em;}  
+        pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}          
+        
+        .container {
+            width:750px;
+            margin:10px auto;
+            background:#f2f2f2;
+            padding:5px;
+        }
+        
+        a {
+            color:#FF0052;
+            text-decoration: none;
+            margin:5px 10px;
+        }
+        
+        .container a {
+            font-size:2em;
+        }
+        
+        #console {
+            width:740px;
+            margin:10px auto;
+            background:#f5f5f5;
+            padding:10px;
+        }        
+        
+    </style>    
+</head>
+<body>
+    <div id="fb-root"></div>
+    <div class  = "container">
+
+	</div>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+    <script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>
+    <script type="text/javascript">
+        FB.init({ 
+            appId:'219947674704766', cookie:true, 
+            status:true, xfbml:true 
+        });         
+        /*
+		if (window.session) {
+			
+			FB.login(function(response) {
+			
+				window.session = response.session;
+				
+				if (response.authResponse) {
+					
+				}	
+			}, {scope: 'email'});
+			    
+		}
+		FB.api('/me', function(response) {
+		 
+			console.log(response);
+			FB.api({
+			    method: 'pages.isFan',
+			    page_id: '226467557415341',
+			    uid: response.id
+			}, function (resp) {
+			    if (resp == true) {
+			        jQuery('.container').load('content.php', function() {
+			       	
+			   		});
+			    } else if (resp.error_code) {
+			        //alert(resp.error_msg);
+			        console.log(resp);
+			        jQuery('.container').load('error.html', function() {
+			        	
+			        });			        
+			    } else {
+			        jQuery('.container').load('error.html', function() {
+			        	
+			        });
+			    }
+			});
+		});        
+        */
+    </script>
+
+</body>
+</html>    <!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:fb="http://www.facebook.com/2008/fbml">
+<head>
+    
+    <title>FB snadbox</title>
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/1.6.1/jquery.js"></script>
+    
+    <style type="text/css">
+    
+        html {margin:0;padding:0;border:0;}
+        body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, code, del, dfn, em, img, q, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, dialog, figure, footer, header, hgroup, nav, section {margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+        article, aside, details, figcaption, figure, dialog, footer, header, hgroup, menu, nav, section {display:block;}
+        body {line-height:1.5;background:white;}
+        table {border-collapse:separate;border-spacing:0;}
+        caption, th, td {text-align:left;font-weight:normal;float:none !important;}
+        table, th, td {vertical-align:middle;}
+        blockquote:before, blockquote:after, q:before, q:after {content:'';}
+        blockquote, q {quotes:"" "";}
+        a img {border:none;}
+        :focus {outline:0;}
+        
+        /* typography.css */
+        html {font-size:100.01%;}
+        body {font-size:75%;color:#222;background:#fff;font-family:"Helvetica Neue", Arial, Helvetica, sans-serif;}
+        h1, h2, h3, h4, h5, h6 {font-weight:normal;color:#666;}
+        h1 {font-size:2.5em;line-height:1;margin-bottom:0.5em;}
+        h2 {font-size:2em;margin-bottom:0.75em;}
+        h3 {font-size:1.5em;line-height:1;margin-bottom:1em;}  
+        pre, code, tt {font:1em 'andale mono', 'lucida console', monospace;line-height:1.5;}          
+        
+        .container {
+            width:750px;
+            margin:10px auto;
+            background:#f2f2f2;
+            padding:5px;
+        }
+        
+        a {
+            color:#FF0052;
+            text-decoration: none;
+            margin:5px 10px;
+        }
+        
+        .container a {
+            font-size:2em;
+        }
+        
+        #console {
+            width:740px;
+            margin:10px auto;
+            background:#f5f5f5;
+            padding:10px;
+        }        
+        
+    </style>    
+</head>
+<body>
+    <div id="fb-root"></div>
+    <div class  = "container">
+
+	</div>
+    <script src="http://connect.facebook.net/en_US/all.js"></script>
+    <script type="text/javascript" src = "http://static.ak.fbcdn.net/connect/en_US/core.debug.js"></script>
+    <script type="text/javascript">
+        FB.init({ 
+            appId:'219947674704766', cookie:true, 
+            status:true, xfbml:true 
+        });         
+			        jQuery('.container').load('content.php', function() {
+			       	
+			   		});
+        /*
+		if (window.session) {
+			
+			FB.login(function(response) {
+			
+				window.session = response.session;
+				
+				if (response.authResponse) {
+					
+				}	
+			}, {scope: 'email'});
+			    
+		}
+		FB.api('/me', function(response) {
+		 
+			console.log(response);
+			FB.api({
+			    method: 'pages.isFan',
+			    page_id: '226467557415341',
+			    uid: response.id
+			}, function (resp) {
+			    if (resp == true) {
+			        jQuery('.container').load('content.php', function() {
+			       	
+			   		});
+			    } else if (resp.error_code) {
+			        //alert(resp.error_msg);
+			        console.log(resp);
+			        jQuery('.container').load('error.html', function() {
+			        	
+			        });			        
+			    } else {
+			        jQuery('.container').load('error.html', function() {
+			        	
+			        });
+			    }
+			});
+		});        
+        */
+    </script>
+
+</body>
+</html>    <?php
+date_default_timezone_set('Europe/Budapest');
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ *
+ */
+	define('ENVIRONMENT', 'development');
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
+
+if (defined('ENVIRONMENT'))
+{
+	switch (ENVIRONMENT)
+	{
+		case 'development':
+			error_reporting(E_ALL);
+		break;
+	
+		case 'testing':
+		case 'production':
+			error_reporting(0);
+		break;
+
+		default:
+			exit('The application environment is not set correctly.');
+	}
+}
+
+/*
+ *---------------------------------------------------------------
+ * SYSTEM FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" folder.
+ * Include the path if the folder is not in the same  directory
+ * as this file.
+ *
+ */
+	$system_path = '../system';
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * folder then the default one you can set its name here. The folder
+ * can also be renamed or relocated anywhere on your server.  If
+ * you do, use a full server path. For more info please see the user guide:
+ * http://codeigniter.com/user_guide/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ *
+ */
+	$application_folder = '../application';
+
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here.  For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT:  If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller.  Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ *
+ */
+	// The directory name, relative to the "controllers" folder.  Leave blank
+	// if your controller is not in a sub-folder within the "controllers" folder
+	// $routing['directory'] = '';
+
+	// The controller class file name.  Example:  Mycontroller.php
+	// $routing['controller'] = '';
+
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
+
+
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ *
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
+
+
+
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
+
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
+
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
+
+	if (realpath($system_path) !== FALSE)
+	{
+		$system_path = realpath($system_path).'/';
+	}
+
+	// ensure there's a trailing slash
+	$system_path = rtrim($system_path, '/').'/';
+
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		exit("Your system folder path does not appear to be set correctly. Please open the following file and correct this: ".pathinfo(__FILE__, PATHINFO_BASENAME));
+	}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+	// The PHP file extension
+	define('EXT', '.php');
+
+	// Path to the system folder
+	define('BASEPATH', str_replace("\\", "/", $system_path));
+
+	// Path to the front controller (this file)
+	define('FCPATH', str_replace(SELF, '', __FILE__));
+
+	// Name of the "system folder"
+	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
+
+
+	// The path to the "application" folder
+	if (is_dir($application_folder))
+	{
+		define('APPPATH', $application_folder.'/');
+	}
+	else
+	{
+		if ( ! is_dir(BASEPATH.$application_folder.'/'))
+		{
+			exit("Your application folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+		}
+
+		define('APPPATH', BASEPATH.$application_folder.'/');
+	}
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ *
+ */
+require_once BASEPATH.'core/CodeIgniter'.EXT;
+
+
+/* End of file index.php */
+/* Location: ./index.php */<?php
+date_default_timezone_set('Europe/Budapest');
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ *
+ */
+	define('ENVIRONMENT', 'development');
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
+
+if (defined('ENVIRONMENT'))
+{
+	switch (ENVIRONMENT)
+	{
+		case 'development':
+			error_reporting(E_ALL);
+		break;
+	
+		case 'testing':
+		case 'production':
+			error_reporting(0);
+		break;
+
+		default:
+			exit('The application environment is not set correctly.');
+	}
+}
+
+/*
+ *---------------------------------------------------------------
+ * SYSTEM FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" folder.
+ * Include the path if the folder is not in the same  directory
+ * as this file.
+ *
+ */
+	$system_path = '../system';
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * folder then the default one you can set its name here. The folder
+ * can also be renamed or relocated anywhere on your server.  If
+ * you do, use a full server path. For more info please see the user guide:
+ * http://codeigniter.com/user_guide/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ *
+ */
+	$application_folder = '../application';
+
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here.  For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT:  If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller.  Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ *
+ */
+	// The directory name, relative to the "controllers" folder.  Leave blank
+	// if your controller is not in a sub-folder within the "controllers" folder
+	// $routing['directory'] = '';
+
+	// The controller class file name.  Example:  Mycontroller.php
+	// $routing['controller'] = '';
+
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
+
+
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ *
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
+
+
+
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
+
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
+
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
+
+	if (realpath($system_path) !== FALSE)
+	{
+		$system_path = realpath($system_path).'/';
+	}
+
+	// ensure there's a trailing slash
+	$system_path = rtrim($system_path, '/').'/';
+
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		exit("Your system folder path does not appear to be set correctly. Please open the following file and correct this: ".pathinfo(__FILE__, PATHINFO_BASENAME));
+	}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+	// The PHP file extension
+	define('EXT', '.php');
+
+	// Path to the system folder
+	define('BASEPATH', str_replace("\\", "/", $system_path));
+
+	// Path to the front controller (this file)
+	define('FCPATH', str_replace(SELF, '', __FILE__));
+
+	// Name of the "system folder"
+	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
+
+
+	// The path to the "application" folder
+	if (is_dir($application_folder))
+	{
+		define('APPPATH', $application_folder.'/');
+	}
+	else
+	{
+		if ( ! is_dir(BASEPATH.$application_folder.'/'))
+		{
+			exit("Your application folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+		}
+
+		define('APPPATH', BASEPATH.$application_folder.'/');
+	}
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ *
+ */
+require_once BASEPATH.'core/CodeIgniter'.EXT;
+
+
+/* End of file index.php */
+/* Location: ./index.php */<?php
+
+    defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/application'));
+
+    if(isset($_SERVER['SCRIPT_NAME'])) {
+		
+		define("_APP_MAIN_DIR", rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'));
+	}
+	
+	if(isset($_SERVER['HTTP_HOST']) && isset($_SERVER['SERVER_PORT'])) {
+		
+		if($_SERVER['SERVER_PORT'] == 80) {
+			
+			define("BASE_URL", "http://{$_SERVER['HTTP_HOST']}"._APP_MAIN_DIR."/");
+		}
+		else {
+			define("BASE_URL", "http://{$_SERVER['HTTP_HOST']}:{$_SERVER['SERVER_PORT']}"._APP_MAIN_DIR."/");
+		}
+	}
+
+    $_app_info['params'] = array();
+	$_url = str_replace(_APP_MAIN_DIR, '', $_SERVER['REQUEST_URI']);
+	$_tmp = explode("?", $_url);
+	$_url = $_tmp[0];
+	
+	if($_url = explode("/", $_url)) {
+		
+		foreach($_url as $tag) {
+			
+			if($tag) {
+				
+				$_app_info['params'][] = $tag;
+			}
+		}
+	}
+
+	$controller = (isset($_app_info['params'][0]) ? $_app_info['params'][0] : '');
+	$action = (isset($_app_info['params'][1]) ? $_app_info['params'][1] : 0);
+	$param = (isset($_app_info['params'][2]) ? $_app_info['params'][2] : '');
+
+    date_default_timezone_set('Europe/Budapest');
+    
+    function base_url() {
+        
+        return BASE_URL;
+    }
+
+    require_once '_template/template.php';<?php
+    echo '<pre>'; var_dump($_SERVER);
+    defined('APPLICATION_PATH') || define('APPLICATION_PATH', realpath(dirname(__FILE__) . '/application'));
+
+    if(isset($_SERVER['SCRIPT_NAME'])) {
+		
+		define("_APP_MAIN_DIR", rtrim(dirname($_SERVER['SCRIPT_NAME']), '/'));
+	}
+	
+	if(isset($_SERVER['HTTP_HOST']) && isset($_SERVER['SERVER_PORT'])) {
+		
+		if($_SERVER['SERVER_PORT'] == 80) {
+			
+			define("BASE_URL", "http://{$_SERVER['HTTP_HOST']}"._APP_MAIN_DIR."/");
+		}
+		else {
+			define("BASE_URL", "http://{$_SERVER['HTTP_HOST']}:{$_SERVER['SERVER_PORT']}"._APP_MAIN_DIR."/");
+		}
+	}
+
+    $_app_info['params'] = array();
+	$_url = str_replace(_APP_MAIN_DIR, '', $_SERVER['REQUEST_URI']);
+	$_tmp = explode("?", $_url);
+	$_url = $_tmp[0];
+	
+	if($_url = explode("/", $_url)) {
+		
+		foreach($_url as $tag) {
+			
+			if($tag) {
+				
+				$_app_info['params'][] = $tag;
+			}
+		}
+	}
+
+	$controller = (isset($_app_info['params'][0]) ? $_app_info['params'][0] : '');
+	$action = (isset($_app_info['params'][1]) ? $_app_info['params'][1] : 0);
+	$param = (isset($_app_info['params'][2]) ? $_app_info['params'][2] : '');
+
+    date_default_timezone_set('Europe/Budapest');
+    
+    function base_url() {
+        
+        return BASE_URL;
+    }
+
+    require_once '_template/template.php';<?php
+
+date_default_timezone_set('Europe/Budapest');
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ *
+ */
+	define('ENVIRONMENT', 'development');
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
+
+if (defined('ENVIRONMENT'))
+{
+	switch (ENVIRONMENT)
+	{
+		case 'development':
+			error_reporting(E_ALL);
+		break;
+	
+		case 'testing':
+		case 'production':
+			error_reporting(0);
+		break;
+
+		default:
+			exit('The application environment is not set correctly.');
+	}
+}
+
+/*
+ *---------------------------------------------------------------
+ * SYSTEM FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" folder.
+ * Include the path if the folder is not in the same  directory
+ * as this file.
+ *
+ */
+	$system_path = '../system';
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * folder then the default one you can set its name here. The folder
+ * can also be renamed or relocated anywhere on your server.  If
+ * you do, use a full server path. For more info please see the user guide:
+ * http://codeigniter.com/user_guide/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ *
+ */
+	$application_folder = '../application';
+
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here.  For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT:  If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller.  Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ *
+ */
+	// The directory name, relative to the "controllers" folder.  Leave blank
+	// if your controller is not in a sub-folder within the "controllers" folder
+	// $routing['directory'] = '';
+
+	// The controller class file name.  Example:  Mycontroller.php
+	// $routing['controller'] = '';
+
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
+
+
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ *
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
+
+
+
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
+
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
+
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
+
+	if (realpath($system_path) !== FALSE)
+	{
+		$system_path = realpath($system_path).'/';
+	}
+
+	// ensure there's a trailing slash
+	$system_path = rtrim($system_path, '/').'/';
+
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		exit("Your system folder path does not appear to be set correctly. Please open the following file and correct this: ".pathinfo(__FILE__, PATHINFO_BASENAME));
+	}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+	// The PHP file extension
+	define('EXT', '.php');
+
+	// Path to the system folder
+	define('BASEPATH', str_replace("\\", "/", $system_path));
+
+	// Path to the front controller (this file)
+	define('FCPATH', str_replace(SELF, '', __FILE__));
+
+	// Name of the "system folder"
+	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
+
+
+	// The path to the "application" folder
+	if (is_dir($application_folder))
+	{
+		define('APPPATH', $application_folder.'/');
+	}
+	else
+	{
+		if ( ! is_dir(BASEPATH.$application_folder.'/'))
+		{
+			exit("Your application folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+		}
+
+		define('APPPATH', BASEPATH.$application_folder.'/');
+	}
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ *
+ */
+require_once BASEPATH.'core/CodeIgniter'.EXT;
+
+
+/* End of file index.php */
+/* Location: ./index.php */<?php
+
+date_default_timezone_set('Europe/Budapest');
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION ENVIRONMENT
+ *---------------------------------------------------------------
+ *
+ * You can load different configurations depending on your
+ * current environment. Setting the environment also influences
+ * things like logging and error reporting.
+ *
+ * This can be set to anything, but default usage is:
+ *
+ *     development
+ *     testing
+ *     production
+ *
+ * NOTE: If you change these, also change the error_reporting() code below
+ *
+ */
+	define('ENVIRONMENT', 'development');
+/*
+ *---------------------------------------------------------------
+ * ERROR REPORTING
+ *---------------------------------------------------------------
+ *
+ * Different environments will require different levels of error reporting.
+ * By default development will show errors but testing and live will hide them.
+ */
+
+if (defined('ENVIRONMENT'))
+{
+	switch (ENVIRONMENT)
+	{
+		case 'development':
+			error_reporting(E_ALL);
+		break;
+	
+		case 'testing':
+		case 'production':
+			error_reporting(0);
+		break;
+
+		default:
+			exit('The application environment is not set correctly.');
+	}
+}
+
+/*
+ *---------------------------------------------------------------
+ * SYSTEM FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * This variable must contain the name of your "system" folder.
+ * Include the path if the folder is not in the same  directory
+ * as this file.
+ *
+ */
+	$system_path = '../system';
+
+/*
+ *---------------------------------------------------------------
+ * APPLICATION FOLDER NAME
+ *---------------------------------------------------------------
+ *
+ * If you want this front controller to use a different "application"
+ * folder then the default one you can set its name here. The folder
+ * can also be renamed or relocated anywhere on your server.  If
+ * you do, use a full server path. For more info please see the user guide:
+ * http://codeigniter.com/user_guide/general/managing_apps.html
+ *
+ * NO TRAILING SLASH!
+ *
+ */
+	$application_folder = '../application';
+
+/*
+ * --------------------------------------------------------------------
+ * DEFAULT CONTROLLER
+ * --------------------------------------------------------------------
+ *
+ * Normally you will set your default controller in the routes.php file.
+ * You can, however, force a custom routing by hard-coding a
+ * specific controller class/function here.  For most applications, you
+ * WILL NOT set your routing here, but it's an option for those
+ * special instances where you might want to override the standard
+ * routing in a specific front controller that shares a common CI installation.
+ *
+ * IMPORTANT:  If you set the routing here, NO OTHER controller will be
+ * callable. In essence, this preference limits your application to ONE
+ * specific controller.  Leave the function name blank if you need
+ * to call functions dynamically via the URI.
+ *
+ * Un-comment the $routing array below to use this feature
+ *
+ */
+	// The directory name, relative to the "controllers" folder.  Leave blank
+	// if your controller is not in a sub-folder within the "controllers" folder
+	// $routing['directory'] = '';
+
+	// The controller class file name.  Example:  Mycontroller.php
+	// $routing['controller'] = '';
+
+	// The controller function you wish to be called.
+	// $routing['function']	= '';
+
+
+/*
+ * -------------------------------------------------------------------
+ *  CUSTOM CONFIG VALUES
+ * -------------------------------------------------------------------
+ *
+ * The $assign_to_config array below will be passed dynamically to the
+ * config class when initialized. This allows you to set custom config
+ * items or override any default config values found in the config.php file.
+ * This can be handy as it permits you to share one application between
+ * multiple front controller files, with each file containing different
+ * config values.
+ *
+ * Un-comment the $assign_to_config array below to use this feature
+ *
+ */
+	// $assign_to_config['name_of_config_item'] = 'value of config item';
+
+
+
+// --------------------------------------------------------------------
+// END OF USER CONFIGURABLE SETTINGS.  DO NOT EDIT BELOW THIS LINE
+// --------------------------------------------------------------------
+
+/*
+ * ---------------------------------------------------------------
+ *  Resolve the system path for increased reliability
+ * ---------------------------------------------------------------
+ */
+
+	// Set the current directory correctly for CLI requests
+	if (defined('STDIN'))
+	{
+		chdir(dirname(__FILE__));
+	}
+
+	if (realpath($system_path) !== FALSE)
+	{
+		$system_path = realpath($system_path).'/';
+	}
+
+	// ensure there's a trailing slash
+	$system_path = rtrim($system_path, '/').'/';
+
+	// Is the system path correct?
+	if ( ! is_dir($system_path))
+	{
+		exit("Your system folder path does not appear to be set correctly. Please open the following file and correct this: ".pathinfo(__FILE__, PATHINFO_BASENAME));
+	}
+
+/*
+ * -------------------------------------------------------------------
+ *  Now that we know the path, set the main path constants
+ * -------------------------------------------------------------------
+ */
+	// The name of THIS file
+	define('SELF', pathinfo(__FILE__, PATHINFO_BASENAME));
+
+	// The PHP file extension
+	define('EXT', '.php');
+
+	// Path to the system folder
+	define('BASEPATH', str_replace("\\", "/", $system_path));
+
+	// Path to the front controller (this file)
+	define('FCPATH', str_replace(SELF, '', __FILE__));
+
+	// Name of the "system folder"
+	define('SYSDIR', trim(strrchr(trim(BASEPATH, '/'), '/'), '/'));
+
+
+	// The path to the "application" folder
+	if (is_dir($application_folder))
+	{
+		define('APPPATH', $application_folder.'/');
+	}
+	else
+	{
+		if ( ! is_dir(BASEPATH.$application_folder.'/'))
+		{
+			exit("Your application folder path does not appear to be set correctly. Please open the following file and correct this: ".SELF);
+		}
+
+		define('APPPATH', BASEPATH.$application_folder.'/');
+	}
+
+/*
+ * --------------------------------------------------------------------
+ * LOAD THE BOOTSTRAP FILE
+ * --------------------------------------------------------------------
+ *
+ * And away we go...
+ *
+ */
+require_once BASEPATH.'core/CodeIgniter'.EXT;
+
+
+/* End of file index.php */
+/* Location: ./index.php */<?php  
+    
+    error_reporting(E_ALL|E_STRICT);
+ 	ini_set('display_errors', 'on');
+
+	session_start();    
+    require_once 'config.php';
+	header('Content-Type: text/html; charset=UTF-8');
+	
+    if ($controller === 'api' || ($_SESSION && array_key_exists('UserId', $_SESSION) && $_SESSION['UserId'])) {
+        
+
+        $controller = $controller ? str_replace('-', '_', $controller) : $controller;
+        $action = $action ? str_replace('-', '_', $action) : $action;
+        
+        
+        $flag = 0;
+        
+    	if(!empty($controller) && file_exists(APPLICATION_PATH . DIRECTORY_SEPARATOR . 
+    	                                      'controllers' . DIRECTORY_SEPARATOR . 
+    	                                      $controller . '.php')) {
+            
+    	    require_once 'controllers/' . $controller . '.php';
+    	    $flag = 1;
+    	} 
+    	else {
+    	    
+    	    if(empty($controller)) {
+    	        
+    	        require_once 'controllers/main.php';
+    	        $flag = 1;
+    	    }
+    	    else {
+    	        $flag = 0;
+    	    }
+    	}
+    	//dump($controller);
+    	if(!$flag) {
+    	    
+    	    Redirect::to(BASE_URL . '404/');
+    	}
+    	
+    	$_template = null;
+        if(empty($controller)) {
+            
+            /*
+                TODO admin index or public index
+            */
+            
+            $_template =  'admin/index.php';
+            
+        } elseif (is_dir(APPLICATION_PATH . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . $controller) ) {
+            
+            
+            if (isset($action) && !empty($action)) {
+                
+                if (file_exists(APPLICATION_PATH . DIRECTORY_SEPARATOR . 'views' . DIRECTORY_SEPARATOR . $controller . DIRECTORY_SEPARATOR . $action . '.php')) {
+                    
+                    $_template =  $controller . '/' . $action . '.php';    
+                    
+                } else {
+                    
+                    if ($action === 'list' || $action === 'page') {
+                        
+                        $_template = $controller . '/index.php';
+                    } else {
+                        
+                        $_template = '404/index.php';
+                    }
+                }
+                
+            } else {
+                $_template =  $controller . '/index.php';
+            }
+        
+        } else {
+            
+            $_template = '404/index.php';
+        }
+        
+        if (!empty($_template)) {
+            
+            //if ($_SESSION && array_key_exists('UserId', $_SESSION) && $_SESSION['UserId']) {
+                
+                require_once 'layout/admin/layout.php';
+            //} else {
+                
+            //    require_once 'views/_layout.php';
+            //}
+        } else {
+            
+            
+        }
+            
+    } else {
+        
+        if ($controller === 'login') {
+            
+            require_once 'controllers/login.php';
+            
+            $_template = 'login/index.php';
+        
+        } else {
+            
+            require_once 'controllers/main.php';
+        
+            if (!$_page) {
+                
+                $_template = '404/index.php';
+            } else {
+                
+                $_template = 'main/' . $_page;
+            }
+        }
+        
+        if ($controller === 'login') {
+        
+            require_once 'layout/admin/layout.php';
+        } else {
+        
+            require_once 'layout/public/layout.php';
+        }
+    }
+
+?>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;encrypt-&gt;${1:function}(${2});${0}</string>
+	<key>name</key>
+	<string>Encryption Class</string>
+	<key>tabTrigger</key>
+	<string>ciencrypt</string>
+	<key>uuid</key>
+	<string>8B307545-41BA-41BF-BC36-D1EC92185AC9</string>
+</dict>
+</plist>

@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;db-&gt;like('${1:field}', '${2:match}');${0}</string>
+	<key>name</key>
+	<string>Like</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cidblike</string>
+	<key>uuid</key>
+	<string>35094BDF-59C0-45A2-B68B-4A4BF3A3E770</string>
+</dict>
+</plist>

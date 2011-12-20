@@ -1,0 +1,12 @@
+<?php 
+
+    header('Location: http://apps.facebook.com/groovygarage');
+    exit;
+
+?><?php 
+
+    //header('Location: http://apps.facebook.com/groovygarage');
+    header('Location: http://invictus.com');
+    exit;
+
+?>

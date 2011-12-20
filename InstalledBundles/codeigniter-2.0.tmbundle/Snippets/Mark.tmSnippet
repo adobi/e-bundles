@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;benchmark-&gt;mark('${1:name}');${0}</string>
+	<key>name</key>
+	<string>Mark</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cibenchmark</string>
+	<key>uuid</key>
+	<string>3FD44CC7-D4BC-4970-9872-0786557EB999</string>
+</dict>
+</plist>

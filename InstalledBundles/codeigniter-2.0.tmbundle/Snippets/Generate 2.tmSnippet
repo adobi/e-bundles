@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;table-&gt;generate();${0}</string>
+	<key>name</key>
+	<string>Generate</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>citablegen</string>
+	<key>uuid</key>
+	<string>C44BD101-375E-4495-975D-4AA3247EF8E4</string>
+</dict>
+</plist>

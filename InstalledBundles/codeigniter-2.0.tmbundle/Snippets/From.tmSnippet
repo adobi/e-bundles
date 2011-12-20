@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;email-&gt;from('${1:from_address}', '${2:from_name}');${0}</string>
+	<key>name</key>
+	<string>From</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cimailfrom</string>
+	<key>uuid</key>
+	<string>C02E4E34-A2AC-4589-86E6-6F0F21D27C5D</string>
+</dict>
+</plist>

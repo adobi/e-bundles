@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;form_validation-&gt;set_rules('${1:field_name}','${2:display_name}','${3:rules}');${0}</string>
+	<key>name</key>
+	<string>Set Rules</string>
+	<key>tabTrigger</key>
+	<string>ciformvalrules</string>
+	<key>uuid</key>
+	<string>0C4CB258-5113-4201-92EB-B3263DB336D5</string>
+</dict>
+</plist>

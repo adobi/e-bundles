@@ -1,0 +1,361 @@
+<?php  
+
+    Check::session();
+
+    $news = new News();
+    $errors = array();
+    
+    $types = new Types();
+    $typesList = $types->fetchAll();
+    
+    switch($action) {
+        
+        case '':
+        case 'page':
+        case 'list':
+            
+            if ($action === 'list' && empty($param)) {
+                
+                //$newsList = $news->fetchAllByType(null);
+            } else {
+                
+                if ($action === 'list' && $param && $types->find(intval($param))) {
+                    
+                    $newsList = $news->fetchAllByType(intval($param));
+                    
+                    $page = (isset($_app_info['params'][4]) ? $_app_info['params'][4] : 1);
+                    
+                    $paginator = new Paginator($newsList, 10, $page ? $page : 1);
+                    
+                    $newsList = $paginator->setLink(BASE_URL . 'news/list/'.$param.'/page/')->paginate();
+                    $pagesLink = $paginator->getPagesLink();                    
+                    
+                } else {
+                    
+                    $newsList = $news->fetchAll('created');
+
+                    $page = $param;
+                    
+                    $paginator = new Paginator($newsList, 10, $page ? $page : 1);
+                    
+                    $newsList = $paginator->setLink(BASE_URL . 'news/page/')->paginate();
+                    $pagesLink = $paginator->getPagesLink();                    
+                    
+                }            
+            }
+            break;
+        case 'edit': 
+        
+            $buzz = false;
+            if ($param) {
+                
+                if (is_numeric($param)) {
+                    
+                    $buzz = $news->find(intval($param));  
+                    //dump($buzz); die;
+                } 
+            }
+            
+            if ($_POST) {
+                //dump($_POST); die;
+                if (!empty($_POST['title']) && !empty($_POST['news_content'])) {
+                    
+                    $data = array();
+                    $data['title'] = htmlspecialchars(XSS::clear(trim($_POST['title'])));
+                    $data['short_description'] = htmlspecialchars(XSS::clear(trim($_POST['short_description'])));
+                    $data['content'] = htmlspecialchars((XSS::clear(trim($_POST['news_content']))));
+                    $data['url'] = Sanitizer::sanitize_title_with_dashes($data['title']);
+                    $data['type_id'] = $_POST['type_id'];
+                    $data['is_draft'] = array_key_exists('is_draft', $_POST) ? intval($_POST['is_draft']) : 0;
+                    
+                    if ($buzz) {
+                        
+                        $news->update($data, intval($param));
+                    } else {
+                        
+                        $data['created'] = now();
+                        $news->insert($data);                        
+                    }
+                    
+                    Redirect::to(BASE_URL . 'news');
+                } else {
+                    $errors[] = 'Minden mező kitöltése kötelező';
+                }   
+            }
+            
+            break;
+        case 'delete':
+            
+            if (is_numeric($param)) {
+                
+                $buzz = $news->find(intval($param));
+                
+                if ($buzz) {
+                    $news->delete(intval($param));
+                }
+                
+                Redirect::to(BASE_URL . 'news');
+            }
+        
+            break;
+        case 'make_draft': 
+        
+            $news = new News();
+            
+            $news->update(array('is_draft'=>1), intval($param));
+            
+            Redirect::to($_SERVER['HTTP_REFERER']);
+        
+            break;
+            
+        case 'delete_draft':
+        
+            $news = new News();
+            
+            $news->update(array('is_draft'=>0), intval($param));
+            
+            Redirect::to($_SERVER['HTTP_REFERER']);
+            break;            
+        default:
+            Redirect::to(BASE_URL . '404');
+    }<?php  
+
+    Check::session();
+
+    $news = new News();
+    $errors = array();
+    
+    $types = new Types();
+    $typesList = $types->fetchAll();
+    
+    switch($action) {
+        
+        case '':
+        case 'page':
+        case 'list':
+            
+            if ($action === 'list' && empty($param)) {
+                
+                //$newsList = $news->fetchAllByType(null);
+            } else {
+                
+                if ($action === 'list' && $param && $types->find(intval($param))) {
+                    
+                    $newsList = $news->fetchAllByType(intval($param));
+                    
+                    $page = (isset($_app_info['params'][4]) ? $_app_info['params'][4] : 1);
+                    
+                    $paginator = new Paginator($newsList, 10, $page ? $page : 1);
+                    
+                    $newsList = $paginator->setLink(BASE_URL . 'news/list/'.$param.'/page/')->paginate();
+                    $pagesLink = $paginator->getPagesLink();                    
+                    
+                } else {
+                    
+                    $newsList = $news->fetchAll('created');
+
+                    $page = $param;
+                    
+                    $paginator = new Paginator($newsList, 10, $page ? $page : 1);
+                    
+                    $newsList = $paginator->setLink(BASE_URL . 'news/page/')->paginate();
+                    $pagesLink = $paginator->getPagesLink();                    
+                    
+                }            
+            }
+            break;
+        case 'edit': 
+        
+            $buzz = false;
+            if ($param) {
+                
+                if (is_numeric($param)) {
+                    
+                    $buzz = $news->find(intval($param));  
+                    //dump($buzz); die;
+                } 
+            }
+            
+            if ($_POST) {
+                //dump($_POST); die;
+                if (!empty($_POST['title']) && !empty($_POST['news_content'])) {
+                    
+                    $data = array();
+                    $data['title'] = htmlspecialchars(XSS::clear(trim($_POST['title'])));
+                    $data['short_description'] = htmlspecialchars(XSS::clear(trim($_POST['short_description'])));
+                    $data['content'] = htmlspecialchars((XSS::clear(trim($_POST['news_content']))));
+                    $data['url'] = Sanitizer::sanitize_title_with_dashes($data['title']);
+                    $data['type_id'] = $_POST['type_id'];
+                    $data['is_draft'] = array_key_exists('is_draft', $_POST) ? intval($_POST['is_draft']) : 0;
+                    
+                    if ($buzz) {
+                        
+                        $news->update($data, intval($param));
+                    } else {
+                        
+                        $data['created'] = now();
+                        $news->insert($data);                        
+                    }
+                    
+                    Redirect::to(BASE_URL . 'news');
+                } else {
+                    $errors[] = 'Minden mező kitöltése kötelező';
+                }   
+            }
+            
+            break;
+        case 'delete':
+            
+            if (is_numeric($param)) {
+                
+                $buzz = $news->find(intval($param));
+                
+                if ($buzz) {
+                    $news->delete(intval($param));
+                }
+                
+                Redirect::to(BASE_URL . 'news');
+            }
+        
+            break;
+        case 'make_draft': 
+        
+            $news = new News();
+            
+            $news->update(array('is_draft'=>1), intval($param));
+            
+            Redirect::to($_SERVER['HTTP_REFERER']);
+        
+            break;
+            
+        case 'delete_draft':
+        
+            $news = new News();
+            
+            $news->update(array('is_draft'=>0), intval($param));
+            
+            Redirect::to($_SERVER['HTTP_REFERER']);
+            break;            
+        default:
+            Redirect::to(BASE_URL . '404');
+    }<?php  
+
+    Check::session();
+
+    $news = new News();
+    $errors = array();
+    
+    $types = new Types();
+    $typesList = $types->fetchAll();
+    
+    switch($action) {
+        
+        case '':
+        case 'page':
+        case 'list':
+            
+            if ($action === 'list' && empty($param)) {
+                
+                //$newsList = $news->fetchAllByType(null);
+            } else {
+                
+                if ($action === 'list' && $param && $types->find(intval($param))) {
+                    
+                    $newsList = $news->fetchAllByType(intval($param));
+                    
+                    $page = (isset($_app_info['params'][4]) ? $_app_info['params'][4] : 1);
+                    
+                    $paginator = new Paginator($newsList, 10, $page ? $page : 1);
+                    
+                    $newsList = $paginator->setLink(BASE_URL . 'news/list/'.$param.'/page/')->paginate();
+                    $pagesLink = $paginator->getPagesLink();                    
+                    
+                } else {
+                    
+                    $newsList = $news->fetchAll('created');
+                    
+                    $page = $param;
+                    
+                    $paginator = new Paginator($newsList, 10, $page ? $page : 1);
+                    
+                    $newsList = $paginator->setLink(BASE_URL . 'news/page/')->paginate();
+                    $pagesLink = $paginator->getPagesLink();                    
+                    
+                }            
+            }
+            break;
+        case 'edit': 
+        
+            $buzz = false;
+            if ($param) {
+                
+                if (is_numeric($param)) {
+                    
+                    $buzz = $news->find(intval($param));  
+                    //dump($buzz); die;
+                } 
+            }
+            
+            if ($_POST) {
+                //dump($_POST); die;
+                if (!empty($_POST['title']) && !empty($_POST['news_content'])) {
+                    
+                    $data = array();
+                    $data['title'] = htmlspecialchars(XSS::clear(trim($_POST['title'])));
+                    $data['short_description'] = htmlspecialchars(XSS::clear(trim($_POST['short_description'])));
+                    $data['content'] = htmlspecialchars((XSS::clear(trim($_POST['news_content']))));
+                    $data['url'] = Sanitizer::sanitize_title_with_dashes($data['title']);
+                    $data['type_id'] = $_POST['type_id'];
+                    $data['is_draft'] = array_key_exists('is_draft', $_POST) ? intval($_POST['is_draft']) : 0;
+                    
+                    if ($buzz) {
+                        
+                        $news->update($data, intval($param));
+                    } else {
+                        
+                        $data['created'] = now();
+                        $news->insert($data);                        
+                    }
+                    
+                    Redirect::to(BASE_URL . 'news');
+                } else {
+                    $errors[] = 'Minden mező kitöltése kötelező';
+                }   
+            }
+            
+            break;
+        case 'delete':
+            
+            if (is_numeric($param)) {
+                
+                $buzz = $news->find(intval($param));
+                
+                if ($buzz) {
+                    $news->delete(intval($param));
+                }
+                
+                Redirect::to(BASE_URL . 'news');
+            }
+        
+            break;
+        case 'make_draft': 
+        
+            $news = new News();
+            
+            $news->update(array('is_draft'=>1), intval($param));
+            
+            Redirect::to($_SERVER['HTTP_REFERER']);
+        
+            break;
+            
+        case 'delete_draft':
+        
+            $news = new News();
+            
+            $news->update(array('is_draft'=>0), intval($param));
+            
+            Redirect::to($_SERVER['HTTP_REFERER']);
+            break;            
+        default:
+            Redirect::to(BASE_URL . '404');
+    }

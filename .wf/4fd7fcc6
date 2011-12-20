@@ -1,0 +1,151 @@
+<?php 
+
+if (! defined('BASEPATH')) exit('No direct script access');
+
+require_once 'MY_Controller.php';
+
+class Manage extends MY_Controller 
+{
+    //php 5 constructor
+    public function __construct() 
+    {
+        parent::__construct();   
+		
+		if (!$this->session->userdata('logged_in') && $this->uri->segment(2) !== 'login') {
+			
+			redirect(base_url() . 'manage/login');
+		}     
+    }
+	
+	public function login() 
+	{
+		if ($_POST && md5($_POST['password']) === md5('a')) {
+			
+			$this->session->set_userdata('logged_in', true);
+			
+			redirect(base_url() . 'manage/competitors');
+		}
+		
+		$this->template->build('manage/login');
+	}
+	
+	public function logout() 
+	{
+		$this->session->set_userdata('logged_in', false);
+		
+		redirect(base_url() . 'manage/login');
+	}
+    
+    public function index()
+    {
+        //$this->template->build('manage/index');
+        
+        redirect(base_url().'manage/competitors');
+    }
+    
+    
+    public function competitors()
+    {
+        $data = array();
+        
+        $this->load->model('Registrations', 'registration');
+        
+        if ($_POST && isset($_POST['ids']) && !empty($_POST['ids'])) {
+            
+            $ids = implode(',', $_POST['ids']);
+            
+            $this->registration->delete(array('id in ('.$ids.')'=>null));
+            
+            redirect($_SERVER['HTTP_REFERER']);
+            
+        }
+        
+        $data['items'] = $this->registration->fetchAll(array('order'=>array('by'=>'registered_at', 'dest'=>'desc')));
+        
+        $this->template->build('manage/competitors', $data);
+    }
+    
+    public function orders()
+    {
+        $data = array();
+        
+        $this->load->model('Orders', 'order');
+        
+        $data['items'] = $this->order->fetchAll(array(
+            'join'=>array(
+                array('table'=>'licenses', 'condition'=>'orders.license = licenses.id', 'columns'=>array('licenses.name as license_name'))
+            ),
+            'order'=>array('by'=>'created', 'dest'=>'desc')
+        ));
+        
+        //dump($data); die;
+        
+        $this->template->build('manage/orders', $data);
+    }    
+    
+    public function license()
+    {
+        $data = array();
+        
+        $this->load->model('Licenses', 'license');
+        
+        $data['items'] = $this->license->fetchAll();
+        
+        $this->template->build('manage/license', $data);
+    }
+    
+    public function edit_license() 
+    {
+        $data = array();
+        
+        $id = $this->uri->segment(3);
+        
+        $this->load->model('Licenses', 'license');
+        $data['item'] = false;
+        if ($id) {
+            $data['item'] = $this->license->find($id);
+        }
+        
+        $this->form_validation->set_rules('name', 'Name', 'trim|required');
+        $this->form_validation->set_rules('description', 'Description', 'trim|required');
+        $this->form_validation->set_rules('price', 'Price', 'trim|required');
+        $this->form_validation->set_rules('pieces', 'Pieces', 'trim|required');
+        
+        if ($this->form_validation->run()) {
+            
+            if ($id) {
+                $this->license->update($_POST, $id);
+            } else {
+                $this->license->insert($_POST);
+            }
+            redirect(base_url() . 'manage/license');
+        }
+        
+        $this->template->build('manage/edit_license', $data);
+    }
+    
+    public function delete_license()
+    {
+        $this->load->model('Licenses', 'license');
+        
+        $this->license->delete($this->uri->segment(3));
+        
+        redirect($_SERVER['HTTP_REFERER']);
+    }
+    
+    public function stat()
+    {
+        $data = array();
+        
+        $data['data'] = false;
+        if ($_POST) {
+            $this->load->model('Statistics', 'stat');
+            
+            $data['data'] = json_encode($this->stat->get($_POST));
+            
+            
+        }
+        
+        $this->template->build('manage/stat', $data);
+    }
+}

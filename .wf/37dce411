@@ -1,0 +1,149 @@
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+DEBUG - 2011-11-08 16:04:41 --> Config Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Hooks Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Utf8 Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> UTF-8 Support Enabled
+DEBUG - 2011-11-08 16:04:41 --> URI Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Router Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Output Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Security Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Input Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:04:41 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:04:41 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:04:41 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:04:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2011-11-08 16:04:41 --> Language Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Loader Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: cookie_helper
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: url_helper
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: form_helper
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: html_helper
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: debug_helper
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: display_errors_helper
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: to_date_helper
+DEBUG - 2011-11-08 16:04:41 --> Session Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: string_helper
+DEBUG - 2011-11-08 16:04:41 --> Encrypt Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Session routines successfully run
+DEBUG - 2011-11-08 16:04:41 --> User Agent Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Template class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Form Validation Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Controller Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2011-11-08 16:04:41 --> Model Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Model Class Initialized
+ERROR - 2011-11-08 16:04:41 --> Severity: Notice  --> Undefined property: Register::$db F:\wamp\www\roc-facebook\system\core\Model.php 50
+<?php  if ( ! defined('BASEPATH')) exit('No direct script access allowed'); ?>
+
+DEBUG - 2011-11-08 16:04:41 --> Config Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Hooks Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Utf8 Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> UTF-8 Support Enabled
+DEBUG - 2011-11-08 16:04:41 --> URI Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Router Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Output Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Security Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Input Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:04:41 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:04:41 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:04:41 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:04:41 --> Global POST and COOKIE data sanitized
+DEBUG - 2011-11-08 16:04:41 --> Language Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Loader Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: cookie_helper
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: url_helper
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: form_helper
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: html_helper
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: debug_helper
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: display_errors_helper
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: to_date_helper
+DEBUG - 2011-11-08 16:04:41 --> Session Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Helper loaded: string_helper
+DEBUG - 2011-11-08 16:04:41 --> Encrypt Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Session routines successfully run
+DEBUG - 2011-11-08 16:04:41 --> User Agent Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Template class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Form Validation Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Controller Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2011-11-08 16:04:41 --> Model Class Initialized
+DEBUG - 2011-11-08 16:04:41 --> Model Class Initialized
+ERROR - 2011-11-08 16:04:41 --> Severity: Notice  --> Undefined property: Register::$db F:\wamp\www\roc-facebook\system\core\Model.php 50
+DEBUG - 2011-11-08 16:06:15 --> Config Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Hooks Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Utf8 Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> UTF-8 Support Enabled
+DEBUG - 2011-11-08 16:06:15 --> URI Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Router Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Output Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Security Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Input Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:06:15 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:06:15 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:06:15 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:06:15 --> Global POST and COOKIE data sanitized
+DEBUG - 2011-11-08 16:06:15 --> Language Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Loader Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Helper loaded: cookie_helper
+DEBUG - 2011-11-08 16:06:15 --> Helper loaded: url_helper
+DEBUG - 2011-11-08 16:06:15 --> Helper loaded: form_helper
+DEBUG - 2011-11-08 16:06:15 --> Helper loaded: html_helper
+DEBUG - 2011-11-08 16:06:15 --> Helper loaded: debug_helper
+DEBUG - 2011-11-08 16:06:15 --> Helper loaded: display_errors_helper
+DEBUG - 2011-11-08 16:06:15 --> Helper loaded: to_date_helper
+DEBUG - 2011-11-08 16:06:15 --> Database Driver Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Session Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Helper loaded: string_helper
+DEBUG - 2011-11-08 16:06:15 --> Encrypt Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Session routines successfully run
+DEBUG - 2011-11-08 16:06:15 --> User Agent Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Template class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Form Validation Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Controller Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Language file loaded: language/english/form_validation_lang.php
+DEBUG - 2011-11-08 16:06:15 --> Model Class Initialized
+DEBUG - 2011-11-08 16:06:15 --> Model Class Initialized
+DEBUG - 2011-11-08 16:06:16 --> Helper loaded: inflector_helper
+DEBUG - 2011-11-08 16:06:16 --> File loaded: ../application/views/register/second.php
+DEBUG - 2011-11-08 16:06:16 --> File loaded: ../application/views/layouts/default.php
+DEBUG - 2011-11-08 16:06:16 --> Final output sent to browser
+DEBUG - 2011-11-08 16:06:16 --> Total execution time: 0.2878
+DEBUG - 2011-11-08 16:06:18 --> Config Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Hooks Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Utf8 Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> UTF-8 Support Enabled
+DEBUG - 2011-11-08 16:06:18 --> URI Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Router Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Output Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Security Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Input Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:06:18 --> XSS Filtering completed
+DEBUG - 2011-11-08 16:06:18 --> Global POST and COOKIE data sanitized
+DEBUG - 2011-11-08 16:06:18 --> Language Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Loader Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Helper loaded: cookie_helper
+DEBUG - 2011-11-08 16:06:18 --> Helper loaded: url_helper
+DEBUG - 2011-11-08 16:06:18 --> Helper loaded: form_helper
+DEBUG - 2011-11-08 16:06:18 --> Helper loaded: html_helper
+DEBUG - 2011-11-08 16:06:18 --> Helper loaded: debug_helper
+DEBUG - 2011-11-08 16:06:18 --> Helper loaded: display_errors_helper
+DEBUG - 2011-11-08 16:06:18 --> Helper loaded: to_date_helper
+DEBUG - 2011-11-08 16:06:18 --> Database Driver Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Session Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Helper loaded: string_helper
+DEBUG - 2011-11-08 16:06:18 --> Encrypt Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Session routines successfully run
+DEBUG - 2011-11-08 16:06:18 --> User Agent Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Template class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Form Validation Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Controller Class Initialized
+DEBUG - 2011-11-08 16:06:18 --> Helper loaded: inflector_helper
+DEBUG - 2011-11-08 16:06:18 --> File loaded: ../application/views/register/second.php
+DEBUG - 2011-11-08 16:06:18 --> File loaded: ../application/views/layouts/default.php
+DEBUG - 2011-11-08 16:06:18 --> Final output sent to browser
+DEBUG - 2011-11-08 16:06:18 --> Total execution time: 0.0639

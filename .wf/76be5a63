@@ -1,0 +1,7 @@
+<?php  
+    header('Location: https://morning-leaf-2304.herokuapp.com/public/mobile/');
+    exit;
+?><?php  
+    header('Location: http://morning-leaf-2304.herokuapp.com/public/mobile/');
+    exit;
+?>

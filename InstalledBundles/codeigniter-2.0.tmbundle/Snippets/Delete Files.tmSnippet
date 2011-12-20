@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>name</key>
+        <string>Delete Files</string>
+        <key>uuid</key>
+        <string>2762182C-7530-404A-B884-0B9F2556489E</string>
+        <key>tabTrigger</key>
+        <string>delfiles</string>
+        <key>content</key>
+        <string>delete_files(${1:'${2:path}'}, ${3:TRUE});${0}</string>
+        <key>scope</key>
+        <string>source.php</string>
+    </dict>
+</plist>

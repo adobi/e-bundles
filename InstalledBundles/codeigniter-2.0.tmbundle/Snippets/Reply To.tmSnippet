@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>content</key>
+	<string>\$this-&gt;email-&gt;reply_to('${1:reply_address}', '${2:reply_name}');${0}</string>
+	<key>name</key>
+	<string>Reply To</string>
+	<key>scope</key>
+	<string>source.php</string>
+	<key>tabTrigger</key>
+	<string>cimailreply</string>
+	<key>uuid</key>
+	<string>3B1C5AC2-76E0-46C8-B6D4-E126C76395F0</string>
+</dict>
+</plist>
